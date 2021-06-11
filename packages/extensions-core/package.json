@@ -1,0 +1,21 @@
+{
+  "name": "@tsukiy0/extensions-core",
+  "version": "0.1.0-alpha.20",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "runtypes": "^5.2.0"
+  }
+}
