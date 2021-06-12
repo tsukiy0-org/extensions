@@ -1,4 +1,5 @@
 import { GuidExtensions } from "@tsukiy0/extensions-core";
+import { ICorrelationService } from "packages/extensions-logging-core/src/services/ICorrelationService";
 import { Writable } from "stream";
 import { transports } from "winston";
 import { WinstonLogger } from "./WinstonLogger";
@@ -6,6 +7,10 @@ import { WinstonLogger } from "./WinstonLogger";
 describe("WinstonLogger", () => {
   const traceId = GuidExtensions.generate();
   const spanId = GuidExtensions.generate();
+  const correlationService: ICorrelationService = {
+    getTraceId: () => traceId,
+    getSpanId: () => spanId,
+  };
   let output: string;
   let sut: WinstonLogger;
 
@@ -17,7 +22,7 @@ describe("WinstonLogger", () => {
       next();
     };
     const transport = new transports.Stream({ stream });
-    sut = new WinstonLogger(traceId, spanId, transport);
+    sut = new WinstonLogger(correlationService, transport);
   });
 
   describe("info", () => {

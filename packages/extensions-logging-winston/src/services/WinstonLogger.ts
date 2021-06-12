@@ -1,5 +1,10 @@
-import { ErrorLog, ILogger, Log } from "@tsukiy0/extensions-logging-core";
-import { Guid, TimestampExtensions } from "@tsukiy0/extensions-core";
+import {
+  ErrorLog,
+  ICorrelationService,
+  ILogger,
+  Log,
+} from "@tsukiy0/extensions-logging-core";
+import { TimestampExtensions } from "@tsukiy0/extensions-core";
 import { createLogger, Logger, LoggerOptions, format } from "winston";
 import { Console } from "winston/lib/winston/transports";
 
@@ -7,8 +12,7 @@ export class WinstonLogger implements ILogger {
   private readonly logger: Logger;
 
   constructor(
-    private readonly traceId: Guid,
-    private readonly spanId: Guid,
+    private readonly correlationService: ICorrelationService,
     transports: LoggerOptions["transports"],
   ) {
     const fmt = format.printf((data) => {
@@ -33,8 +37,8 @@ export class WinstonLogger implements ILogger {
       version: 1,
       level: 20,
       timestamp: TimestampExtensions.now(),
-      traceId: this.traceId,
-      spanId: this.spanId,
+      traceId: this.correlationService.getTraceId(),
+      spanId: this.correlationService.getSpanId(),
       message,
       context,
     };
@@ -50,8 +54,8 @@ export class WinstonLogger implements ILogger {
       version: 1,
       level: 50,
       timestamp: TimestampExtensions.now(),
-      traceId: this.traceId,
-      spanId: this.spanId,
+      traceId: this.correlationService.getTraceId(),
+      spanId: this.correlationService.getSpanId(),
       message: message ?? error.message,
       context,
       exception: {
