@@ -1,5 +1,5 @@
 {
-  "name": "@tsukiy0/extensions-core",
+  "name": "@tsukiy0/extensions-logging-core",
   "version": "0.0.0",
   "license": "MIT",
   "main": "dist/index.js",
