@@ -16,6 +16,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "@tsukiy0/extensions-core": "^0.0.0",
     "runtypes": "^6.3.1"
   }
 }
