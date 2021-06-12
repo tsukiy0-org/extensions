@@ -16,6 +16,6 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "runtypes": "^5.2.0"
+    "runtypes": "^6.3.1"
   }
 }
