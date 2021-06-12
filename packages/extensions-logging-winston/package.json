@@ -1,0 +1,23 @@
+{
+  "name": "@tsukiy0/extensions-logging-winston",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@tsukiy0/extensions-core": "^0.0.0",
+    "@tsukiy0/extensions-logging-core": "^0.0.0",
+    "winston": "^3.3.3"
+  }
+}
