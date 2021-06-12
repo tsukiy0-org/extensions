@@ -5,6 +5,7 @@ describe("Log", () => {
   const log: Log = {
     version: 1,
     level: 1,
+    name: "TestLogger",
     timestamp: TimestampExtensions.fromDate(new Date()),
     traceId: GuidExtensions.generate(),
     spanId: GuidExtensions.generate(),

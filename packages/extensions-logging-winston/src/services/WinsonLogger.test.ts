@@ -5,9 +5,11 @@ import { transports } from "winston";
 import { WinstonLogger } from "./WinstonLogger";
 
 describe("WinstonLogger", () => {
+  const name = "TestLogger";
   const traceId = GuidExtensions.generate();
   const spanId = GuidExtensions.generate();
   const correlationService: ICorrelationService = {
+    getName: () => name,
     getTraceId: () => traceId,
     getSpanId: () => spanId,
   };
@@ -43,6 +45,7 @@ describe("WinstonLogger", () => {
       expect(JSON.parse(output)).toEqual({
         version: 1,
         level: 20,
+        name,
         timestamp: expect.any(Number),
         traceId,
         spanId,
@@ -71,6 +74,7 @@ describe("WinstonLogger", () => {
       expect(JSON.parse(output)).toEqual({
         version: 1,
         level: 50,
+        name,
         timestamp: expect.any(Number),
         traceId,
         spanId,

@@ -36,6 +36,7 @@ export class WinstonLogger implements ILogger {
     const log: Log = {
       version: 1,
       level: 20,
+      name: this.correlationService.getName(),
       timestamp: TimestampExtensions.now(),
       traceId: this.correlationService.getTraceId(),
       spanId: this.correlationService.getSpanId(),
@@ -53,6 +54,7 @@ export class WinstonLogger implements ILogger {
     const log: ErrorLog = {
       version: 1,
       level: 50,
+      name: this.correlationService.getName(),
       timestamp: TimestampExtensions.now(),
       traceId: this.correlationService.getTraceId(),
       spanId: this.correlationService.getSpanId(),
