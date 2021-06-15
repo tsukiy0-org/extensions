@@ -10,6 +10,6 @@ describe("SystemClock", () => {
 
     const actual = sut.now();
 
-    expect(actual).toEqual(TimestampExtensions.fromDate(date));
+    expect(actual - TimestampExtensions.fromDate(date)).toBeLessThan(100);
   });
 });
