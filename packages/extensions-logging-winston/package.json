@@ -1,6 +1,6 @@
 {
   "name": "@tsukiy0/extensions-logging-winston",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,8 +16,8 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.1",
-    "@tsukiy0/extensions-logging-core": "^0.1.0-alpha.1",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.2",
+    "@tsukiy0/extensions-logging-core": "^0.1.0-alpha.2",
     "winston": "^3.3.3"
   }
 }
