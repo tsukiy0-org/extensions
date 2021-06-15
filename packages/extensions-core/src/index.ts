@@ -8,3 +8,5 @@ export * from "./models/Enum";
 
 export * from "./services/IConfiguration";
 export * from "./services/SystemConfiguration";
+export * from "./services/IClock";
+export * from "./services/SystemClock";
