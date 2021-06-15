@@ -5,3 +5,6 @@ export * from "./extensions/GuidExtensions";
 export * from "./models/Url";
 export * from "./models/BaseError";
 export * from "./models/Enum";
+
+export * from "./services/IConfiguration";
+export * from "./services/SystemConfiguration";
