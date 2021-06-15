@@ -12,6 +12,7 @@ export class WinstonLogger implements ILogger {
   private readonly logger: Logger;
 
   constructor(
+    private readonly name: string,
     private readonly correlationService: ICorrelationService,
     transports: LoggerOptions["transports"],
   ) {
@@ -36,7 +37,7 @@ export class WinstonLogger implements ILogger {
     const log: Log = {
       version: 1,
       level: 20,
-      name: this.correlationService.getName(),
+      name: this.name,
       timestamp: TimestampExtensions.now(),
       traceId: this.correlationService.getTraceId(),
       spanId: this.correlationService.getSpanId(),
@@ -54,7 +55,7 @@ export class WinstonLogger implements ILogger {
     const log: ErrorLog = {
       version: 1,
       level: 50,
-      name: this.correlationService.getName(),
+      name: this.name,
       timestamp: TimestampExtensions.now(),
       traceId: this.correlationService.getTraceId(),
       spanId: this.correlationService.getSpanId(),

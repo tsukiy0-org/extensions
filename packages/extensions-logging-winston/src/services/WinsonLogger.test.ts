@@ -9,7 +9,6 @@ describe("WinstonLogger", () => {
   const traceId = GuidExtensions.generate();
   const spanId = GuidExtensions.generate();
   const correlationService: ICorrelationService = {
-    getName: () => name,
     getTraceId: () => traceId,
     getSpanId: () => spanId,
   };
@@ -24,7 +23,7 @@ describe("WinstonLogger", () => {
       next();
     };
     const transport = new transports.Stream({ stream });
-    sut = new WinstonLogger(correlationService, transport);
+    sut = new WinstonLogger(name, correlationService, transport);
   });
 
   describe("info", () => {
