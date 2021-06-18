@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.3](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.2...v0.1.0-alpha.3) (2021-06-18)
+
+
+### Bug Fixes
+
+* hack to enable esbuild for winston formatters ([afbf7e8](https://github.com/tsukiy0-org/extensions-js/commit/afbf7e8c8cd823cbc67ebb3064f57b1933571d3e)), closes [/github.com/evanw/esbuild/issues/480#issuecomment-715489407](https://github.com//github.com/evanw/esbuild/issues/480/issues/issuecomment-715489407)
+
+
+### Features
+
+* add promisifyHandler ([9d978f1](https://github.com/tsukiy0-org/extensions-js/commit/9d978f1f53a81e863cba3a751f726e73a17a9c5a))
+
+
+
+
+
 # [0.1.0-alpha.2](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.1...v0.1.0-alpha.2) (2021-06-15)
 
 
