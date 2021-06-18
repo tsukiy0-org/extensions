@@ -18,6 +18,7 @@
   "dependencies": {
     "@tsukiy0/extensions-core": "^0.1.0-alpha.2",
     "@tsukiy0/extensions-logging-core": "^0.1.0-alpha.2",
+    "logform": "^2.2.0",
     "winston": "^3.3.3"
   }
 }

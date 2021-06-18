@@ -5,7 +5,8 @@ import {
   Log,
 } from "@tsukiy0/extensions-logging-core";
 import { TimestampExtensions } from "@tsukiy0/extensions-core";
-import { createLogger, Logger, LoggerOptions, format } from "winston";
+import { createLogger, Logger, LoggerOptions } from "winston";
+import printf from "logform/printf";
 import { Console } from "winston/lib/winston/transports";
 
 export class WinstonLogger implements ILogger {
@@ -16,7 +17,7 @@ export class WinstonLogger implements ILogger {
     private readonly correlationService: ICorrelationService,
     transports: LoggerOptions["transports"],
   ) {
-    const fmt = format.printf((data) => {
+    const fmt = printf((data) => {
       return JSON.stringify(data.log);
     });
 
