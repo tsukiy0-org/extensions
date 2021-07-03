@@ -6,6 +6,8 @@ export * from "./models/Url";
 export * from "./extensions/UrlExtensions";
 export * from "./models/BaseError";
 export * from "./models/NotFoundError";
+export * from "./models/UnauthorizedError";
+export * from "./models/ValidationError";
 export * from "./models/Enum";
 
 export * from "./services/IConfiguration";
