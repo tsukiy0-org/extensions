@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tsukiy0/extensions-core": "^0.1.0-alpha.4",
+    "@tsukiy0/extensions-logging-core": "^0.1.0-alpha.4",
     "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.4",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

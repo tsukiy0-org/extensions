@@ -1,4 +1,4 @@
-import { Guid } from "@tsukiy0/extensions-core";
+import { Guid } from "../models/Guid";
 
 export interface ICorrelationService {
   getTraceId(): Guid;

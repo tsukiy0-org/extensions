@@ -1,5 +1,5 @@
 import { GuidExtensions } from "@tsukiy0/extensions-core";
-import { ICorrelationService } from "@tsukiy0/extensions-logging-core";
+import { ICorrelationService } from "@tsukiy0/extensions-core";
 import { Writable } from "stream";
 import { transports } from "winston";
 import { WinstonLogger } from "./WinstonLogger";

@@ -14,3 +14,4 @@ export * from "./services/IConfiguration";
 export * from "./services/SystemConfiguration";
 export * from "./services/IClock";
 export * from "./services/SystemClock";
+export * from "./services/ICorrelationService";

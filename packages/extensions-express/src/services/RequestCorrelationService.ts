@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { ICorrelationService } from "@tsukiy0/extensions-logging-core";
+import { ICorrelationService } from "@tsukiy0/extensions-core";
 import { Guid, GuidExtensions } from "@tsukiy0/extensions-core";
 
 export class RequestCorrelationService implements ICorrelationService {
