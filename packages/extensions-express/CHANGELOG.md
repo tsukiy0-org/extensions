@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.5](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2021-07-03)
+
+
+### Features
+
+* add ErrorMiddleware ([7cc5d60](https://github.com/tsukiy0-org/extensions-js/commit/7cc5d60329671cf89ee432caaa26e62c01c31ce5))
+* merge logging-core into core ([265112d](https://github.com/tsukiy0-org/extensions-js/commit/265112d6badd68bc4cdc7727596c0669c4a1d609))
+* move ICorrelationService to core ([e8c2e96](https://github.com/tsukiy0-org/extensions-js/commit/e8c2e96ef36d2474be547d0d1d5318746058e438))
+
+
+
+
+
 # [0.1.0-alpha.4](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2021-07-03)
 
 **Note:** Version bump only for package @tsukiy0/extensions-express

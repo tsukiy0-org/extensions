@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.5](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2021-07-03)
+
+
+### Features
+
+* add common error types ([93edd16](https://github.com/tsukiy0-org/extensions-js/commit/93edd16bccec6db6ae8dde4c841a75722a3f1909))
+* add NotFoundError ([2238384](https://github.com/tsukiy0-org/extensions-js/commit/2238384d44db89ba8104cf8958d852c412a71c66))
+* export UrlExtensions ([8683885](https://github.com/tsukiy0-org/extensions-js/commit/86838853c6089327ff45d9c8148f62e47c0d9092))
+* merge logging-core into core ([265112d](https://github.com/tsukiy0-org/extensions-js/commit/265112d6badd68bc4cdc7727596c0669c4a1d609))
+* move ICorrelationService to core ([e8c2e96](https://github.com/tsukiy0-org/extensions-js/commit/e8c2e96ef36d2474be547d0d1d5318746058e438))
+
+
+
+
+
 # [0.1.0-alpha.4](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2021-07-03)
 
 
