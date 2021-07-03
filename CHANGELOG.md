@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.4](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2021-07-03)
+
+
+### Features
+
+* add UrlExtensions ([ae02d9f](https://github.com/tsukiy0-org/extensions-js/commit/ae02d9fe9101250b33e23cb2358d8e51d4983d6f))
+
+
+
+
+
 # [0.1.0-alpha.3](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.2...v0.1.0-alpha.3) (2021-06-18)
 
 
