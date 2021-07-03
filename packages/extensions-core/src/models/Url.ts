@@ -7,6 +7,6 @@ export const Url = String.withConstraint((_) => {
   } catch {
     return false;
   }
-});
+}).withBrand("Url");
 
 export type Url = Static<typeof Url>;
