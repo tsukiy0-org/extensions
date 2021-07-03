@@ -1,7 +1,9 @@
-import { ErrorLog, ILogger, Log } from "@tsukiy0/extensions-logging-core";
 import {
   ICorrelationService,
   TimestampExtensions,
+  ErrorLog,
+  ILogger,
+  Log,
 } from "@tsukiy0/extensions-core";
 import { createLogger, Logger, LoggerOptions } from "winston";
 import printf from "logform/printf";

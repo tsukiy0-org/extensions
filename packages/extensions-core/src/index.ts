@@ -9,9 +9,12 @@ export * from "./models/NotFoundError";
 export * from "./models/UnauthorizedError";
 export * from "./models/ValidationError";
 export * from "./models/Enum";
+export * from "./models/Log";
+export * from "./models/ErrorLog";
 
 export * from "./services/IConfiguration";
 export * from "./services/SystemConfiguration";
 export * from "./services/IClock";
 export * from "./services/SystemClock";
 export * from "./services/ICorrelationService";
+export * from "./services/ILogger";

@@ -7,7 +7,8 @@ import {
   Static,
   Unknown,
 } from "runtypes";
-import { Guid, Timestamp } from "@tsukiy0/extensions-core";
+import { Guid } from "./Guid";
+import { Timestamp } from "./Timestamp";
 
 export const Log = Record({
   version: Union(Literal(1)),

@@ -1,4 +1,5 @@
-import { GuidExtensions, TimestampExtensions } from "@tsukiy0/extensions-core";
+import { GuidExtensions } from "../extensions/GuidExtensions";
+import { TimestampExtensions } from "../extensions/TimestampExtensions";
 import { Log } from "./Log";
 
 describe("Log", () => {
