@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.7](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.6...v0.1.0-alpha.7) (2021-07-04)
+
+
+### Features
+
+* LoggerMiddleware is a class that includes setting up a logger name ([1c57332](https://github.com/tsukiy0-org/extensions-js/commit/1c57332c7abb4afc2db7498ed93eda8af193a98a))
+* update ErrorMiddleware to have dependency on LoggerMiddleware ([78bcf8b](https://github.com/tsukiy0-org/extensions-js/commit/78bcf8bbd36a10ad745c77ed8f1a849ccd7eb8b0))
+
+
+
+
+
 # [0.1.0-alpha.6](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2021-07-04)
 
 
