@@ -1,8 +1,11 @@
-import { RequestHandler } from "express";
+import { RequestHandler, Response } from "express";
 import { RequestCorrelationService } from "../services/RequestCorrelationService";
 import { WinstonLogger } from "@tsukiy0/extensions-logging-winston";
+import { ILogger } from "@tsukiy0/extensions-core";
 
 export class LoggerMiddleware {
+  private static readonly key = "logger";
+
   static handler =
     (name: string): RequestHandler =>
     (req, res, next) => {
@@ -10,7 +13,7 @@ export class LoggerMiddleware {
 
       const logger = new WinstonLogger(name, correlationService, []);
 
-      res.locals.logger = logger;
+      res.locals[LoggerMiddleware.key] = logger;
 
       res.on("finish", () => {
         logger.info("TRANSACTION", {
@@ -30,4 +33,8 @@ export class LoggerMiddleware {
 
       next();
     };
+
+  static getLogger = (res: Response): ILogger => {
+    return res.locals[LoggerMiddleware.key] as ILogger;
+  };
 }
