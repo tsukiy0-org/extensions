@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.6](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2021-07-04)
+
+
+### Features
+
+* add way to get logger from response global ([018d886](https://github.com/tsukiy0-org/extensions-js/commit/018d886c22144b2b3576e8f1ecc9fab6e8c12ba0))
+
+
+
+
+
 # [0.1.0-alpha.5](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2021-07-03)
 
 
