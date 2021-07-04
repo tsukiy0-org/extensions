@@ -1,14 +1,13 @@
 import { ErrorRequestHandler } from "express";
-import {
-  ILogger,
-  UnauthorizedError,
-  ValidationError,
-} from "@tsukiy0/extensions-core";
+import { UnauthorizedError, ValidationError } from "@tsukiy0/extensions-core";
 import { ValidationError as RuntypesValidationError } from "runtypes";
+import { LoggerMiddleware } from "./LoggerMiddleware";
 
 export class ErrorMiddleware {
-  static handler: ErrorRequestHandler = (err, req, res, next) => {
-    const logger: ILogger = res.locals.logger;
+  constructor(private readonly loggerMiddleware: LoggerMiddleware) {}
+
+  handler: ErrorRequestHandler = (err, req, res, next) => {
+    const logger = this.loggerMiddleware.getLogger(res);
 
     logger.error(err);
 
