@@ -1,0 +1,35 @@
+{
+  "name": "@tsukiy0/extesnions-express-example",
+  "private": true,
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/aws-lambda": "^8.10.73",
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.10",
+    "@types/dotenv-flow": "^3.1.0",
+    "@types/express": "^4.17.11",
+    "@types/multer": "^1.4.6",
+    "dotenv-flow": "^3.2.0",
+    "esbuild": "^0.11.14",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0"
+  },
+  "dependencies": {
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.7",
+    "@tsukiy0/extensions-express": "^0.1.0-alpha.7",
+    "@vendia/serverless-express": "^4.3.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "source-map-support": "^0.5.19"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc --noEmit",
+    "prepublish": "yarn clean",
+    "publish": "esbuild src/index.ts --platform=node --bundle --target=node12 --sourcemap --outfile=dist/index.js",
+    "start": "ts-node -r tsconfig-paths/register src/local.ts"
+  }
+}
