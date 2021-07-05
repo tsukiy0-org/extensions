@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.8](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.7...v0.1.0-alpha.8) (2021-07-05)
+
+
+### Bug Fixes
+
+* error logs no longer undefined ([76fda7f](https://github.com/tsukiy0-org/extensions-js/commit/76fda7feee388551c7d7326c916baf62a5b89259))
+
+
+
+
+
 # [0.1.0-alpha.7](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.6...v0.1.0-alpha.7) (2021-07-04)
 
 **Note:** Version bump only for package @tsukiy0/extensions-logging-winston

@@ -1,7 +1,7 @@
 {
   "name": "@tsukiy0/extensions-deployment",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.8",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,7 +34,7 @@
     "@aws-cdk/aws-sns": "1.109.0",
     "@aws-cdk/aws-sns-subscriptions": "1.109.0",
     "@aws-cdk/core": "1.109.0",
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.7"
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.8"
   },
   "devDependencies": {
     "aws-cdk": "1.109.0"
