@@ -87,5 +87,31 @@ describe("WinstonLogger", () => {
         },
       });
     });
+
+    ["", undefined].forEach((message) => {
+      it("empty message", () => {
+        const error = new RangeError();
+        const context = {};
+
+        sut.error(error, message, context);
+
+        expect(JSON.parse(output)).toEqual({
+          version: 1,
+          level: 50,
+          name,
+          timestamp: expect.any(Number),
+          traceId,
+          spanId,
+          message: "",
+          context,
+          exception: {
+            type: error.name,
+            message: error.message,
+            stackTrace: error.stack,
+            context: {},
+          },
+        });
+      });
+    });
   });
 });
