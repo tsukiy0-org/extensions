@@ -15,13 +15,13 @@ export class ErrorMiddleware {
       err instanceof RuntypesValidationError ||
       err instanceof ValidationError
     ) {
-      return res.send(400).end();
+      return res.status(400).end();
     }
 
     if (err instanceof UnauthorizedError) {
-      return res.send(401).end();
+      return res.status(401).end();
     }
 
-    return res.send(500).end();
+    return res.status(500).end();
   };
 }

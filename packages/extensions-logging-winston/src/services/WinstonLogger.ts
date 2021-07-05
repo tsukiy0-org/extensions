@@ -47,7 +47,7 @@ export class WinstonLogger implements ILogger {
     };
 
     this.logger.info({
-      message,
+      message: "ignored",
       log,
     });
   };
@@ -71,7 +71,7 @@ export class WinstonLogger implements ILogger {
     };
 
     this.logger.error({
-      message,
+      message: "ignored",
       log,
     });
   };
