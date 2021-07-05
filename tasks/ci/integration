@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+get_cfn_output() {
+    echo $(aws cloudformation describe-stacks --stack-name ${1} --query "Stacks[0].Outputs[?OutputKey==\`${2}\`].OutputValue" --output text --region us-east-1)
+}
+
+export API_URL=$(get_cfn_output AppUsEast1 ApiUrl)
+
+yarn test:integration
