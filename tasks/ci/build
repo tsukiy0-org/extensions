@@ -6,4 +6,4 @@ yarn install --silent
 yarn build
 yarn lint
 yarn test
-yarn publish
+yarn run build:publish
