@@ -41,6 +41,13 @@ export class App {
       }),
     );
 
+    app.get(
+      "/errors/unknown",
+      promisifyHandler(async () => {
+        throw new RangeError();
+      }),
+    );
+
     app.get("/health", (req, res) => {
       res.status(200).send("OK");
     });
