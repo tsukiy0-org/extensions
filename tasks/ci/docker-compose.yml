@@ -1,24 +1,31 @@
 version: '3'
 services:
   build:
-    image: node:12
+    build:
+      context: .
+      dockerfile: build.Dockerfile
     volumes:
       - ../../:/app
     working_dir: /app
     command: bash ./tasks/ci/build
-  publish_prerelease:
-    image: node:12
+  publish:
+    build:
+      context: .
+      dockerfile: publish.Dockerfile
     volumes:
       - ../../:/app
     working_dir: /app
     environment:
       NPM_TOKEN: ${NPM_TOKEN}
-    command: bash ./tasks/ci/publish_prerelease
-  publish_release:
-    image: node:12
+    command: bash ./tasks/ci/publish
+  deploy:
+    build:
+      context: .
+      dockerfile: deploy.Dockerfile
     volumes:
       - ../../:/app
     working_dir: /app
     environment:
-      NPM_TOKEN: ${NPM_TOKEN}
-    command: bash ./tasks/ci/publish_release
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    command: bash ./tasks/ci/deploy
