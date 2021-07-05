@@ -6,7 +6,6 @@ import { SystemConfiguration } from "@tsukiy0/extensions-core";
 const app = new cdk.App();
 
 const configuration = new SystemConfiguration();
-const environment = configuration.get("ENVIRONMENT");
 
 new Static(app, "Static", {
   env: {
