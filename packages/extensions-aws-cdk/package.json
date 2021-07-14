@@ -1,0 +1,20 @@
+{
+  "name": "@tsukiy0/extensions-aws-cdk",
+  "version": "0.1.0-alpha.8",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+  }
+}
