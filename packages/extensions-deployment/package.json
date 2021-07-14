@@ -23,7 +23,7 @@
     "@aws-cdk/aws-dynamodb": "1.109.0",
     "@aws-cdk/aws-events": "1.109.0",
     "@aws-cdk/aws-events-targets": "1.109.0",
-    "@aws-cdk/aws-iam": "^1.109.0",
+    "@aws-cdk/aws-iam": "1.109.0",
     "@aws-cdk/aws-lambda": "1.109.0",
     "@aws-cdk/aws-logs": "1.109.0",
     "@aws-cdk/aws-pinpoint": "1.109.0",
@@ -34,7 +34,7 @@
     "@aws-cdk/aws-sns": "1.109.0",
     "@aws-cdk/aws-sns-subscriptions": "1.109.0",
     "@aws-cdk/core": "1.109.0",
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.8"
+    "@tsukiy0/extensions-core": "0.1.0-alpha.8"
   },
   "devDependencies": {
     "aws-cdk": "1.109.0"
