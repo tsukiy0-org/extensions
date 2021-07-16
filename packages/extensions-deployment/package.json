@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
-    "predeploy": "cdk bootstrap && cdk deploy --require-approval never Static",
+    "predeploy": "cdk bootstrap && cdk deploy --require-approval never External",
     "deploy": "cdk deploy --require-approval never --all"
   },
   "dependencies": {
@@ -18,6 +18,6 @@
     "constructs": "10.0.5"
   },
   "devDependencies": {
-    "aws-cdk": "1.113.0"
+    "aws-cdk": "^2.0.0-rc.11"
   }
 }
