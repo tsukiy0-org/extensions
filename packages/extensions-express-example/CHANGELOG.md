@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.13](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.12...v0.1.0-alpha.13) (2021-07-16)
+
+**Note:** Version bump only for package @tsukiy0/extensions-express-example
+
+
+
+
+
 # [0.1.0-alpha.12](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.11...v0.1.0-alpha.12) (2021-07-16)
 
 **Note:** Version bump only for package @tsukiy0/extensions-express-example

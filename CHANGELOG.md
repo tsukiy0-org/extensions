@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.13](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.12...v0.1.0-alpha.13) (2021-07-16)
+
+
+### Bug Fixes
+
+* use ICachePolicy interface ([757d73f](https://github.com/tsukiy0-org/extensions-js/commit/757d73f743236fdff7559b22e027e85c3ac08ba1))
+
+
+
+
+
 # [0.1.0-alpha.12](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.11...v0.1.0-alpha.12) (2021-07-16)
 
 
