@@ -2,6 +2,7 @@ import {
   BehaviorOptions,
   CachePolicy,
   Distribution,
+  ICachePolicy,
   OriginProtocolPolicy,
   ViewerProtocolPolicy,
 } from "aws-cdk-lib/lib/aws-cloudfront";
@@ -21,7 +22,7 @@ export class StaticSite extends Construct {
     id: string,
     props: {
       source: ISource;
-      behaviors: { path: string; cachePolicy: CachePolicy }[];
+      behaviors: { path: string; cachePolicy: ICachePolicy }[];
       domainName?: DomainName;
     },
   ) {
