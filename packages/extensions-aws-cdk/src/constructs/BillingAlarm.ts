@@ -5,7 +5,6 @@ import {
   IAlarmAction,
   Metric,
 } from "aws-cdk-lib/lib/aws-cloudwatch";
-import { Topic } from "aws-cdk-lib/lib/aws-sns";
 import { Construct } from "constructs";
 
 export class BillingAlarm extends Construct {
