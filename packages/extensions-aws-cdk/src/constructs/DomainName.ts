@@ -45,8 +45,11 @@ export class DomainName extends Construct {
     });
   };
 
-  toApiGatewayDomainName = (scope: Construct): ApiGatewayDomainName => {
-    return new ApiGatewayDomainName(scope, "DomainName", {
+  toApiGatewayDomainName = (
+    scope: Construct,
+    id: string,
+  ): ApiGatewayDomainName => {
+    return new ApiGatewayDomainName(scope, id, {
       domainName: this.domainName,
       certificate: this.certificate,
       endpointType: EndpointType.EDGE,
