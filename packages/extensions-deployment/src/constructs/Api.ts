@@ -1,8 +1,10 @@
-import { Code, Runtime, Function } from "@aws-cdk/aws-lambda";
-import { Construct } from "@aws-cdk/core";
+import {
+  DefaultFunction,
+  DefaultLambdaRestApi,
+} from "@tsukiy0/extensions-aws-cdk";
+import { Code, Runtime } from "aws-cdk-lib/lib/aws-lambda";
+import { Construct } from "constructs";
 import path from "path";
-import { LambdaProxyIntegration } from "@aws-cdk/aws-apigatewayv2-integrations";
-import { HttpApi } from "@aws-cdk/aws-apigatewayv2";
 
 export class Api extends Construct {
   public readonly url: string;
@@ -10,22 +12,19 @@ export class Api extends Construct {
   public constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    const fn = new Function(this, "Function", {
+    const fn = new DefaultFunction(this, "Function", {
       runtime: Runtime.NODEJS_12_X,
       code: Code.fromAsset(
         path.resolve(__dirname, "../../../extensions-express-example/dist"),
       ),
       handler: "index.handler",
-      memorySize: 512,
       environment: {},
     });
 
-    const api = new HttpApi(this, "Api", {
-      defaultIntegration: new LambdaProxyIntegration({
-        handler: fn,
-      }),
+    const api = new DefaultLambdaRestApi(this, "Api", {
+      fn,
     });
 
-    this.url = api.apiEndpoint;
+    this.url = api.url;
   }
 }

@@ -12,29 +12,10 @@
     "deploy": "cdk deploy --require-approval never --all"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "1.113.0",
-    "@aws-cdk/aws-apigatewayv2": "1.113.0",
-    "@aws-cdk/aws-apigatewayv2-integrations": "1.113.0",
-    "@aws-cdk/aws-certificatemanager": "1.113.0",
-    "@aws-cdk/aws-cloudfront": "1.113.0",
-    "@aws-cdk/aws-cloudfront-origins": "1.113.0",
-    "@aws-cdk/aws-cloudwatch": "1.113.0",
-    "@aws-cdk/aws-cloudwatch-actions": "1.113.0",
-    "@aws-cdk/aws-dynamodb": "1.113.0",
-    "@aws-cdk/aws-events": "1.113.0",
-    "@aws-cdk/aws-events-targets": "1.113.0",
-    "@aws-cdk/aws-iam": "1.113.0",
-    "@aws-cdk/aws-lambda": "1.113.0",
-    "@aws-cdk/aws-logs": "1.113.0",
-    "@aws-cdk/aws-pinpoint": "1.113.0",
-    "@aws-cdk/aws-route53": "1.113.0",
-    "@aws-cdk/aws-route53-targets": "1.113.0",
-    "@aws-cdk/aws-s3": "1.113.0",
-    "@aws-cdk/aws-s3-deployment": "1.113.0",
-    "@aws-cdk/aws-sns": "1.113.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.113.0",
-    "@aws-cdk/core": "1.113.0",
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.9"
+    "@tsukiy0/extensions-aws-cdk": "^0.1.0-alpha.9",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.9",
+    "aws-cdk-lib": "2.0.0-rc.11",
+    "constructs": "10.0.5"
   },
   "devDependencies": {
     "aws-cdk": "1.113.0"

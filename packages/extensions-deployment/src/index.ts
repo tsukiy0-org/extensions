@@ -1,20 +1,20 @@
-import * as cdk from "@aws-cdk/core";
-import { App } from "./stacks/App";
-import { Static } from "./stacks/Static";
+import { AppStack } from "./stacks/AppStack";
+import { ExternalStack } from "./stacks/ExternalStack";
 import { SystemConfiguration } from "@tsukiy0/extensions-core";
+import { App } from "aws-cdk-lib";
 
-const app = new cdk.App();
+const app = new App();
 
 const configuration = new SystemConfiguration();
 
-new Static(app, "Static", {
+new ExternalStack(app, "External", {
   env: {
     account: configuration.get("CDK_DEFAULT_ACCOUNT"),
     region: "us-east-1",
   },
 });
 
-new App(app, "AppUsEast1", {
+new AppStack(app, "AppUsEast1", {
   env: {
     account: configuration.get("CDK_DEFAULT_ACCOUNT"),
     region: "us-east-1",
