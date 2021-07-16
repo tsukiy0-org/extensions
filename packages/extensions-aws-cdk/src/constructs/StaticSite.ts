@@ -21,7 +21,7 @@ export class StaticSite extends Construct {
     id: string,
     props: {
       source: ISource;
-      additionalBehaviors: Record<string, BehaviorOptions>;
+      behaviors: { path: string; cachePolicy: CachePolicy }[];
       domainName?: DomainName;
     },
   ) {
@@ -42,6 +42,20 @@ export class StaticSite extends Construct {
       protocolPolicy: OriginProtocolPolicy.HTTP_ONLY,
     });
 
+    const behaviors = props.behaviors.reduce<Record<string, BehaviorOptions>>(
+      (acc, next) => {
+        return {
+          ...acc,
+          [next.path]: {
+            origin,
+            viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+            cachePolicy: next.cachePolicy,
+          },
+        };
+      },
+      {},
+    );
+
     const cdn = new Distribution(this, "CloudFront", {
       certificate: props.domainName?.certificate,
       domainNames: props.domainName ? [props.domainName.domainName] : undefined,
@@ -50,7 +64,7 @@ export class StaticSite extends Construct {
         viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         cachePolicy: CachePolicy.CACHING_OPTIMIZED,
       },
-      additionalBehaviors: props.additionalBehaviors,
+      additionalBehaviors: behaviors,
     });
 
     props.domainName?.addARecord(
