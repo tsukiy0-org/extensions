@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.11](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.10...v0.1.0-alpha.11) (2021-07-16)
+
+
+### Features
+
+* configure with id ([913e5bf](https://github.com/tsukiy0-org/extensions-js/commit/913e5bf1fcc6f2d005de18ac2ea4fbe928277667))
+
+
+
+
+
 # [0.1.0-alpha.10](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.9...v0.1.0-alpha.10) (2021-07-16)
 
 
