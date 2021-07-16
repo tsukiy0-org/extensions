@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.12](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.11...v0.1.0-alpha.12) (2021-07-16)
+
+
+### Features
+
+* abstract behaviors arg for StatiCSite ([c370812](https://github.com/tsukiy0-org/extensions-js/commit/c370812c86036f8d72c499bd5c43728a36bcf9be))
+
+
+
+
+
 # [0.1.0-alpha.11](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.10...v0.1.0-alpha.11) (2021-07-16)
 
 
