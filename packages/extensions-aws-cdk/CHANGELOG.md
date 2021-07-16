@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.10](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.9...v0.1.0-alpha.10) (2021-07-16)
+
+
+### Features
+
+* add DefaultFunction ([78733d3](https://github.com/tsukiy0-org/extensions-js/commit/78733d3ba6b079ca4fd6e9212dc8711902e15099))
+* add DefaultLambdaRestApi ([76d92f1](https://github.com/tsukiy0-org/extensions-js/commit/76d92f1d5d50dc79762645de40467d51e1c37a90))
+* add LambdaQueue ([6d7a049](https://github.com/tsukiy0-org/extensions-js/commit/6d7a0492e9bde0ea19241444a8c586d37e5374e9))
+* add StaticSite ([a811728](https://github.com/tsukiy0-org/extensions-js/commit/a811728b08b5ff0da854d28a0c00ec9381db9fa2))
+* add way to create ApiGatewayDomainName ([cd3eecd](https://github.com/tsukiy0-org/extensions-js/commit/cd3eecdb58f23d2cbffd9da07b784bb10c33e074))
+
+
+
+
+
 # [0.1.0-alpha.9](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.8...v0.1.0-alpha.9) (2021-07-14)
 
 
