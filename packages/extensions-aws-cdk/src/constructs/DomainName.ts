@@ -8,6 +8,10 @@ import {
   IHostedZone,
   RecordTarget,
 } from "aws-cdk-lib/lib/aws-route53";
+import {
+  DomainName as ApiGatewayDomainName,
+  EndpointType,
+} from "aws-cdk-lib/lib/aws-apigateway";
 import { Construct } from "constructs";
 
 export class DomainName extends Construct {
@@ -38,6 +42,14 @@ export class DomainName extends Construct {
       zone: this.props.hostedZone,
       recordName: this.domainName,
       target: target,
+    });
+  };
+
+  toApiGatewayDomainName = (scope: Construct): ApiGatewayDomainName => {
+    return new ApiGatewayDomainName(scope, "DomainName", {
+      domainName: this.domainName,
+      certificate: this.certificate,
+      endpointType: EndpointType.EDGE,
     });
   };
 }
