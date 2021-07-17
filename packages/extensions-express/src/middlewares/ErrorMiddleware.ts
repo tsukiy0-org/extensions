@@ -1,5 +1,9 @@
 import { ErrorRequestHandler } from "express";
-import { UnauthorizedError, ValidationError } from "@tsukiy0/extensions-core";
+import {
+  NotFoundError,
+  UnauthorizedError,
+  ValidationError,
+} from "@tsukiy0/extensions-core";
 import { ValidationError as RuntypesValidationError } from "runtypes";
 import { LoggerMiddleware } from "./LoggerMiddleware";
 
@@ -16,6 +20,10 @@ export class ErrorMiddleware {
       err instanceof ValidationError
     ) {
       return res.status(400).end();
+    }
+
+    if (err instanceof NotFoundError) {
+      return res.status(404).end();
     }
 
     if (err instanceof UnauthorizedError) {
