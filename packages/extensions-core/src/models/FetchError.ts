@@ -1,4 +1,4 @@
-import { BaseError } from "@tsukiy0/extensions-core";
+import { BaseError } from "./BaseError";
 
 export class FetchError extends BaseError {
   constructor(
