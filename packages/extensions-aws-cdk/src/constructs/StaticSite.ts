@@ -3,12 +3,11 @@ import {
   CachePolicy,
   Distribution,
   ICachePolicy,
+  IDistribution,
   OriginProtocolPolicy,
   ViewerProtocolPolicy,
 } from "aws-cdk-lib/lib/aws-cloudfront";
 import { HttpOrigin } from "aws-cdk-lib/lib/aws-cloudfront-origins";
-import { RecordTarget } from "aws-cdk-lib/lib/aws-route53";
-import { CloudFrontTarget } from "aws-cdk-lib/lib/aws-route53-targets";
 import { Bucket, IBucket } from "aws-cdk-lib/lib/aws-s3";
 import { BucketDeployment, ISource } from "aws-cdk-lib/lib/aws-s3-deployment";
 import { Construct } from "constructs";
@@ -16,6 +15,7 @@ import { DomainName } from "./DomainName";
 
 export class StaticSite extends Construct {
   public readonly bucket: IBucket;
+  public readonly cdn: IDistribution;
 
   public constructor(
     scope: Construct,
@@ -68,10 +68,7 @@ export class StaticSite extends Construct {
       additionalBehaviors: behaviors,
     });
 
-    props.domainName?.addARecord(
-      RecordTarget.fromAlias(new CloudFrontTarget(cdn)),
-    );
-
     this.bucket = bucket;
+    this.cdn = cdn;
   }
 }
