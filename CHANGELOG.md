@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.14](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.13...v0.1.0-alpha.14) (2021-07-19)
+
+
+### Bug Fixes
+
+* reference BaseError internally ([5a36c37](https://github.com/tsukiy0-org/extensions-js/commit/5a36c37f24b8944ecff3bdafbd1d18f746ed7f58))
+
+
+### Features
+
+* add FetchError ([dbf3160](https://github.com/tsukiy0-org/extensions-js/commit/dbf3160ce84bfa3cb31405e5503e8547439db896))
+* add FetchExtensions for processing response ([6172e4e](https://github.com/tsukiy0-org/extensions-js/commit/6172e4e3c453aade8dd952b4e65d451ad2a5141e))
+* respond with 404 when NotFoundError ([c54c5a9](https://github.com/tsukiy0-org/extensions-js/commit/c54c5a91f1556af51ddf0a3ff4c7047c51bbd5ef))
+* StaticSite not responsible for creating A record ([18e0f08](https://github.com/tsukiy0-org/extensions-js/commit/18e0f0859eb3c540f1b57c1aca118da375034639))
+* stub out extensions-fetch ([d5d7261](https://github.com/tsukiy0-org/extensions-js/commit/d5d7261d3dedfd9673e511544507f5485df6f809))
+
+
+
+
+
 # [0.1.0-alpha.13](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.12...v0.1.0-alpha.13) (2021-07-16)
 
 

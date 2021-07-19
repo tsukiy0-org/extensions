@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.14](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.13...v0.1.0-alpha.14) (2021-07-19)
+
+
+### Features
+
+* respond with 404 when NotFoundError ([c54c5a9](https://github.com/tsukiy0-org/extensions-js/commit/c54c5a91f1556af51ddf0a3ff4c7047c51bbd5ef))
+
+
+
+
+
 # [0.1.0-alpha.13](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.12...v0.1.0-alpha.13) (2021-07-16)
 
 **Note:** Version bump only for package @tsukiy0/extensions-express

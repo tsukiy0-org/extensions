@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.14](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.13...v0.1.0-alpha.14) (2021-07-19)
+
+
+### Bug Fixes
+
+* reference BaseError internally ([5a36c37](https://github.com/tsukiy0-org/extensions-js/commit/5a36c37f24b8944ecff3bdafbd1d18f746ed7f58))
+
+
+### Features
+
+* add FetchExtensions for processing response ([6172e4e](https://github.com/tsukiy0-org/extensions-js/commit/6172e4e3c453aade8dd952b4e65d451ad2a5141e))
+
+
+
+
+
 # [0.1.0-alpha.13](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.12...v0.1.0-alpha.13) (2021-07-16)
 
 **Note:** Version bump only for package @tsukiy0/extensions-core

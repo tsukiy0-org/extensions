@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.14](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.13...v0.1.0-alpha.14) (2021-07-19)
+
+
+### Features
+
+* StaticSite not responsible for creating A record ([18e0f08](https://github.com/tsukiy0-org/extensions-js/commit/18e0f0859eb3c540f1b57c1aca118da375034639))
+
+
+
+
+
 # [0.1.0-alpha.13](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.12...v0.1.0-alpha.13) (2021-07-16)
 
 
