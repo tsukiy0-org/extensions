@@ -1,6 +1,6 @@
+import { GuidExtensions } from "@tsukiy0/extensions-core";
 import { Request, RequestHandler, Response } from "express";
-import { GuidExtensions } from "packages/extensions-core/src/extensions/GuidExtensions";
-import { promisifyHandler } from "packages/extensions-express/dist";
+import { promisifyHandler } from "../helpers/promisifyHandler";
 
 export abstract class AbstractServicesMiddleware<T> {
   private readonly key = `services_${GuidExtensions.generate()}`;
