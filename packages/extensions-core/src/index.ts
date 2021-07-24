@@ -22,4 +22,5 @@ export * from "./services/SystemConfiguration";
 export * from "./services/IClock";
 export * from "./services/SystemClock";
 export * from "./services/ICorrelationService";
+export * from "./services/StaticCorrelationService";
 export * from "./services/ILogger";
