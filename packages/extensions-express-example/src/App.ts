@@ -4,6 +4,7 @@ import {
   ValidationError,
 } from "@tsukiy0/extensions-core";
 import {
+  CorrelationMiddleware,
   ErrorMiddleware,
   LoggerMiddleware,
   promisifyHandler,
@@ -15,11 +16,13 @@ export class App {
   static build = (): Application => {
     const app = express();
 
+    const correlationMiddleware = new CorrelationMiddleware();
     const loggerMiddleware = new LoggerMiddleware(
       "@tsukiy0/extensions-express-example",
     );
     const servicesMiddleware = new ServicesMiddleware();
 
+    app.use(correlationMiddleware.handler);
     app.use(loggerMiddleware.handler);
     app.use(servicesMiddleware.handler);
 
@@ -56,6 +59,18 @@ export class App {
       promisifyHandler(async (_, res) => {
         const services = servicesMiddleware.getServices(res);
         res.status(200).json(services);
+      }),
+    );
+
+    app.get(
+      "/correlation",
+      promisifyHandler(async (_, res) => {
+        const correlationService =
+          correlationMiddleware.getCorrelationService(res);
+        res.status(200).json({
+          traceId: correlationService.getTraceId(),
+          spanId: correlationService.getSpanId(),
+        });
       }),
     );
 
