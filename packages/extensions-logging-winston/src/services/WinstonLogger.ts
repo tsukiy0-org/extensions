@@ -4,6 +4,7 @@ import {
   ErrorLog,
   ILogger,
   Log,
+  StaticCorrelationService,
 } from "@tsukiy0/extensions-core";
 import { createLogger, Logger, LoggerOptions } from "winston";
 import printf from "logform/printf";
@@ -14,8 +15,8 @@ export class WinstonLogger implements ILogger {
 
   constructor(
     private readonly name: string,
-    private readonly correlationService: ICorrelationService,
-    transports: LoggerOptions["transports"],
+    private readonly correlationService: ICorrelationService = new StaticCorrelationService(),
+    transports: LoggerOptions["transports"] = [],
   ) {
     const fmt = printf((data) => {
       return JSON.stringify(data.log);
