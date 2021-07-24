@@ -1,4 +1,4 @@
-import { GuidExtensions } from "packages/extensions-core/dist";
+import { GuidExtensions } from "../extensions/GuidExtensions";
 import { Guid } from "../models/Guid";
 import { ICorrelationService } from "./ICorrelationService";
 
