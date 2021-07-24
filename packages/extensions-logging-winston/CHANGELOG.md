@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.15](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.14...v0.1.0-alpha.15) (2021-07-24)
+
+
+### Features
+
+* add defaults for WinstonLogger when no correlation or transport ([2cbd17e](https://github.com/tsukiy0-org/extensions-js/commit/2cbd17eb903ec94506ff7aef31a754f3b3e21f42))
+
+
+
+
+
 # [0.1.0-alpha.14](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.13...v0.1.0-alpha.14) (2021-07-19)
 
 **Note:** Version bump only for package @tsukiy0/extensions-logging-winston

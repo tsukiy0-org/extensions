@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.15](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.14...v0.1.0-alpha.15) (2021-07-24)
+
+
+### Features
+
+* add FileMiddleware for hosting and controlling cache ([b99655c](https://github.com/tsukiy0-org/extensions-js/commit/b99655cbcbb7ba6cdf85b5c7ce5be41716317caf))
+* add StaticCorrelationService ([4704c1d](https://github.com/tsukiy0-org/extensions-js/commit/4704c1d2e5dbaa174d27f2e18a5b98c0fdb2a208))
+* add Timespan ([e659120](https://github.com/tsukiy0-org/extensions-js/commit/e65912055f6fa4d1b802fad026067e0ced918902))
+* add TimespanExtensions for quickly creating hours/mins/seconds ([4e65bfb](https://github.com/tsukiy0-org/extensions-js/commit/4e65bfb37b687c41aaf2a6e11ee5449299891103))
+* add withTracing helper ([ad0bd7a](https://github.com/tsukiy0-org/extensions-js/commit/ad0bd7a8c1bf4cb530fc05ace49103a63a25ca2c))
+* export Timespan and TimespanExtensions ([1f2aa19](https://github.com/tsukiy0-org/extensions-js/commit/1f2aa19738c44523e4de62019373ca356ed5b686))
+
+
+
+
+
 # [0.1.0-alpha.14](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.13...v0.1.0-alpha.14) (2021-07-19)
 
 
