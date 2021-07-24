@@ -19,5 +19,8 @@
   "dependencies": {
     "@tsukiy0/extensions-core": "^0.1.0-alpha.15",
     "aws-sdk": "^2.953.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.80"
   }
 }
