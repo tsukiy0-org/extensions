@@ -9,6 +9,7 @@ import {
   promisifyHandler,
 } from "@tsukiy0/extensions-express";
 import express, { Application } from "express";
+import { ServicesMiddleware } from "./middlewares/ServicesMiddleware";
 
 export class App {
   static build = (): Application => {
@@ -45,6 +46,17 @@ export class App {
       "/errors/unknown",
       promisifyHandler(async () => {
         throw new RangeError();
+      }),
+    );
+
+    const servicesMiddleware = new ServicesMiddleware();
+
+    app.get(
+      "/services",
+      servicesMiddleware.handler,
+      promisifyHandler(async (_, res) => {
+        const services = servicesMiddleware.getServices(res);
+        res.status(200).json(services);
       }),
     );
 

@@ -3,7 +3,7 @@ import { GuidExtensions } from "packages/extensions-core/src/extensions/GuidExte
 import { promisifyHandler } from "packages/extensions-express/dist";
 
 export abstract class AbstractServicesMiddleware<T> {
-  protected readonly key = `services_${GuidExtensions.generate()}`;
+  private readonly key = `services_${GuidExtensions.generate()}`;
 
   abstract buildServices(req: Request, res: Response): Promise<T>;
 
