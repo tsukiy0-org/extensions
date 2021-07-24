@@ -1,16 +1,19 @@
 import {
   Guid,
+  TimespanExtensions,
   UnauthorizedError,
   ValidationError,
 } from "@tsukiy0/extensions-core";
 import {
   CorrelationMiddleware,
   ErrorMiddleware,
+  FileMiddleware,
   LoggerMiddleware,
   promisifyHandler,
 } from "@tsukiy0/extensions-express";
 import express, { Application } from "express";
 import { ServicesMiddleware } from "./middlewares/ServicesMiddleware";
+import path from "path";
 
 export class App {
   static build = (): Application => {
@@ -22,10 +25,24 @@ export class App {
       correlationMiddleware,
     );
     const servicesMiddleware = new ServicesMiddleware();
+    const fileMiddleware = new FileMiddleware(
+      path.resolve(__dirname, "./static"),
+      [
+        {
+          glob: "*.jpg",
+          maxAge: TimespanExtensions.seconds(100),
+        },
+        {
+          glob: "*.png",
+          maxAge: TimespanExtensions.seconds(200),
+        },
+      ],
+    );
 
     app.use(correlationMiddleware.handler);
     app.use(loggerMiddleware.handler);
     app.use(servicesMiddleware.handler);
+    app.use("/static", fileMiddleware.handler);
 
     app.get(
       "/errors/unauthorized",

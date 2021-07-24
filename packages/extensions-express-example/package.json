@@ -30,6 +30,7 @@
     "typecheck": "tsc --noEmit",
     "prebuild:publish": "yarn clean",
     "build:publish": "esbuild src/index.ts --platform=node --bundle --target=node12 --sourcemap --outfile=dist/index.js",
+    "postbuild:publich": "cp -r static dist",
     "start": "ts-node -r tsconfig-paths/register --files src/local.ts"
   }
 }
