@@ -1,6 +1,7 @@
 import { Timespan, TimespanExtensions } from "@tsukiy0/extensions-core";
 import express, { RequestHandler } from "express";
 import micromatch from "micromatch";
+import { relative } from "path";
 
 export class FileMiddleware {
   constructor(
@@ -17,9 +18,12 @@ export class FileMiddleware {
     redirect: false,
     setHeaders: (res, p) => {
       for (const rule of this.cacheRules) {
-        if (micromatch.isMatch(p, rule.glob)) {
+        const relP = relative(this.path, p);
+        const isMatch = micromatch.isMatch(relP, rule.glob);
+        if (isMatch) {
           const seconds = TimespanExtensions.toSeconds(rule.maxAge);
           res.set("Cache-Control", `max-age=${seconds}`);
+          return;
         }
       }
     },
