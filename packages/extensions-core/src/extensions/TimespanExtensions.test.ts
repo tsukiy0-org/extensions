@@ -18,4 +18,14 @@ describe("TimespanExtensions", () => {
 
     expect(actual).toEqual(60);
   });
+
+  describe("toSeconds", () => {
+    it("converts to seconds", () => {
+      const ts = TimespanExtensions.hours(1);
+
+      const actual = TimespanExtensions.toSeconds(ts);
+
+      expect(actual).toEqual(3600);
+    });
+  });
 });
