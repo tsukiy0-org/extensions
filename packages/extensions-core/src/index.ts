@@ -1,4 +1,5 @@
 export * from "./models/Timestamp";
+export * from "./models/Timespan";
 export * from "./models/Guid";
 export * from "./models/Url";
 export * from "./models/BaseError";
@@ -12,6 +13,7 @@ export * from "./models/FetchError";
 
 export * from "./extensions/GuidExtensions";
 export * from "./extensions/TimestampExtensions";
+export * from "./extensions/TimespanExtensions";
 export * from "./extensions/UrlExtensions";
 export * from "./extensions/FetchExtensions";
 
