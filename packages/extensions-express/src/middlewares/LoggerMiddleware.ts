@@ -1,16 +1,17 @@
 import { RequestHandler, Response } from "express";
-import { RequestCorrelationService } from "../services/RequestCorrelationService";
 import { WinstonLogger } from "@tsukiy0/extensions-logging-winston";
 import { GuidExtensions, ILogger } from "@tsukiy0/extensions-core";
+import { CorrelationMiddleware } from "./CorrelationMiddleware";
 
 export class LoggerMiddleware {
-  private readonly key: string;
-  constructor(private readonly name: string) {
-    this.key = this.buildKey(name);
-  }
+  private readonly key = `logger_${this.name}_${GuidExtensions.generate()}`;
+  constructor(
+    private readonly name: string,
+    private readonly correlationMiddleware: CorrelationMiddleware,
+  ) {}
 
   handler: RequestHandler = (req, res, next) => {
-    const correlationService = new RequestCorrelationService(req);
+    const correlationService = this.correlationMiddleware.getService(res);
 
     const logger = new WinstonLogger(this.name, correlationService, []);
 
@@ -37,10 +38,5 @@ export class LoggerMiddleware {
 
   getLogger = (res: Response): ILogger => {
     return res.locals[this.key] as ILogger;
-  };
-
-  private readonly buildKey = (name: string): string => {
-    const id = GuidExtensions.generate();
-    return `logger_${name}_${id}`;
   };
 }

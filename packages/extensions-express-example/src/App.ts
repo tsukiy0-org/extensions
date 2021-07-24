@@ -19,6 +19,7 @@ export class App {
     const correlationMiddleware = new CorrelationMiddleware();
     const loggerMiddleware = new LoggerMiddleware(
       "@tsukiy0/extensions-express-example",
+      correlationMiddleware,
     );
     const servicesMiddleware = new ServicesMiddleware();
 
@@ -65,8 +66,7 @@ export class App {
     app.get(
       "/correlation",
       promisifyHandler(async (_, res) => {
-        const correlationService =
-          correlationMiddleware.getCorrelationService(res);
+        const correlationService = correlationMiddleware.getService(res);
         res.status(200).json({
           traceId: correlationService.getTraceId(),
           spanId: correlationService.getSpanId(),

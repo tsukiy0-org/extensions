@@ -11,7 +11,7 @@ export class CorrelationMiddleware {
     res.locals[this.key] = correlationService;
   });
 
-  getCorrelationService = (res: Response): ICorrelationService => {
+  getService = (res: Response): ICorrelationService => {
     return res.locals[this.key] as ICorrelationService;
   };
 }
