@@ -18,8 +18,10 @@ export class App {
     const loggerMiddleware = new LoggerMiddleware(
       "@tsukiy0/extensions-express-example",
     );
+    const servicesMiddleware = new ServicesMiddleware();
 
     app.use(loggerMiddleware.handler);
+    app.use(servicesMiddleware.handler);
 
     app.get(
       "/errors/unauthorized",
@@ -49,11 +51,8 @@ export class App {
       }),
     );
 
-    const servicesMiddleware = new ServicesMiddleware();
-
     app.get(
       "/services",
-      servicesMiddleware.handler,
       promisifyHandler(async (_, res) => {
         const services = servicesMiddleware.getServices(res);
         res.status(200).json(services);
