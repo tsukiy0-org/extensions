@@ -22,8 +22,8 @@ export class AppStack extends Stack {
       value: testSqsLambdaRuntime.queue.queueUrl,
     });
 
-    new CfnOutput(this, "TestSqsLambdaRuntimeFnLogGroupName", {
-      value: testSqsLambdaRuntime.fn.logGroup.logGroupName,
+    new CfnOutput(this, "TestSqsLambdaRuntimeTableName", {
+      value: testSqsLambdaRuntime.table.tableName,
     });
   }
 }
