@@ -1,4 +1,4 @@
-import { Duration, Fn } from "aws-cdk-lib";
+import { Duration } from "aws-cdk-lib";
 import { IFunction } from "aws-cdk-lib/lib/aws-lambda";
 import { SqsEventSource } from "aws-cdk-lib/lib/aws-lambda-event-sources";
 import { IQueue, Queue } from "aws-cdk-lib/lib/aws-sqs";
@@ -13,7 +13,7 @@ export class LambdaQueue extends Construct {
     props: {
       fn: IFunction;
       timeout: Duration;
-      retry: number;
+      maxAttempts: number;
     },
   ) {
     super(scope, id);
@@ -23,7 +23,7 @@ export class LambdaQueue extends Construct {
       visibilityTimeout: Duration.millis(6 * props.timeout.toMilliseconds()),
       deadLetterQueue: {
         queue: new Queue(this, "DeadLetterQueue"),
-        maxReceiveCount: props.retry,
+        maxReceiveCount: props.maxAttempts,
       },
     });
 

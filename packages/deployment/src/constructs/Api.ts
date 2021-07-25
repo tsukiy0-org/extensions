@@ -13,7 +13,7 @@ export class Api extends Construct {
     super(scope, id);
 
     const fn = new DefaultFunction(this, "Function", {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(
         path.resolve(__dirname, "../../../extensions-express-example/dist"),
       ),
