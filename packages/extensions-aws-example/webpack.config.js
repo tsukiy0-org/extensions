@@ -2,9 +2,9 @@ const path = require("path");
 const PathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  entry: path.join(__dirname, "src/index.ts"),
+  entry: path.join(__dirname, "src/TestSqsLambdaRuntime/index.ts"),
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "dist/TestSqsLambdaRuntime"),
     filename: "index.js",
     libraryTarget: "commonjs",
   },
