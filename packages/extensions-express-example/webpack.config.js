@@ -21,9 +21,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        use: {
-          loader: "ts-loader",
+        test: /\.tsx?$/,
+        loader: "esbuild-loader",
+        options: {
+          loader: "ts",
+          target: "es2015",
         },
       },
     ],
