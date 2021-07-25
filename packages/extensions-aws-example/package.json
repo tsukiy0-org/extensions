@@ -12,6 +12,7 @@
   "dependencies": {
     "@tsukiy0/extensions-core": "^0.1.0-alpha.15",
     "@tsukiy0/extensions-aws": "^0.1.0-alpha.15",
+    "@tsukiy0/extensions-logger-winston": "^0.1.0-alpha.15",
     "source-map-support": "0.5.19"
   },
   "scripts": {
