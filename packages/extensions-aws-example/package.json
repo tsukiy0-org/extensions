@@ -1,0 +1,24 @@
+{
+  "name": "@tsukiy0/extensions-aws-example",
+  "private": true,
+  "version": "0.1.0-alpha.15",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tsconfig/recommended": "1.0.1",
+    "@types/dotenv-flow": "3.1.1",
+    "dotenv-flow": "3.2.0",
+    "esbuild": "0.12.15"
+  },
+  "dependencies": {
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.15",
+    "@tsukiy0/extensions-aws": "^0.1.0-alpha.15",
+    "source-map-support": "0.5.19"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "prebuild:publish": "yarn clean",
+    "build:publish": "esbuild src/index.ts --platform=node --bundle --target=node12 --sourcemap --outfile=dist/index.js",
+    "postbuild:publish": "cp -r src/static dist"
+  }
+}
