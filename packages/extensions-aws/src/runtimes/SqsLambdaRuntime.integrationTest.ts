@@ -38,7 +38,7 @@ describe("SqsLambdaRuntime", () => {
     const actual = await dynamo
       .get({
         TableName: tableName,
-        Key = {
+        Key: {
           PK: message,
           SK: "TEST_SQS_LAMBDA_RUNTIME",
         },
