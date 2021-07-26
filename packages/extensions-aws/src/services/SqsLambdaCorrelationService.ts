@@ -24,11 +24,6 @@ export class SqsLambdaCorrelationService implements ICorrelationService {
 
   private extractTraceId = (record: SQSRecord): Guid => {
     try {
-      console.log(record);
-      console.log(
-        "traceId",
-        record.messageAttributes["x-trace-id"].stringValue,
-      );
       return Guid.check(record.messageAttributes["x-trace-id"].stringValue);
     } catch {
       return GuidExtensions.generate();

@@ -20,8 +20,11 @@ export abstract class SqsLambdaRuntime<T> {
       throw new SqsRecordNotFoundError();
     }
 
-    const correlationService = new SqsLambdaCorrelationService(record);
-    const logger = new WinstonLogger("SqsLambdaRuntime", correlationService);
+    this.correlationService = new SqsLambdaCorrelationService(record);
+    const logger = new WinstonLogger(
+      "SqsLambdaRuntime",
+      this.correlationService,
+    );
 
     try {
       logger.info("TRANSACTION", { record });
