@@ -42,7 +42,7 @@ describe("SqsLambdaRuntime", () => {
       })
       .promise();
 
-    expect(actual.Item).toEqual({
+    expect(actual.Item?.CONTENT).toEqual({
       message,
       traceId: correlationService.getTraceId(),
     });

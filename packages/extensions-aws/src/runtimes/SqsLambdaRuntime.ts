@@ -24,6 +24,7 @@ export abstract class SqsLambdaRuntime<T> {
     const logger = new WinstonLogger("SqsLambdaRuntime", correlationService);
 
     try {
+      logger.info("TRANSACTION", { record });
       const message = JSON.parse(record.body);
 
       await this.handle(message);
