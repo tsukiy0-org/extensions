@@ -1,8 +1,7 @@
 import "source-map-support/register";
-import serverlessExpresss from "@vendia/serverless-express";
 import { App } from "./App";
-import { APIGatewayProxyHandler } from "aws-lambda";
+import { ExpressLambdaRuntime } from "@tsukiy0/extensions-aws";
 
-export const handler: APIGatewayProxyHandler = serverlessExpresss({
-  app: App.build(),
-});
+const runtime = new ExpressLambdaRuntime(App.build());
+
+export const handler = runtime.handler;
