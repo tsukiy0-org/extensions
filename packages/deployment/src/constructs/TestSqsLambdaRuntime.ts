@@ -18,7 +18,7 @@ export class TestSqsLambdaRuntime extends Construct {
   public constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    const timeout = Duration.minutes(5);
+    const timeout = Duration.seconds(20);
 
     const table = new Table(this, "Table", {
       partitionKey: {
