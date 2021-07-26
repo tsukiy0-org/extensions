@@ -8,6 +8,7 @@ import {
   Url,
   Timespan,
   TimespanExtensions,
+  PromiseExtensions,
 } from "@tsukiy0/extensions-core";
 import { DynamoDB, SQS } from "aws-sdk";
 import { SqsQueue } from "../services/SqsQueue";
@@ -27,13 +28,10 @@ describe("SqsLambdaRuntime", () => {
     dynamo = new DynamoDB.DocumentClient();
   });
 
-  const sleep = async (timespan: Timespan) =>
-    new Promise((resolve) => setTimeout(resolve, timespan));
-
   it("processes message", async () => {
     const message = GuidExtensions.generate();
     await queue.send(message);
-    await sleep(TimespanExtensions.seconds(20));
+    await PromiseExtensions.sleep(TimespanExtensions.seconds(20));
 
     const actual = await dynamo
       .get({
