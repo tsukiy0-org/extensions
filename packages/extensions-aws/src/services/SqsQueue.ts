@@ -8,6 +8,13 @@ export class SqsQueue<T> implements IQueue<T> {
     private readonly correlationService: ICorrelationService,
   ) {}
 
+  static build = <T>(
+    queueUrl: Url,
+    correlationService: ICorrelationService,
+  ): SqsQueue<T> => {
+    return new SqsQueue(new SQS(), queueUrl, correlationService);
+  };
+
   send = async (message: T): Promise<void> => {
     await this.client
       .sendMessage({

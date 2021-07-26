@@ -15,7 +15,7 @@ class TestSqsLambdaRuntime extends SqsLambdaRuntime<Guid> {
         TableName: tableName,
         Item: {
           PK: message,
-          SK: "PAYLOAD",
+          SK: "TEST_SQS_LAMBDA_RUNTIME",
           CONTENT: {
             message,
             traceId: this.correlationService.getTraceId(),
