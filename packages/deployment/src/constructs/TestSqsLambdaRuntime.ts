@@ -40,6 +40,7 @@ export class TestSqsLambdaRuntime extends Construct {
           "../../../extensions-aws-example/dist/TestSqsLambdaRuntime",
         ),
       ),
+      memorySize: 256,
       handler: "index.handler",
       timeout,
       environment: {
