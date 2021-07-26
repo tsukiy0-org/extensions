@@ -21,9 +21,11 @@
   "dependencies": {
     "@tsukiy0/extensions-core": "^0.1.0-alpha.15",
     "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.15",
+    "@vendia/serverless-express": "^4.3.9",
     "aws-sdk": "^2.953.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.80"
+    "@types/aws-lambda": "^8.10.80",
+    "@types/express": "^4.17.13"
   }
 }
