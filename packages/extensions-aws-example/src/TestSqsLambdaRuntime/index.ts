@@ -1,16 +1,28 @@
 import "source-map-support/register";
 import { SqsLambdaRuntime } from "@tsukiy0/extensions-aws";
-import { Guid } from "@tsukiy0/extensions-core";
-import { WinstonLogger } from "@tsukiy0/extensions-logging-winston";
+import { Guid, SystemConfiguration } from "@tsukiy0/extensions-core";
+import { DynamoDB } from "aws-sdk";
 
 class TestSqsLambdaRuntime extends SqsLambdaRuntime<Guid> {
   protected handle = async (message: Guid): Promise<void> => {
-    const logger = new WinstonLogger(
-      "TestSqsLambdaRuntime",
-      this.correlationService,
-    );
+    const config = new SystemConfiguration();
 
-    logger.info(message);
+    const tableName = config.get("TABLE_NAME");
+    const client = new DynamoDB.DocumentClient();
+
+    await client
+      .put({
+        TableName: tableName,
+        Item: {
+          PK: message,
+          SK: "PAYLOAD",
+          CONTENT: {
+            message,
+            traceId: this.correlationService.getTraceId(),
+          },
+        },
+      })
+      .promise();
   };
 }
 
