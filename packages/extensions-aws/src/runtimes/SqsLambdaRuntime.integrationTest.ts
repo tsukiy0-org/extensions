@@ -6,7 +6,6 @@ import {
   StaticCorrelationService,
   SystemConfiguration,
   Url,
-  Timespan,
   TimespanExtensions,
   PromiseExtensions,
 } from "@tsukiy0/extensions-core";
@@ -43,7 +42,7 @@ describe("SqsLambdaRuntime", () => {
       })
       .promise();
 
-    expect(actual).toEqual({
+    expect(actual.Item).toEqual({
       message,
       traceId: correlationService.getTraceId(),
     });
