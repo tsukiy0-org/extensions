@@ -1,4 +1,4 @@
-import { Timespan } from "packages/extensions-core/dist";
+import { Timespan } from "../models/Timespan";
 
 export class PromiseExtensions {
   static sleep = async (duration: Timespan): Promise<void> => {
