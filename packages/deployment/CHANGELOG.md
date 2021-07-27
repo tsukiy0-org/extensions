@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.16](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.15...v0.1.0-alpha.16) (2021-07-27)
+
+
+### Features
+
+* deploy TestSqsLambdaRuntime ([b00c3a0](https://github.com/tsukiy0-org/extensions-js/commit/b00c3a0fecaa62cf532011fd575465f7c6084cca))
+
+
+
+
+
 # [0.1.0-alpha.15](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.14...v0.1.0-alpha.15) (2021-07-24)
 
 **Note:** Version bump only for package @tsukiy0/deployment

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.16](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.15...v0.1.0-alpha.16) (2021-07-27)
+
+
+### Bug Fixes
+
+* bad import ([9d17790](https://github.com/tsukiy0-org/extensions-js/commit/9d177909b191aa488d5492363f51da0ec6713a1c))
+
+
+### Features
+
+* add IQueue ([392d625](https://github.com/tsukiy0-org/extensions-js/commit/392d6257cde7e69f963ac7879a52c340a2f5766d))
+* add PromiseExtensions ([540dc14](https://github.com/tsukiy0-org/extensions-js/commit/540dc1462daea4d0ddbf6c25263cabb41ddb619f))
+* impl SqsQueue ([fdc6bf9](https://github.com/tsukiy0-org/extensions-js/commit/fdc6bf9ffe371e444d3e5a00ba0955147e0fac50))
+
+
+
+
+
 # [0.1.0-alpha.15](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.14...v0.1.0-alpha.15) (2021-07-24)
 
 

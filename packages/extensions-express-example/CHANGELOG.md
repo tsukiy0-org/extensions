@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.16](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.15...v0.1.0-alpha.16) (2021-07-27)
+
+
+### Reverts
+
+* Revert "test: express-example uses extensions-aws" ([7521b07](https://github.com/tsukiy0-org/extensions-js/commit/7521b0702f4483efa4bcc288007d6386ddf2e743))
+
+
+
+
+
 # [0.1.0-alpha.15](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.14...v0.1.0-alpha.15) (2021-07-24)
 
 
