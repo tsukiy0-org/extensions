@@ -19,13 +19,13 @@
     "test:integration:local": "jest --config jest.config.integration.js -t SqsLambdaRuntime"
   },
   "dependencies": {
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.16",
-    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.16",
-    "@vendia/serverless-express": "^4.3.9",
-    "aws-sdk": "^2.953.0"
+    "@tsukiy0/extensions-core": "0.1.0-alpha.16",
+    "@tsukiy0/extensions-logging-winston": "0.1.0-alpha.16",
+    "@vendia/serverless-express": "4.3.9",
+    "aws-sdk": "2.955.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.80",
-    "@types/express": "^4.17.13"
+    "@types/aws-lambda": "8.10.81",
+    "@types/express": "4.17.13"
   }
 }

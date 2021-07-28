@@ -24,7 +24,7 @@ export class BillingAlarm extends Construct {
       namespace: "AWS/Billing",
       period: Duration.hours(6),
       statistic: "Maximum",
-      dimensions: {
+      dimensionsMap: {
         Currency: "USD",
       },
     });
