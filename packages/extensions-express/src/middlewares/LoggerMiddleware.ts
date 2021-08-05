@@ -2,6 +2,7 @@ import { RequestHandler, Response } from "express";
 import { WinstonLogger } from "@tsukiy0/extensions-logging-winston";
 import { GuidExtensions, ILogger } from "@tsukiy0/extensions-core";
 import { CorrelationMiddleware } from "./CorrelationMiddleware";
+import { promisifyHandler } from "packages/extensions-express/dist";
 
 export class LoggerMiddleware {
   private readonly key = `logger_${this.name}_${GuidExtensions.generate()}`;
@@ -10,7 +11,7 @@ export class LoggerMiddleware {
     private readonly correlationMiddleware: CorrelationMiddleware,
   ) {}
 
-  handler: RequestHandler = (req, res, next) => {
+  handler: RequestHandler = promisifyHandler(async (req, res) => {
     const correlationService = this.correlationMiddleware.getService(res);
 
     const logger = new WinstonLogger(this.name, correlationService, []);
@@ -32,9 +33,7 @@ export class LoggerMiddleware {
         },
       });
     });
-
-    next();
-  };
+  });
 
   getLogger = (res: Response): ILogger => {
     return res.locals[this.key] as ILogger;
