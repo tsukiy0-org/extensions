@@ -5,6 +5,7 @@ import {
   ValidationError,
 } from "@tsukiy0/extensions-core";
 import {
+  ApiKeyAuthMiddleware,
   CorrelationMiddleware,
   ErrorMiddleware,
   FileMiddleware,
@@ -38,6 +39,16 @@ export class App {
         },
       ],
     );
+    const apiKeyAuthMiddleware = new ApiKeyAuthMiddleware(async (req, res) => {
+      return {
+        keys: [
+          {
+            name: "test",
+            value: "abc123",
+          },
+        ],
+      };
+    });
 
     app.use(correlationMiddleware.handler);
     app.use(loggerMiddleware.handler);
@@ -87,6 +98,28 @@ export class App {
         res.status(200).json({
           traceId: correlationService.getTraceId(),
           spanId: correlationService.getSpanId(),
+        });
+      }),
+    );
+
+    app.get(
+      "/correlation",
+      promisifyHandler(async (_, res) => {
+        const correlationService = correlationMiddleware.getService(res);
+        res.status(200).json({
+          traceId: correlationService.getTraceId(),
+          spanId: correlationService.getSpanId(),
+        });
+      }),
+    );
+
+    app.get(
+      "/apiKeyAuth",
+      apiKeyAuthMiddleware.handler,
+      promisifyHandler(async (_, res) => {
+        const keyName = apiKeyAuthMiddleware.getName(res);
+        res.status(200).json({
+          keyName,
         });
       }),
     );
