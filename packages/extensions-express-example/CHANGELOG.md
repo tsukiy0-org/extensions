@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.18](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.17...v0.1.0-alpha.18) (2021-08-05)
+
+
+### Features
+
+* add ApiKeyAuthMiddleware ([898111a](https://github.com/tsukiy0-org/extensions-js/commit/898111a80b307d69f92af71e371c6d5c8f1abba6))
+
+
+
+
+
 # [0.1.0-alpha.17](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.16...v0.1.0-alpha.17) (2021-07-28)
 
 
