@@ -34,4 +34,12 @@ describe("ApiKeyAuthMiddleware", () => {
 
     expect(actual.status).toEqual(401);
   });
+
+  it("when send no api key then unauthorized", async () => {
+    const url = UrlExtensions.appendPath(apiUrl, "/apiKeyAuth");
+
+    const actual = await fetch(url);
+
+    expect(actual.status).toEqual(401);
+  });
 });
