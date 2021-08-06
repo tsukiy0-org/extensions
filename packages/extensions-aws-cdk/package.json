@@ -17,7 +17,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.0.0-rc.15",
+    "aws-cdk-lib": "2.0.0-rc.16",
     "constructs": "10.0.5"
   },
   "peerDependencies": {

@@ -15,7 +15,7 @@
   "dependencies": {
     "@tsukiy0/extensions-aws-cdk": "^0.1.0-alpha.18",
     "@tsukiy0/extensions-core": "^0.1.0-alpha.18",
-    "aws-cdk-lib": "2.0.0-rc.15",
+    "aws-cdk-lib": "2.0.0-rc.16",
     "constructs": "10.0.5"
   },
   "devDependencies": {
