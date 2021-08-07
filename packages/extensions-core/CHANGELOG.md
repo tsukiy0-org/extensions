@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.20](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.19...v0.1.0-alpha.20) (2021-08-07)
+
+
+### Features
+
+* add ArrayExtensions.chunk ([a944951](https://github.com/tsukiy0-org/extensions-js/commit/a944951374d629d6fb72b7cb1e71566aa2dfffb1))
+* add PromiseExtensions.allBatched ([dd2779b](https://github.com/tsukiy0-org/extensions-js/commit/dd2779b603f020fb01467f3c903c81c945898396))
+
+
+
+
+
 # [0.1.0-alpha.19](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.18...v0.1.0-alpha.19) (2021-08-06)
 
 **Note:** Version bump only for package @tsukiy0/extensions-core
