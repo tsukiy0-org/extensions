@@ -17,6 +17,7 @@ export * from "./extensions/TimespanExtensions";
 export * from "./extensions/UrlExtensions";
 export * from "./extensions/FetchExtensions";
 export * from "./extensions/PromiseExtensions";
+export * from "./extensions/ArrayExtensions";
 
 export * from "./services/IConfiguration";
 export * from "./services/SystemConfiguration";
