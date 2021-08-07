@@ -13,4 +13,15 @@ describe("PromiseExtensions", () => {
       expect(after - before).toBeGreaterThanOrEqual(duration);
     });
   });
+
+  describe("allBatched", () => {
+    it("resolves all promises", async () => {
+      const actual = await PromiseExtensions.allBatched(
+        [1, 2, 3].map((_) => Promise.resolve(_)),
+        2,
+      );
+
+      expect(actual).toEqual([1, 2, 3]);
+    });
+  });
 });
