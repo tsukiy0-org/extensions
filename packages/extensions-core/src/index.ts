@@ -10,6 +10,8 @@ export * from "./models/Enum";
 export * from "./models/Log";
 export * from "./models/ErrorLog";
 export * from "./models/FetchError";
+export * from "./models/Message";
+export * from "./models/MessageHeader";
 
 export * from "./extensions/GuidExtensions";
 export * from "./extensions/TimestampExtensions";
