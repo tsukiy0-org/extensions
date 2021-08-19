@@ -45,7 +45,7 @@ describe("SqsLambdaRuntime", () => {
       .get({
         TableName: tableName,
         Key: {
-          PK: message,
+          PK: message.body,
           SK: "TEST_SQS_LAMBDA_RUNTIME",
         },
       })

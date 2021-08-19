@@ -13,7 +13,7 @@ export class Processor extends DefaultProcessor<Guid, void> {
       .put({
         TableName: tableName,
         Item: {
-          PK: message,
+          PK: message.body,
           SK: "TEST_SQS_LAMBDA_RUNTIME",
           CONTENT: {
             message,
