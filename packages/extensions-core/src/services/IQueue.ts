@@ -1,3 +1,5 @@
+import { Message } from "../models/Message";
+
 export interface IQueue<T> {
-  send(message: T): Promise<void>;
+  send(message: Message<T>): Promise<void>;
 }

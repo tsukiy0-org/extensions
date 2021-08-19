@@ -1,31 +1,18 @@
 import { SQS } from "aws-sdk";
-import { Url, IQueue, ICorrelationService } from "@tsukiy0/extensions-core";
+import { Url, IQueue, Message } from "@tsukiy0/extensions-core";
 
 export class SqsQueue<T> implements IQueue<T> {
-  constructor(
-    private readonly client: SQS,
-    private readonly queueUrl: Url,
-    private readonly correlationService: ICorrelationService,
-  ) {}
+  constructor(private readonly client: SQS, private readonly queueUrl: Url) {}
 
-  static build = <T>(
-    queueUrl: Url,
-    correlationService: ICorrelationService,
-  ): SqsQueue<T> => {
-    return new SqsQueue(new SQS(), queueUrl, correlationService);
+  static build = <T>(queueUrl: Url): SqsQueue<T> => {
+    return new SqsQueue(new SQS(), queueUrl);
   };
 
-  send = async (message: T): Promise<void> => {
+  send = async (message: Message<T>): Promise<void> => {
     await this.client
       .sendMessage({
         QueueUrl: this.queueUrl,
         MessageBody: JSON.stringify(message),
-        MessageAttributes: {
-          "x-trace-id": {
-            StringValue: this.correlationService.getTraceId() as string,
-            DataType: "String",
-          },
-        },
       })
       .promise();
   };
