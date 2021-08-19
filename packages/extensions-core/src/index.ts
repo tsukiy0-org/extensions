@@ -30,3 +30,4 @@ export * from "./services/StaticCorrelationService";
 export * from "./services/ILogger";
 export * from "./services/IQueue";
 export * from "./services/MessageCorrelationService";
+export * from "./services/IProcessor";
