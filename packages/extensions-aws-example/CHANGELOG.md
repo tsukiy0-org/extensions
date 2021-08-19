@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.21](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.20...v0.1.0-alpha.21) (2021-08-19)
+
+
+### Bug Fixes
+
+* dynamo db key schema ([721c52d](https://github.com/tsukiy0-org/extensions-js/commit/721c52dee6593b0f6b5fada2961ddc3778c87f93))
+
+
+### Features
+
+* add DefaultProcessor ([41fb158](https://github.com/tsukiy0-org/extensions-js/commit/41fb1585305ee2e7807c08750ee1ea911599e5d3))
+* runtime receives Message ([9bce878](https://github.com/tsukiy0-org/extensions-js/commit/9bce87840c86d9ba6816b524386b0399dbb7cda6))
+
+
+
+
+
 # [0.1.0-alpha.20](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.19...v0.1.0-alpha.20) (2021-08-07)
 
 **Note:** Version bump only for package @tsukiy0/extensions-aws-example

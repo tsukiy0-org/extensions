@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.21](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.20...v0.1.0-alpha.21) (2021-08-19)
+
+**Note:** Version bump only for package @tsukiy0/extensions-logging-winston
+
+
+
+
+
 # [0.1.0-alpha.20](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.19...v0.1.0-alpha.20) (2021-08-07)
 
 **Note:** Version bump only for package @tsukiy0/extensions-logging-winston

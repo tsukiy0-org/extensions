@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.21](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.20...v0.1.0-alpha.21) (2021-08-19)
+
+
+### Features
+
+* add DefaultProcessor ([41fb158](https://github.com/tsukiy0-org/extensions-js/commit/41fb1585305ee2e7807c08750ee1ea911599e5d3))
+* add IProcessor ([d2c67fe](https://github.com/tsukiy0-org/extensions-js/commit/d2c67fe87501d0f1c899785ef808622cd3842f09))
+* add Message type ([dfc8d4b](https://github.com/tsukiy0-org/extensions-js/commit/dfc8d4b5d5f3344431ef0f230ce0f6882bb1d812))
+* add MessageCorrelationService ([30ea7b7](https://github.com/tsukiy0-org/extensions-js/commit/30ea7b720c724eb71532e9b5d6b80f340879e488))
+* IQueue uses message ([2f846a6](https://github.com/tsukiy0-org/extensions-js/commit/2f846a6f6de407a993024f2a15022c63e4f88837))
+
+
+
+
+
 # [0.1.0-alpha.20](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.19...v0.1.0-alpha.20) (2021-08-07)
 
 
