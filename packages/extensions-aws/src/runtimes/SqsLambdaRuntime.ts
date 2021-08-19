@@ -1,5 +1,6 @@
 import {
   ICorrelationService,
+  Message,
   NotFoundError,
   StaticCorrelationService,
 } from "@tsukiy0/extensions-core";
@@ -11,7 +12,7 @@ export abstract class SqsLambdaRuntime<T> {
   protected correlationService: ICorrelationService =
     new StaticCorrelationService();
 
-  protected abstract handle: (message: T) => Promise<void>;
+  protected abstract handle: (message: Message<T>) => Promise<void>;
 
   handler: SQSHandler = async (event) => {
     const record = event.Records[0];

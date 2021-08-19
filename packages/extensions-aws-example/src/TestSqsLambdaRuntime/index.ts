@@ -1,10 +1,10 @@
 import "source-map-support/register";
 import { SqsLambdaRuntime } from "@tsukiy0/extensions-aws";
-import { Guid, SystemConfiguration } from "@tsukiy0/extensions-core";
+import { Guid, Message, SystemConfiguration } from "@tsukiy0/extensions-core";
 import { DynamoDB } from "aws-sdk";
 
 class TestSqsLambdaRuntime extends SqsLambdaRuntime<Guid> {
-  protected handle = async (message: Guid): Promise<void> => {
+  protected handle = async (message: Message<Guid>): Promise<void> => {
     const config = new SystemConfiguration();
 
     const tableName = config.get("TABLE_NAME");
