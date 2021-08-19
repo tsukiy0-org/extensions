@@ -1,11 +1,11 @@
 import {
   ICorrelationService,
   Message,
+  MessageCorrelationService,
   NotFoundError,
   StaticCorrelationService,
 } from "@tsukiy0/extensions-core";
 import { SQSHandler } from "aws-lambda";
-import { SqsLambdaCorrelationService } from "../services/SqsLambdaCorrelationService";
 import { WinstonLogger } from "@tsukiy0/extensions-logging-winston";
 
 export abstract class SqsLambdaRuntime<T> {
@@ -21,7 +21,8 @@ export abstract class SqsLambdaRuntime<T> {
       throw new SqsRecordNotFoundError();
     }
 
-    this.correlationService = new SqsLambdaCorrelationService(record);
+    const message = JSON.parse(record.body);
+    this.correlationService = new MessageCorrelationService(message);
     const logger = new WinstonLogger(
       "SqsLambdaRuntime",
       this.correlationService,
@@ -29,7 +30,6 @@ export abstract class SqsLambdaRuntime<T> {
 
     try {
       logger.info("TRANSACTION", { record });
-      const message = JSON.parse(record.body);
 
       await this.handle(message);
     } catch (e) {
