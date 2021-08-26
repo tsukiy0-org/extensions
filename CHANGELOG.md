@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.23](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.22...v0.1.0-alpha.23) (2021-08-26)
+
+
+### Bug Fixes
+
+* use triple-beam to get the MESSAGE symbol ([bf56798](https://github.com/tsukiy0-org/extensions-js/commit/bf56798179e047f4b36bb97a123fde63f4a4afb0))
+
+
+### Features
+
+* add BatchRuntime ([e60bc00](https://github.com/tsukiy0-org/extensions-js/commit/e60bc0014f8be0408edfef5c6c2ba3b4c3933261))
+* BatchMessageQueue starts job with uniq env variable with message ([7118677](https://github.com/tsukiy0-org/extensions-js/commit/711867761390ac6b01e2774255c1c80a713c7745))
+* remove logform/printf dependency ([b4dfa21](https://github.com/tsukiy0-org/extensions-js/commit/b4dfa2178cda36293cc6e40d6476870742e43754))
+
+
+
+
+
 # [0.1.0-alpha.22](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.21...v0.1.0-alpha.22) (2021-08-26)
 
 

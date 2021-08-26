@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.23](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.22...v0.1.0-alpha.23) (2021-08-26)
+
+
+### Features
+
+* add BatchRuntime ([e60bc00](https://github.com/tsukiy0-org/extensions-js/commit/e60bc0014f8be0408edfef5c6c2ba3b4c3933261))
+* BatchMessageQueue starts job with uniq env variable with message ([7118677](https://github.com/tsukiy0-org/extensions-js/commit/711867761390ac6b01e2774255c1c80a713c7745))
+
+
+
+
+
 # [0.1.0-alpha.22](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.21...v0.1.0-alpha.22) (2021-08-26)
 
 
