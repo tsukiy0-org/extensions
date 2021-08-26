@@ -7,6 +7,7 @@ import {
   StaticCorrelationService,
 } from "@tsukiy0/extensions-core";
 import { TransformableInfo } from "logform";
+import { MESSAGE } from "triple-beam";
 import { createLogger, Logger, LoggerOptions } from "winston";
 import { Console } from "winston/lib/winston/transports";
 
@@ -22,7 +23,7 @@ export class WinstonLogger implements ILogger {
       transform: (info: TransformableInfo): TransformableInfo => {
         return {
           ...info,
-          message: JSON.stringify(info.log),
+          [MESSAGE]: JSON.stringify(info.log),
         };
       },
     };
