@@ -6,8 +6,8 @@ import {
   Log,
   StaticCorrelationService,
 } from "@tsukiy0/extensions-core";
+import { TransformableInfo } from "logform";
 import { createLogger, Logger, LoggerOptions } from "winston";
-import printf from "logform/printf";
 import { Console } from "winston/lib/winston/transports";
 
 export class WinstonLogger implements ILogger {
@@ -18,18 +18,23 @@ export class WinstonLogger implements ILogger {
     private readonly correlationService: ICorrelationService = new StaticCorrelationService(),
     transports: LoggerOptions["transports"] = [],
   ) {
-    const fmt = printf((data) => {
-      return JSON.stringify(data.log);
-    });
+    const format = {
+      transform: (info: TransformableInfo): TransformableInfo => {
+        return {
+          ...info,
+          message: JSON.stringify(info.log),
+        };
+      },
+    };
 
     if (transports instanceof Array) {
       this.logger = createLogger({
-        format: fmt,
+        format,
         transports: [...transports, new Console()],
       });
     } else {
       this.logger = createLogger({
-        format: fmt,
+        format,
         transports,
       });
     }
