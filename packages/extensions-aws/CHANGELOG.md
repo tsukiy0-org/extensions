@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.22](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.21...v0.1.0-alpha.22) (2021-08-26)
+
+
+### Bug Fixes
+
+* SqsLambdaRuntime integration tests ([ace9ec1](https://github.com/tsukiy0-org/extensions-js/commit/ace9ec1ddf4d0ffa2b92c55be1aad8eb24618be3))
+
+
+### Features
+
+* add IMessageQueue interface ([76b54ff](https://github.com/tsukiy0-org/extensions-js/commit/76b54ffad4383159fa0b73688824fe034a63caf3))
+* impl BatchMessageQueue ([ac5b490](https://github.com/tsukiy0-org/extensions-js/commit/ac5b490a4c304a4039db7b2991d8b3698039594d))
+
+
+
+
+
 # [0.1.0-alpha.21](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.20...v0.1.0-alpha.21) (2021-08-19)
 
 

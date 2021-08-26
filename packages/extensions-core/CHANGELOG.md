@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.22](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.21...v0.1.0-alpha.22) (2021-08-26)
+
+
+### Features
+
+* add DefaultQueue ([6fdcbe0](https://github.com/tsukiy0-org/extensions-js/commit/6fdcbe030e2b3c92402a7c4f4105960ef338b148))
+* add IMessageQueue interface ([76b54ff](https://github.com/tsukiy0-org/extensions-js/commit/76b54ffad4383159fa0b73688824fe034a63caf3))
+
+
+
+
+
 # [0.1.0-alpha.21](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.20...v0.1.0-alpha.21) (2021-08-19)
 
 
