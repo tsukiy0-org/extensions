@@ -29,6 +29,7 @@ export * from "./services/ICorrelationService";
 export * from "./services/StaticCorrelationService";
 export * from "./services/ILogger";
 export * from "./services/IQueue";
+export * from "./services/DefaultQueue";
 export * from "./services/IMessageQueue";
 export * from "./services/MessageCorrelationService";
 export * from "./services/IProcessor";
