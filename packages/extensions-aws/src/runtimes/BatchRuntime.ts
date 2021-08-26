@@ -1,7 +1,7 @@
 import { IProcessor, SystemConfiguration } from "@tsukiy0/extensions-core";
 import { BatchMessageQueue } from "../services/BatchMessageQueue";
 
-export abstract class BatchRuntime<T> {
+export class BatchRuntime<T> {
   constructor(private readonly processor: IProcessor<T, void>) {}
 
   run = async (): Promise<void> => {

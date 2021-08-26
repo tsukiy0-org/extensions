@@ -1,7 +1,7 @@
 import { IProcessor, NotFoundError } from "@tsukiy0/extensions-core";
 import { SQSHandler } from "aws-lambda";
 
-export abstract class SqsLambdaRuntime<T> {
+export class SqsLambdaRuntime<T> {
   constructor(private readonly processor: IProcessor<T, void>) {}
 
   handler: SQSHandler = async (event) => {
