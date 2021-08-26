@@ -1,11 +1,11 @@
 import { SQS } from "aws-sdk";
 import { Url, Message, IMessageQueue } from "@tsukiy0/extensions-core";
 
-export class SqsQueue<T> implements IMessageQueue<T> {
+export class SqsMessageQueue<T> implements IMessageQueue<T> {
   constructor(private readonly client: SQS, private readonly queueUrl: Url) {}
 
-  static build = <T>(queueUrl: Url): SqsQueue<T> => {
-    return new SqsQueue(new SQS(), queueUrl);
+  static build = <T>(queueUrl: Url): SqsMessageQueue<T> => {
+    return new SqsMessageQueue(new SQS(), queueUrl);
   };
 
   send = async (message: Message<T>): Promise<void> => {

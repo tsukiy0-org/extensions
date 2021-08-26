@@ -8,16 +8,20 @@ import {
   Url,
   TimespanExtensions,
   PromiseExtensions,
-  Message,
+  DefaultQueue,
+  SystemClock,
   TimestampExtensions,
 } from "@tsukiy0/extensions-core";
-import { DynamoDB, SQS } from "aws-sdk";
-import { SqsQueue } from "../services/SqsQueue";
+import { DynamoDB } from "aws-sdk";
+import { SqsMessageQueue } from "../services/SqsMessageQueue";
+
+class TestQueue extends DefaultQueue<Guid> {}
 
 describe("SqsLambdaRuntime", () => {
   let correlationService: ICorrelationService;
   let queue: IQueue<Guid>;
   let dynamo: DynamoDB.DocumentClient;
+  const now = TimestampExtensions.now();
   let tableName: string;
 
   beforeEach(() => {
@@ -25,34 +29,36 @@ describe("SqsLambdaRuntime", () => {
     const queueUrl = Url.check(config.get("TEST_SQS_LAMBDA_RUNTIME_QUEUE_URL"));
     tableName = config.get("TEST_SQS_LAMBDA_RUNTIME_TABLE_NAME");
     correlationService = new StaticCorrelationService();
-    queue = new SqsQueue(new SQS(), queueUrl);
+    queue = new TestQueue(SqsMessageQueue.build(queueUrl), correlationService, {
+      now: () => now,
+    });
     dynamo = new DynamoDB.DocumentClient();
   });
 
   it("processes message", async () => {
-    const message: Message<Guid> = {
-      header: {
-        version: 1,
-        traceId: correlationService.getTraceId(),
-        created: TimestampExtensions.now(),
-      },
-      body: GuidExtensions.generate(),
-    };
-    await queue.send(message);
+    const body = GuidExtensions.generate();
+    await queue.send(body);
     await PromiseExtensions.sleep(TimespanExtensions.seconds(20));
 
     const actual = await dynamo
       .get({
         TableName: tableName,
         Key: {
-          PK: message.body,
+          PK: body,
           SK: "TEST_SQS_LAMBDA_RUNTIME",
         },
       })
       .promise();
 
     expect(actual.Item?.CONTENT).toEqual({
-      message,
+      message: {
+        header: {
+          version: 1,
+          traceId: correlationService.getTraceId(),
+          created: now,
+        },
+        body,
+      },
       traceId: correlationService.getTraceId(),
     });
   });

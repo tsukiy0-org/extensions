@@ -3,6 +3,10 @@ import { Guid, Message, SystemConfiguration } from "@tsukiy0/extensions-core";
 import { DynamoDB } from "aws-sdk";
 
 export class Processor extends DefaultProcessor<Guid, void> {
+  constructor() {
+    super("TestSqsLambdaRuntime");
+  }
+
   protected handle = async (message: Message<Guid>): Promise<void> => {
     const config = new SystemConfiguration();
 

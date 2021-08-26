@@ -5,7 +5,7 @@ import { Processor } from "./Processor";
 
 class TestSqsLambdaRuntime extends SqsLambdaRuntime<Guid> {
   constructor() {
-    super(new Processor("TestSqsLambdaRuntime"));
+    super(new Processor());
   }
 }
 
