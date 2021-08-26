@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.24](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.23...v0.1.0-alpha.24) (2021-08-26)
+
+
+### Features
+
+* make classes not abstract ([4384542](https://github.com/tsukiy0-org/extensions-js/commit/4384542d2da28ca1770641cc7e36352d0a9a1dac))
+
+
+
+
+
 # [0.1.0-alpha.23](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.22...v0.1.0-alpha.23) (2021-08-26)
 
 
