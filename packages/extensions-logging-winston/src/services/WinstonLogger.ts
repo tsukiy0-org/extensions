@@ -6,9 +6,8 @@ import {
   Log,
   StaticCorrelationService,
 } from "@tsukiy0/extensions-core";
-import { TransformableInfo } from "logform";
 import { MESSAGE } from "triple-beam";
-import { createLogger, Logger, LoggerOptions } from "winston";
+import { createLogger, Logger, LoggerOptions, format } from "winston";
 import { Console } from "winston/lib/winston/transports";
 
 export class WinstonLogger implements ILogger {
@@ -19,23 +18,21 @@ export class WinstonLogger implements ILogger {
     private readonly correlationService: ICorrelationService = new StaticCorrelationService(),
     transports: LoggerOptions["transports"] = [],
   ) {
-    const format = {
-      transform: (info: TransformableInfo): TransformableInfo => {
-        return {
-          ...info,
-          [MESSAGE]: JSON.stringify(info.log),
-        };
-      },
-    };
+    const jsonFormatter = format((info) => {
+      return {
+        ...info,
+        [MESSAGE]: JSON.stringify(info.log),
+      };
+    })();
 
     if (transports instanceof Array) {
       this.logger = createLogger({
-        format,
+        format: jsonFormatter,
         transports: [...transports, new Console()],
       });
     } else {
       this.logger = createLogger({
-        format,
+        format: jsonFormatter,
         transports,
       });
     }
