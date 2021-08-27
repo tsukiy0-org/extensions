@@ -6,7 +6,6 @@ import {
 } from "@tsukiy0/extensions-core";
 
 type Config = {
-  jobName: string;
   jobQueue: string;
   jobDefinition: string;
 };
