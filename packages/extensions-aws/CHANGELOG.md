@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.25](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.24...v0.1.0-alpha.25) (2021-08-27)
+
+
+### Bug Fixes
+
+* remove unused jobName ([63d70d1](https://github.com/tsukiy0-org/extensions-js/commit/63d70d125e4007284fdfc949da28d6981d02b616))
+
+
+
+
+
 # [0.1.0-alpha.24](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.23...v0.1.0-alpha.24) (2021-08-26)
 
 
