@@ -55,7 +55,7 @@ export class TestSqsLambdaRuntime extends Construct {
       maxAttempts: 1,
     });
 
-    this.queue = lambdaQueue.queue;
+    this.queue = lambdaQueue.queue.queue;
     this.table = table;
   }
 }
