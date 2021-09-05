@@ -1,5 +1,9 @@
-import { SqsQueueProps } from "aws-cdk-lib/lib/aws-events-targets";
-import { DeadLetterQueue, IQueue, Queue } from "aws-cdk-lib/lib/aws-sqs";
+import {
+  DeadLetterQueue,
+  IQueue,
+  Queue,
+  QueueProps,
+} from "aws-cdk-lib/lib/aws-sqs";
 import { Construct } from "constructs";
 
 export class DefaultQueue extends Construct {
@@ -9,7 +13,7 @@ export class DefaultQueue extends Construct {
   constructor(
     scope: Construct,
     id: string,
-    props: Omit<SqsQueueProps, "deadLetterQueue"> & {
+    props: Omit<QueueProps, "deadLetterQueue"> & {
       deadLetterQueue: Omit<DeadLetterQueue, "queue">;
     },
   ) {
