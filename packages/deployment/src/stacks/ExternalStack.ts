@@ -1,3 +1,4 @@
+import { PublicDbInstance } from "@tsukiy0/extensions-aws-cdk";
 import { RemovalPolicy, SecretValue, Stack, StackProps } from "aws-cdk-lib";
 import {
   Credentials,
@@ -5,7 +6,6 @@ import {
   PostgresEngineVersion,
 } from "aws-cdk-lib/lib/aws-rds";
 import { Construct } from "constructs";
-import { PublicDbInstance } from "packages/extensions-aws-cdk/src/constructs/PublicDbInstance";
 
 export class ExternalStack extends Stack {
   public constructor(scope: Construct, id: string, props: StackProps) {
