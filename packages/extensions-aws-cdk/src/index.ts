@@ -6,3 +6,4 @@ export * from "./constructs/DomainName";
 export * from "./constructs/StaticSite";
 export * from "./constructs/LambdaQueue";
 export * from "./constructs/DefaultQueue";
+export * from "./constructs/PublicDbInstance";
