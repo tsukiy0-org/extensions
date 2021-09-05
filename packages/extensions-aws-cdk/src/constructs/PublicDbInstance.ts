@@ -27,7 +27,9 @@ export class PublicDbInstance extends Construct {
         DatabaseInstanceProps,
         "vpc" | "vpcSubnets" | "securityGroups"
       > &
-        Pick<DatabaseInstanceProps, "credentials">;
+        Required<
+          Pick<DatabaseInstanceProps, "engine" | "credentials" | "port">
+        >;
     },
   ) {
     super(scope, id);
@@ -47,6 +49,16 @@ export class PublicDbInstance extends Construct {
       allowAllOutbound: true,
       vpc,
     });
+
+    securityGroup.addIngressRule(
+      Peer.anyIpv4(),
+      Port.tcp(props.databaseInstance.port),
+    );
+    securityGroup.addIngressRule(
+      Peer.anyIpv6(),
+      Port.tcp(props.databaseInstance.port),
+    );
+
     const instance = new DatabaseInstance(this, "Instance", {
       vpc,
       vpcSubnets: { subnetType: SubnetType.PUBLIC },
@@ -56,18 +68,10 @@ export class PublicDbInstance extends Construct {
         InstanceSize.MICRO,
       ),
       storageType: StorageType.GP2,
+      allocatedStorage: 10,
       iamAuthentication: true,
       ...props.databaseInstance,
     });
-
-    securityGroup.addIngressRule(
-      Peer.anyIpv4(),
-      Port.tcp(Number(instance.dbInstanceEndpointPort)),
-    );
-    securityGroup.addIngressRule(
-      Peer.anyIpv6(),
-      Port.tcp(Number(instance.dbInstanceEndpointPort)),
-    );
 
     this.instance = instance;
   }

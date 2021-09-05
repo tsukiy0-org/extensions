@@ -4,6 +4,7 @@ import {
   Credentials,
   DatabaseInstanceEngine,
   PostgresEngineVersion,
+  StorageType,
 } from "aws-cdk-lib/lib/aws-rds";
 import { Construct } from "constructs";
 
@@ -20,7 +21,7 @@ export class ExternalStack extends Stack {
           "postgres",
           SecretValue.plainText("postgres"),
         ),
-        allocatedStorage: 10,
+        port: 5432,
 
         // delete cleanly
         removalPolicy: RemovalPolicy.DESTROY,
