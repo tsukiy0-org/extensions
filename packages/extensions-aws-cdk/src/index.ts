@@ -7,3 +7,4 @@ export * from "./constructs/StaticSite";
 export * from "./constructs/LambdaQueue";
 export * from "./constructs/DefaultQueue";
 export * from "./constructs/PublicDbInstance";
+export * from "./constructs/FunctionObservability";
