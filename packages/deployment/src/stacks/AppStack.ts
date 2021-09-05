@@ -1,6 +1,7 @@
 import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { Api } from "../constructs/Api";
+import { Observability } from "../constructs/Observability";
 import { TestSqsLambdaRuntime } from "../constructs/TestSqsLambdaRuntime";
 
 export class AppStack extends Stack {
@@ -13,6 +14,10 @@ export class AppStack extends Stack {
       this,
       "TestSqsLambdaRuntime",
     );
+
+    new Observability(this, "Observability", {
+      api,
+    });
 
     new CfnOutput(this, "ApiUrl", {
       value: api.url,

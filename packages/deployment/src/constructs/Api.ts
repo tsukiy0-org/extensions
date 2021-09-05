@@ -2,12 +2,17 @@ import {
   DefaultFunction,
   DefaultLambdaRestApi,
 } from "@tsukiy0/extensions-aws-cdk";
-import { Code, Runtime } from "aws-cdk-lib/lib/aws-lambda";
+import {
+  Code,
+  Runtime,
+  Function as LambdaFunction,
+} from "aws-cdk-lib/lib/aws-lambda";
 import { Construct } from "constructs";
 import path from "path";
 
 export class Api extends Construct {
   public readonly url: string;
+  public readonly fn: LambdaFunction;
 
   public constructor(scope: Construct, id: string) {
     super(scope, id);
@@ -26,5 +31,6 @@ export class Api extends Construct {
     });
 
     this.url = api.url;
+    this.fn = fn;
   }
 }
