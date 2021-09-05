@@ -23,8 +23,10 @@ export abstract class DefaultProcessor<T, U> implements IProcessor<T, U> {
       this.logger.info("TRANSACTION", { message });
 
       return await this.handle(message);
-    } catch (e: Error) {
-      this.logger.error(e);
+    } catch (e) {
+      if (e instanceof Error) {
+        this.logger.error(e);
+      }
       throw e;
     }
   };
