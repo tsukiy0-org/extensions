@@ -9,3 +9,4 @@ export * from "./constructs/DefaultQueue";
 export * from "./constructs/PublicDbInstance";
 export * from "./constructs/FunctionObservability";
 export * from "./constructs/LogMetric";
+export * from "./constructs/FargateBatchJob";
