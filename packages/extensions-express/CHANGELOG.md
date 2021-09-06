@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.26](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.25...v0.1.0-alpha.26) (2021-09-06)
+
+
+### Features
+
+* upgrade deps ([ed9a8e2](https://github.com/tsukiy0-org/extensions-js/commit/ed9a8e2b52a06df3e138f0a6d86dc8ed80b5e244))
+
+
+
+
+
 # [0.1.0-alpha.25](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.24...v0.1.0-alpha.25) (2021-08-27)
 
 **Note:** Version bump only for package @tsukiy0/extensions-express

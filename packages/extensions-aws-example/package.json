@@ -1,7 +1,7 @@
 {
   "name": "@tsukiy0/extensions-aws-example",
   "private": true,
-  "version": "0.1.0-alpha.25",
+  "version": "0.1.0-alpha.26",
   "license": "UNLICENSED",
   "devDependencies": {
     "@tsconfig/recommended": "1.0.1",
@@ -13,9 +13,9 @@
     "webpack-cli": "4.8.0"
   },
   "dependencies": {
-    "@tsukiy0/extensions-aws": "^0.1.0-alpha.25",
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.25",
-    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.25",
+    "@tsukiy0/extensions-aws": "^0.1.0-alpha.26",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.26",
+    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.26",
     "aws-sdk": "2.983.0",
     "source-map-support": "0.5.19"
   },
