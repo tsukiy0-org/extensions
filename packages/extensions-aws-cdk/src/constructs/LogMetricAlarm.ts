@@ -1,4 +1,9 @@
-import { Metric, MetricProps } from "aws-cdk-lib/lib/aws-cloudwatch";
+import {
+  Alarm,
+  AlarmProps,
+  Metric,
+  MetricProps,
+} from "aws-cdk-lib/lib/aws-cloudwatch";
 import {
   CfnMetricFilter,
   IFilterPattern,
@@ -6,14 +11,15 @@ import {
 } from "aws-cdk-lib/lib/aws-logs";
 import { Construct } from "constructs";
 
-export class LogMetric extends Construct {
-  public readonly metric: Metric;
+export class LogMetricAlarm extends Construct {
+  public readonly alarm: Alarm;
 
   public constructor(
     scope: Construct,
     id: string,
     props: {
       metricProps: MetricProps;
+      alarmProps: Pick<AlarmProps, "threshold">;
       filterPattern: IFilterPattern;
       logGroup: ILogGroup;
     },
@@ -34,6 +40,11 @@ export class LogMetric extends Construct {
 
     const metric = new Metric(props.metricProps);
 
-    this.metric = metric;
+    const alarm = metric.createAlarm(this, "Alarm", {
+      ...props.alarmProps,
+      evaluationPeriods: 1,
+    });
+
+    this.alarm = alarm;
   }
 }
