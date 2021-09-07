@@ -10,3 +10,4 @@ export * from "./constructs/PublicDbInstance";
 export * from "./constructs/FunctionObservability";
 export * from "./constructs/LogMetricAlarm";
 export * from "./constructs/FargateBatchJob";
+export * from "./constructs/RestApiObservability";
