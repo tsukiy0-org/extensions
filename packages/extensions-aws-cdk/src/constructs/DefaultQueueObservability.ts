@@ -8,25 +8,29 @@ export class DefaultQueueObservability extends Construct {
     props: {
       defaultQueue: DefaultQueue;
       thresholds: {
-        maxMessageAgeInSeconds: number;
-        maxDeadLetterCount: number;
+        maxMessageAgeInSeconds?: number;
+        maxDeadLetterCount?: number;
       };
     },
   ) {
     super(scope, id);
 
-    props.defaultQueue.deadLetterQueue
-      .metricApproximateNumberOfMessagesVisible()
-      .createAlarm(this, "MaxDeadLetterCount", {
-        evaluationPeriods: 1,
-        threshold: props.thresholds.maxDeadLetterCount,
-      });
+    if (props.thresholds.maxDeadLetterCount) {
+      props.defaultQueue.deadLetterQueue
+        .metricApproximateNumberOfMessagesVisible()
+        .createAlarm(this, "MaxDeadLetterCount", {
+          evaluationPeriods: 1,
+          threshold: props.thresholds.maxDeadLetterCount,
+        });
+    }
 
-    props.defaultQueue.deadLetterQueue
-      .metricApproximateAgeOfOldestMessage()
-      .createAlarm(this, "MaxMessageAgeInSeconds", {
-        evaluationPeriods: 1,
-        threshold: props.thresholds.maxMessageAgeInSeconds,
-      });
+    if (props.thresholds.maxMessageAgeInSeconds) {
+      props.defaultQueue.deadLetterQueue
+        .metricApproximateAgeOfOldestMessage()
+        .createAlarm(this, "MaxMessageAgeInSeconds", {
+          evaluationPeriods: 1,
+          threshold: props.thresholds.maxMessageAgeInSeconds,
+        });
+    }
   }
 }
