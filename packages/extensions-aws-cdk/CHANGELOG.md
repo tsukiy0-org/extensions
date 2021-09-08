@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.27](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.26...v0.1.0-alpha.27) (2021-09-08)
+
+
+### Features
+
+* add DefaultLambdaRestApiObservability ([888c9ff](https://github.com/tsukiy0-org/extensions-js/commit/888c9ffae971ec53084e4bc02c543b6218e61bd9))
+* add DefaultQueueObservability ([94b204d](https://github.com/tsukiy0-org/extensions-js/commit/94b204d066f0a4b64b241527073100c4190ecd68))
+* add LogMetricAlarm ([431ac32](https://github.com/tsukiy0-org/extensions-js/commit/431ac3234f9eb5498dab75519a62a1fdc45d7c9c))
+* add RestApiObservability ([d02e21f](https://github.com/tsukiy0-org/extensions-js/commit/d02e21fbf46c37846ea666a753df3d2f3d6a9453))
+* add RestApiObservability ([8f0d642](https://github.com/tsukiy0-org/extensions-js/commit/8f0d642143ef452c66c876c75cf304b4d28b0a62))
+* make thresholds optional ([ea6a15e](https://github.com/tsukiy0-org/extensions-js/commit/ea6a15eb50dfd9fc52170cf8af255e6245188f17))
+
+
+
+
+
 # [0.1.0-alpha.26](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.25...v0.1.0-alpha.26) (2021-09-06)
 
 

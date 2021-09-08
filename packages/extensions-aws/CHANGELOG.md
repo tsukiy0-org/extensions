@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.27](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.26...v0.1.0-alpha.27) (2021-09-08)
+
+**Note:** Version bump only for package @tsukiy0/extensions-aws
+
+
+
+
+
 # [0.1.0-alpha.26](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.25...v0.1.0-alpha.26) (2021-09-06)
 
 
