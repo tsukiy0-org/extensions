@@ -9,8 +9,12 @@ export class RestApiObservability extends Construct {
       api: RestApi;
       alarms: {
         ["5xx"]: {
-          abs: number;
-          rel: number;
+          abs?: number;
+          rel?: number;
+        };
+        ["4xx"]: {
+          abs?: number;
+          rel?: number;
         };
       };
     },
@@ -19,10 +23,10 @@ export class RestApiObservability extends Construct {
 
     if (props.alarms["5xx"].abs) {
       props.api
-        .metricIntegrationLatency({
+        .metricServerError({
           statistic: "sum",
         })
-        .createAlarm(this, "AbsoluteServerErrors", {
+        .createAlarm(this, "5xxErrorsTotal", {
           evaluationPeriods: 1,
           threshold: props.alarms["5xx"].abs,
         });
@@ -30,12 +34,34 @@ export class RestApiObservability extends Construct {
 
     if (props.alarms["5xx"].rel) {
       props.api
-        .metricIntegrationLatency({
+        .metricServerError({
           statistic: "avg",
         })
-        .createAlarm(this, "AbsoluteServerErrors", {
+        .createAlarm(this, "5xxErrorsPercentage", {
           evaluationPeriods: 1,
           threshold: props.alarms["5xx"].rel,
+        });
+    }
+
+    if (props.alarms["4xx"].abs) {
+      props.api
+        .metricClientError({
+          statistic: "sum",
+        })
+        .createAlarm(this, "4xxErrorsTotal", {
+          evaluationPeriods: 1,
+          threshold: props.alarms["4xx"].abs,
+        });
+    }
+
+    if (props.alarms["4xx"].abs) {
+      props.api
+        .metricClientError({
+          statistic: "avg",
+        })
+        .createAlarm(this, "4xxErrorsPercentage", {
+          evaluationPeriods: 1,
+          threshold: props.alarms["4xx"].abs,
         });
     }
   }
