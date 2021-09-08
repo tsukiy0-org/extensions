@@ -1,7 +1,7 @@
 import { RestApi } from "aws-cdk-lib/lib/aws-apigateway";
 import { Construct } from "constructs";
 
-export class RestApiObservability extends Construct {
+export class DefaultRestApiObservability extends Construct {
   public constructor(
     scope: Construct,
     id: string,
