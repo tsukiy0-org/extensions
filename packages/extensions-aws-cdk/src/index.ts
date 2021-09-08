@@ -6,6 +6,7 @@ export * from "./constructs/DomainName";
 export * from "./constructs/StaticSite";
 export * from "./constructs/LambdaQueue";
 export * from "./constructs/DefaultQueue";
+export * from "./constructs/DefaultQueueObservability";
 export * from "./constructs/PublicDbInstance";
 export * from "./constructs/FunctionObservability";
 export * from "./constructs/LogMetricAlarm";
