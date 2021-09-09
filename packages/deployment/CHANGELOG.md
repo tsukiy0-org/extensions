@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.28](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.27...v0.1.0-alpha.28) (2021-09-09)
+
+
+### Features
+
+* simplify names ([714372b](https://github.com/tsukiy0-org/extensions-js/commit/714372bd755a18246870088defa00ccb9550a63d))
+
+
+
+
+
 # [0.1.0-alpha.27](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.26...v0.1.0-alpha.27) (2021-09-08)
 
 
