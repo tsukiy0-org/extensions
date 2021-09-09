@@ -2,7 +2,7 @@ import { Function as LambdaFunction } from "aws-cdk-lib/lib/aws-lambda";
 import { CfnQueryDefinition } from "aws-cdk-lib/lib/aws-logs";
 import { Construct } from "constructs";
 
-export class DefaultFunctionObservability extends Construct {
+export class DefaultFunctionLogs extends Construct {
   public constructor(
     scope: Construct,
     id: string,

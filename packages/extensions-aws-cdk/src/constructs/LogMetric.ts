@@ -1,5 +1,4 @@
 import {
-  Alarm,
   AlarmProps,
   Metric,
   MetricProps,
@@ -11,8 +10,8 @@ import {
 } from "aws-cdk-lib/lib/aws-logs";
 import { Construct } from "constructs";
 
-export class LogMetricAlarm extends Construct {
-  public readonly alarm: Alarm;
+export class LogMetric extends Construct {
+  public readonly metric: Metric;
 
   public constructor(
     scope: Construct,
@@ -40,11 +39,6 @@ export class LogMetricAlarm extends Construct {
 
     const metric = new Metric(props.metricProps);
 
-    const alarm = metric.createAlarm(this, "Alarm", {
-      ...props.alarmProps,
-      evaluationPeriods: 1,
-    });
-
-    this.alarm = alarm;
+    this.metric = metric;
   }
 }

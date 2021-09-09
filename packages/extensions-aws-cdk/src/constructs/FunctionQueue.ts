@@ -4,7 +4,7 @@ import { SqsEventSource } from "aws-cdk-lib/lib/aws-lambda-event-sources";
 import { Construct } from "constructs";
 import { DefaultQueue } from "./DefaultQueue";
 
-export class LambdaQueue extends Construct {
+export class FunctionQueue extends Construct {
   public readonly queue: DefaultQueue;
 
   constructor(

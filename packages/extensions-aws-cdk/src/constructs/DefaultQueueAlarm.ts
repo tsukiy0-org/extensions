@@ -1,12 +1,12 @@
 import { Construct } from "constructs";
 import { DefaultQueue } from "./DefaultQueue";
 
-export class DefaultQueueObservability extends Construct {
+export class DefaultQueueAlarm extends Construct {
   public constructor(
     scope: Construct,
     id: string,
     props: {
-      defaultQueue: DefaultQueue;
+      queue: DefaultQueue;
       thresholds: {
         maxMessageAgeInSeconds?: number;
         maxDeadLetterCount?: number;
@@ -16,7 +16,7 @@ export class DefaultQueueObservability extends Construct {
     super(scope, id);
 
     if (props.thresholds.maxDeadLetterCount) {
-      props.defaultQueue.deadLetterQueue
+      props.queue.deadLetterQueue
         .metricApproximateNumberOfMessagesVisible()
         .createAlarm(this, "MaxDeadLetterCount", {
           evaluationPeriods: 1,
@@ -25,7 +25,7 @@ export class DefaultQueueObservability extends Construct {
     }
 
     if (props.thresholds.maxMessageAgeInSeconds) {
-      props.defaultQueue.deadLetterQueue
+      props.queue.deadLetterQueue
         .metricApproximateAgeOfOldestMessage()
         .createAlarm(this, "MaxMessageAgeInSeconds", {
           evaluationPeriods: 1,

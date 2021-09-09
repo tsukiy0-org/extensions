@@ -1,4 +1,4 @@
-import { DefaultFunction, LambdaQueue } from "@tsukiy0/extensions-aws-cdk";
+import { DefaultFunction, FunctionQueue } from "@tsukiy0/extensions-aws-cdk";
 import { Duration } from "aws-cdk-lib";
 import {
   AttributeType,
@@ -49,7 +49,7 @@ export class TestSqsLambdaRuntime extends Construct {
     });
     table.grantReadWriteData(fn);
 
-    const lambdaQueue = new LambdaQueue(this, "LambdaQueue", {
+    const lambdaQueue = new FunctionQueue(this, "LambdaQueue", {
       fn,
       timeout,
       maxAttempts: 1,
