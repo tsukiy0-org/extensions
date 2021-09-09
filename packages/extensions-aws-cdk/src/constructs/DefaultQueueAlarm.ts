@@ -3,6 +3,8 @@ import { Construct } from "constructs";
 import { DefaultQueue } from "./DefaultQueue";
 
 export class DefaultQueueAlarm extends Construct {
+  public readonly alarms: Alarm[];
+
   public constructor(
     scope: Construct,
     id: string,
@@ -12,29 +14,33 @@ export class DefaultQueueAlarm extends Construct {
         maxMessageAgeInSeconds?: number;
         maxDeadLetterCount?: number;
       };
-      onAddAlarm?: (alarm: Alarm) => void;
     },
   ) {
     super(scope, id);
 
-    if (props.thresholds.maxDeadLetterCount) {
-      const alarm = props.queue.deadLetterQueue
-        .metricApproximateNumberOfMessagesVisible()
-        .createAlarm(this, "MaxDeadLetterCount", {
-          evaluationPeriods: 1,
-          threshold: props.thresholds.maxDeadLetterCount,
-        });
-      props.onAddAlarm && props.onAddAlarm(alarm);
-    }
+    const alarms = [
+      ...(props.thresholds.maxDeadLetterCount
+        ? [
+            props.queue.deadLetterQueue
+              .metricApproximateNumberOfMessagesVisible()
+              .createAlarm(this, "MaxDeadLetterCount", {
+                evaluationPeriods: 1,
+                threshold: props.thresholds.maxDeadLetterCount,
+              }),
+          ]
+        : []),
+      ...(props.thresholds.maxMessageAgeInSeconds
+        ? [
+            props.queue.queue
+              .metricApproximateAgeOfOldestMessage()
+              .createAlarm(this, "MaxMessageAgeInSeconds", {
+                evaluationPeriods: 1,
+                threshold: props.thresholds.maxMessageAgeInSeconds,
+              }),
+          ]
+        : []),
+    ];
 
-    if (props.thresholds.maxMessageAgeInSeconds) {
-      const alarm = props.queue.deadLetterQueue
-        .metricApproximateAgeOfOldestMessage()
-        .createAlarm(this, "MaxMessageAgeInSeconds", {
-          evaluationPeriods: 1,
-          threshold: props.thresholds.maxMessageAgeInSeconds,
-        });
-      props.onAddAlarm && props.onAddAlarm(alarm);
-    }
+    this.alarms = alarms;
   }
 }

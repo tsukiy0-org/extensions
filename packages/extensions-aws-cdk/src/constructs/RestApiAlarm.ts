@@ -3,6 +3,8 @@ import { Alarm } from "aws-cdk-lib/lib/aws-cloudwatch";
 import { Construct } from "constructs";
 
 export class RestApiAlarm extends Construct {
+  public readonly alarms: Alarm[];
+
   public constructor(
     scope: Construct,
     id: string,
@@ -14,57 +16,61 @@ export class RestApiAlarm extends Construct {
         maxPercentageOf5xxErrors?: number;
         maxPercentageOf4xxErrors?: number;
       };
-      onAddAlarm?: (alarm: Alarm) => void;
     },
   ) {
     super(scope, id);
 
-    if (props.thresholds.max5xxErrors) {
-      const alarm = props.api
-        .metricServerError({
-          statistic: "sum",
-        })
-        .createAlarm(this, "Max5xxErrors", {
-          evaluationPeriods: 1,
-          threshold: props.thresholds.max5xxErrors,
-        });
-      props.onAddAlarm && props.onAddAlarm(alarm);
-    }
+    const alarms = [
+      ...(props.thresholds.max5xxErrors
+        ? [
+            props.api
+              .metricServerError({
+                statistic: "sum",
+              })
+              .createAlarm(this, "Max5xxErrors", {
+                evaluationPeriods: 1,
+                threshold: props.thresholds.max5xxErrors,
+              }),
+          ]
+        : []),
+      ...(props.thresholds.max4xxErrors
+        ? [
+            props.api
+              .metricClientError({
+                statistic: "sum",
+              })
+              .createAlarm(this, "Max4xxErrors", {
+                evaluationPeriods: 1,
+                threshold: props.thresholds.max4xxErrors,
+              }),
+          ]
+        : []),
+      ...(props.thresholds.maxPercentageOf5xxErrors
+        ? [
+            props.api
+              .metricServerError({
+                statistic: "avg",
+              })
+              .createAlarm(this, "MaxPercentageOf5xxErrors", {
+                evaluationPeriods: 1,
+                threshold: props.thresholds.maxPercentageOf5xxErrors,
+              }),
+          ]
+        : []),
+      ...(props.thresholds.maxPercentageOf4xxErrors
+        ? [
+            props.api
+              .metricClientError({
+                statistic: "avg",
+              })
+              .createAlarm(this, "MaxPercentageOf4xxErrors", {
+                evaluationPeriods: 1,
+                threshold: props.thresholds.maxPercentageOf4xxErrors,
+              }),
+          ]
+        : []),
+    ];
 
-    if (props.thresholds.max4xxErrors) {
-      const alarm = props.api
-        .metricClientError({
-          statistic: "sum",
-        })
-        .createAlarm(this, "Max4xxErrors", {
-          evaluationPeriods: 1,
-          threshold: props.thresholds.max4xxErrors,
-        });
-      props.onAddAlarm && props.onAddAlarm(alarm);
-    }
-
-    if (props.thresholds.maxPercentageOf5xxErrors) {
-      const alarm = props.api
-        .metricServerError({
-          statistic: "avg",
-        })
-        .createAlarm(this, "MaxPercentageOf5xxErrors", {
-          evaluationPeriods: 1,
-          threshold: props.thresholds.maxPercentageOf5xxErrors,
-        });
-      props.onAddAlarm && props.onAddAlarm(alarm);
-    }
-
-    if (props.thresholds.maxPercentageOf4xxErrors) {
-      const alarm = props.api
-        .metricServerError({
-          statistic: "avg",
-        })
-        .createAlarm(this, "MaxPercentageOf4xxErrors", {
-          evaluationPeriods: 1,
-          threshold: props.thresholds.maxPercentageOf4xxErrors,
-        });
-      props.onAddAlarm && props.onAddAlarm(alarm);
-    }
+    this.alarms = alarms;
   }
 }
