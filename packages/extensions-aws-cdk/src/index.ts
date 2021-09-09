@@ -12,3 +12,4 @@ export * from "./constructs/PublicDbInstance";
 export * from "./constructs/DefaultFunctionLogs";
 export * from "./constructs/LogMetric";
 export * from "./constructs/FargateBatchJob";
+export * from "./constructs/HttpAlarm";
