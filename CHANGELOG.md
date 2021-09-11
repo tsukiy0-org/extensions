@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.29](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.28...v0.1.0-alpha.29) (2021-09-11)
+
+
+### Bug Fixes
+
+* load correct js ([3f19ca0](https://github.com/tsukiy0-org/extensions-js/commit/3f19ca091db90e088040fd8af626429623c909d3))
+
+
+### Features
+
+* add SqsBulkPurge ([6aebf8d](https://github.com/tsukiy0-org/extensions-js/commit/6aebf8d6823e740042683e3390638b0c5db040ec))
+* attach dlq to fn to enable replay ([10abba3](https://github.com/tsukiy0-org/extensions-js/commit/10abba3c97fe0497d80552ada0d4ec571cebb92a))
+* deploy bulk purge ([8b074a4](https://github.com/tsukiy0-org/extensions-js/commit/8b074a47e8e962c0b42b60c065119c2630b511ca))
+* impl bulk purge lambda logic ([a454fb8](https://github.com/tsukiy0-org/extensions-js/commit/a454fb8087ccb455c05679c256bfc0614b9d2825))
+* remove purge ([bdfc480](https://github.com/tsukiy0-org/extensions-js/commit/bdfc480813747e529f1bc1ac6b9fa42f737dad1d))
+* update SqsMessageQueue with purge fn ([f901f11](https://github.com/tsukiy0-org/extensions-js/commit/f901f11f974a1cc74e58a766ecf8d80ec9d4eeb6))
+
+
+
+
+
 # [0.1.0-alpha.28](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.27...v0.1.0-alpha.28) (2021-09-09)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.29](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.28...v0.1.0-alpha.29) (2021-09-11)
+
+
+### Features
+
+* deploy bulk purge ([8b074a4](https://github.com/tsukiy0-org/extensions-js/commit/8b074a47e8e962c0b42b60c065119c2630b511ca))
+
+
+
+
+
 # [0.1.0-alpha.28](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.27...v0.1.0-alpha.28) (2021-09-09)
 
 

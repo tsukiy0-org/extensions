@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.29](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.28...v0.1.0-alpha.29) (2021-09-11)
+
+
+### Bug Fixes
+
+* load correct js ([3f19ca0](https://github.com/tsukiy0-org/extensions-js/commit/3f19ca091db90e088040fd8af626429623c909d3))
+
+
+### Features
+
+* add SqsBulkPurge ([6aebf8d](https://github.com/tsukiy0-org/extensions-js/commit/6aebf8d6823e740042683e3390638b0c5db040ec))
+* attach dlq to fn to enable replay ([10abba3](https://github.com/tsukiy0-org/extensions-js/commit/10abba3c97fe0497d80552ada0d4ec571cebb92a))
+* impl bulk purge lambda logic ([a454fb8](https://github.com/tsukiy0-org/extensions-js/commit/a454fb8087ccb455c05679c256bfc0614b9d2825))
+
+
+
+
+
 # [0.1.0-alpha.28](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.27...v0.1.0-alpha.28) (2021-09-09)
 
 
