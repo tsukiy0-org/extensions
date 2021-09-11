@@ -1,4 +1,8 @@
-import { DefaultFunction, FunctionQueue } from "@tsukiy0/extensions-aws-cdk";
+import {
+  DefaultFunction,
+  FunctionQueue,
+  SqsBulkPurge,
+} from "@tsukiy0/extensions-aws-cdk";
 import { Duration } from "aws-cdk-lib";
 import {
   AttributeType,
@@ -53,6 +57,10 @@ export class TestSqsLambdaRuntime extends Construct {
       fn,
       timeout,
       maxAttempts: 1,
+    });
+
+    new SqsBulkPurge(this, "DeadLetterQueuePurge", {
+      queues: [lambdaQueue.queue.deadLetterQueue],
     });
 
     this.queue = lambdaQueue.queue.queue;
