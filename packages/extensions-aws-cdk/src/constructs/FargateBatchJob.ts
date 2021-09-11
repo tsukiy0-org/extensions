@@ -80,7 +80,6 @@ export class FargateBatchJob extends Construct {
     });
 
     const jobDefinition = new CfnJobDefinition(this, "JobDefinition", {
-      jobDefinitionName: "R18IngestFileExtractJob",
       type: "container",
       containerProperties: {
         image: props.dockerImage.imageUri,
