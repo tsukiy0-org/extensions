@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "aws-cdk-lib": "2.0.0-rc.20",
+    "aws-sdk": "^2.987.0",
     "constructs": "10.0.5"
   },
   "peerDependencies": {

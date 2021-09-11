@@ -1,3 +1,17 @@
+const AWS = require("aws-sdk");
+
 exports.handler = async () => {
-  console.log("hello");
+  const queueUrls = JSON.parse(process.env.QUEUE_URLS);
+
+  const client = new AWS.SQS();
+
+  const tasks = queueUrls.map(async (_) => {
+    await client
+      .purgeQueue({
+        QueueUrl: _,
+      })
+      .promise();
+  });
+
+  await Promise.all(tasks);
 };
