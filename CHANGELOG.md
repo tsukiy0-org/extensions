@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.30](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.29...v0.1.0-alpha.30) (2021-09-11)
+
+
+### Bug Fixes
+
+* rename FargateBatchJob ([974ed42](https://github.com/tsukiy0-org/extensions-js/commit/974ed4249f5d5e08192599d192229a4a93ffd4e3))
+
+
+
+
+
 # [0.1.0-alpha.29](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.28...v0.1.0-alpha.29) (2021-09-11)
 
 

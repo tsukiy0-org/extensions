@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.30](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.29...v0.1.0-alpha.30) (2021-09-11)
+
+**Note:** Version bump only for package @tsukiy0/extensions-core
+
+
+
+
+
 # [0.1.0-alpha.29](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.28...v0.1.0-alpha.29) (2021-09-11)
 
 **Note:** Version bump only for package @tsukiy0/extensions-core
