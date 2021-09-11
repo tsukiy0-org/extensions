@@ -16,12 +16,4 @@ export class SqsMessageQueue<T> implements IMessageQueue<T> {
       })
       .promise();
   };
-
-  purge = async (): Promise<void> => {
-    await this.client
-      .purgeQueue({
-        QueueUrl: this.queueUrl,
-      })
-      .promise();
-  };
 }
