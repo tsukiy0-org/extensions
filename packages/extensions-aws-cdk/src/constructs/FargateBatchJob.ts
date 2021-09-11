@@ -15,7 +15,7 @@ import {
   ServicePrincipal,
 } from "aws-cdk-lib/lib/aws-iam";
 
-export class R18IngestFileExtract extends Construct {
+export class FargateBatchJob extends Construct {
   public readonly jobDefinition: CfnJobDefinition;
   public readonly jobQueue: CfnJobQueue;
   public readonly role: IRole;
