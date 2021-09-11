@@ -26,11 +26,19 @@ export class FunctionQueue extends Construct {
       },
     });
 
-    const source = new SqsEventSource(queue.queue, {
-      batchSize: 1,
-    });
+    props.fn.addEventSource(
+      new SqsEventSource(queue.queue, {
+        batchSize: 1,
+        enabled: true,
+      }),
+    );
 
-    props.fn.addEventSource(source);
+    props.fn.addEventSource(
+      new SqsEventSource(queue.deadLetterQueue, {
+        batchSize: 1,
+        enabled: false,
+      }),
+    );
 
     this.queue = queue;
   }
