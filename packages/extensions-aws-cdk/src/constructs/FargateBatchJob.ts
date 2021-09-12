@@ -14,6 +14,8 @@ import {
   Role,
   ServicePrincipal,
 } from "aws-cdk-lib/lib/aws-iam";
+import { LogGroup, RetentionDays } from "aws-cdk-lib/lib/aws-logs";
+import { RemovalPolicy } from "aws-cdk-lib";
 
 export class FargateBatchJob extends Construct {
   public readonly jobDefinition: CfnJobDefinition;
@@ -34,7 +36,7 @@ export class FargateBatchJob extends Construct {
           mem: number;
           vcpu: number;
         };
-        environment: Record<string, string>;
+        environment: CfnJobDefinition.ContainerPropertiesProperty["environment"];
       };
     },
   ) {
@@ -79,6 +81,11 @@ export class FargateBatchJob extends Construct {
       ],
     });
 
+    const logGroup = new LogGroup(this, "JobLogGroup", {
+      retention: RetentionDays.SIX_MONTHS,
+    });
+    logGroup.applyRemovalPolicy(RemovalPolicy.DESTROY);
+
     const jobDefinition = new CfnJobDefinition(this, "JobDefinition", {
       type: "container",
       containerProperties: {
@@ -97,14 +104,13 @@ export class FargateBatchJob extends Construct {
         networkConfiguration: {
           assignPublicIp: "ENABLED",
         },
-        environment: Object.entries(props.jobDefinition.environment).map(
-          ([key, value]) => {
-            return {
-              key,
-              value,
-            };
+        environment: props.jobDefinition.environment,
+        logConfiguration: {
+          logDriver: "awslogs",
+          options: {
+            "awslogs-group": logGroup.logGroupName,
           },
-        ),
+        },
       },
       platformCapabilities: ["FARGATE"],
     });
