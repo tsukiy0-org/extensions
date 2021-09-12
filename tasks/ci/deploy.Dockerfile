@@ -1,1 +1,1 @@
-FROM node:12
+FROM tsukiy0/node-docker
