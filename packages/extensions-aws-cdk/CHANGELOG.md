@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.33](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.32...v0.1.0-alpha.33) (2021-09-12)
+
+
+### Features
+
+* expose batch job log group ([cf2c92b](https://github.com/tsukiy0-org/extensions-js/commit/cf2c92b656501b982923552e7758b1dfd04c7e59))
+
+
+
+
+
 # [0.1.0-alpha.32](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.31...v0.1.0-alpha.32) (2021-09-12)
 
 
