@@ -1,9 +1,9 @@
-import { Duration, RemovalPolicy } from "aws-cdk-lib";
+import { Duration } from "aws-cdk-lib";
 import {
   Function as LambdaFunction,
   FunctionProps,
 } from "aws-cdk-lib/lib/aws-lambda";
-import { LogGroup, RetentionDays } from "aws-cdk-lib/lib/aws-logs";
+import { RetentionDays } from "aws-cdk-lib/lib/aws-logs";
 import { Construct } from "constructs";
 
 export class DefaultFunction extends LambdaFunction {
@@ -20,7 +20,5 @@ export class DefaultFunction extends LambdaFunction {
       retryAttempts: 0,
       ...props,
     });
-
-    (this.logGroup as LogGroup).applyRemovalPolicy(RemovalPolicy.DESTROY);
   }
 }
