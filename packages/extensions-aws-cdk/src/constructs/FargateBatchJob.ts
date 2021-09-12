@@ -14,12 +14,13 @@ import {
   Role,
   ServicePrincipal,
 } from "aws-cdk-lib/lib/aws-iam";
-import { LogGroup, RetentionDays } from "aws-cdk-lib/lib/aws-logs";
+import { ILogGroup, LogGroup, RetentionDays } from "aws-cdk-lib/lib/aws-logs";
 import { RemovalPolicy } from "aws-cdk-lib";
 
 export class FargateBatchJob extends Construct {
   public readonly jobDefinition: CfnJobDefinition;
   public readonly jobQueue: CfnJobQueue;
+  public readonly logGroup: ILogGroup;
   public readonly role: IRole;
 
   public constructor(
@@ -118,6 +119,7 @@ export class FargateBatchJob extends Construct {
     this.role = role;
     this.jobDefinition = jobDefinition;
     this.jobQueue = jobQueue;
+    this.logGroup = logGroup;
   }
 
   public readonly grantSubmit = (grantee: IGrantable) => {
