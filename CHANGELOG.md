@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.32](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.31...v0.1.0-alpha.32) (2021-09-12)
+
+
+### Bug Fixes
+
+* add docker in docker in deploy ([5f62cbb](https://github.com/tsukiy0-org/extensions-js/commit/5f62cbb9dbd76a635495239d682887f83b4dd4c9))
+* ExamplePgDb imports ([0b217bd](https://github.com/tsukiy0-org/extensions-js/commit/0b217bda0ae6a6ebd4a7c18fa55c14510a1ef688))
+* remove removal policy from fn ([c61141a](https://github.com/tsukiy0-org/extensions-js/commit/c61141a16d799606098a0b36a200356d75712307))
+
+
+### Features
+
+* add ExampleBatchJob ([13599c7](https://github.com/tsukiy0-org/extensions-js/commit/13599c7134e4486c27a3019ca72e9e917126fd92))
+* delete lambda logs on remove lambda ([32c8f5a](https://github.com/tsukiy0-org/extensions-js/commit/32c8f5a302a826f7c9154229720e6ae022c95a31))
+* update FargateBatchJob with log group and environment ([93a6500](https://github.com/tsukiy0-org/extensions-js/commit/93a65006b9fc7eb90407d3d69d12fe0dae902fed))
+
+
+
+
+
 # [0.1.0-alpha.31](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.30...v0.1.0-alpha.31) (2021-09-11)
 
 **Note:** Version bump only for package root
