@@ -9,8 +9,8 @@ export const HttpProxyRequestOptions = Record({
       key: String,
       value: String,
     }),
-  ),
-  body: String,
+  ).optional(),
+  body: String.optional(),
 });
 
 export type HttpProxyRequestOptions = Static<typeof HttpProxyRequestOptions>;

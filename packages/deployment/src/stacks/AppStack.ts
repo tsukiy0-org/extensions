@@ -18,10 +18,14 @@ export class AppStack extends Stack {
 
     new ExampleBatchJob(this, "ExampleBatchJob");
 
-    new HttpProxy(this, "HttpProxy");
+    const httpProxy = new HttpProxy(this, "HttpProxy");
 
     new CfnOutput(this, "ApiUrl", {
       value: api.url,
+    });
+
+    new CfnOutput(this, "HttpProxyFunctionName", {
+      value: httpProxy.fn.functionName,
     });
 
     new CfnOutput(this, "TestSqsLambdaRuntimeQueueUrl", {
