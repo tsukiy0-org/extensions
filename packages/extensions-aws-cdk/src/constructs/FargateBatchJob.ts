@@ -104,6 +104,7 @@ export class FargateBatchJob extends Construct {
             ),
           ],
         }).roleArn,
+        jobRoleArn: role.roleArn,
         networkConfiguration: {
           assignPublicIp: "ENABLED",
         },
