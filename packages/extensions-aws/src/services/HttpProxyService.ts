@@ -15,7 +15,7 @@ export class HttpProxyService {
       .invoke({
         FunctionName: this.functionName,
         InvocationType: "RequestResponse",
-        Payload: options,
+        Payload: JSON.stringify(options),
       })
       .promise();
 
