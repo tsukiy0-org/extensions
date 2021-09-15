@@ -11,8 +11,8 @@ import { RequestHandler, Response } from "express";
 import { promisifyHandler } from "../helpers/promisifyHandler";
 import { ValidationError as RuntypesValidationError } from "runtypes";
 
-export class ExpressRuntime<T> {
-  constructor(private readonly processor: IProcessor<T, void>) {}
+export class ExpressRuntime<T, U> {
+  constructor(private readonly processor: IProcessor<T, U>) {}
 
   handler: RequestHandler = promisifyHandler(async (req, res) => {
     try {
@@ -20,7 +20,7 @@ export class ExpressRuntime<T> {
         req.header("x-trace-id") ?? GuidExtensions.generate(),
       );
 
-      await this.processor.run({
+      const r = await this.processor.run({
         header: {
           version: 1,
           traceId,
@@ -28,6 +28,8 @@ export class ExpressRuntime<T> {
         },
         body: req.body,
       });
+
+      return res.status(200).json(r);
     } catch (e) {
       return this.handleError(e, res);
     }

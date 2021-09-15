@@ -6,26 +6,17 @@ import {
 } from "@tsukiy0/extensions-core";
 import {
   ApiKeyAuthMiddleware,
-  CorrelationMiddleware,
-  ErrorMiddleware,
+  ExpressRuntime,
   FileMiddleware,
-  LoggerMiddleware,
-  promisifyHandler,
 } from "@tsukiy0/extensions-express";
 import express, { Application } from "express";
-import { ServicesMiddleware } from "./middlewares/ServicesMiddleware";
 import path from "path";
+import { Processor } from "./processors/Processor";
 
 export class App {
   static build = (): Application => {
     const app = express();
 
-    const correlationMiddleware = new CorrelationMiddleware();
-    const loggerMiddleware = new LoggerMiddleware(
-      "@tsukiy0/extensions-express-example",
-      correlationMiddleware,
-    );
-    const servicesMiddleware = new ServicesMiddleware();
     const fileMiddleware = new FileMiddleware(
       path.resolve(__dirname, "./static"),
       [
@@ -50,85 +41,83 @@ export class App {
       };
     });
 
-    app.use(correlationMiddleware.handler);
-    app.use(loggerMiddleware.handler);
-    app.use(servicesMiddleware.handler);
     app.use("/static", fileMiddleware.handler);
 
     app.get(
       "/errors/unauthorized",
-      promisifyHandler(async () => {
-        throw new UnauthorizedError();
-      }),
+      new ExpressRuntime(
+        new Processor(async () => {
+          throw new UnauthorizedError();
+        }),
+      ).handler,
     );
 
     app.get(
       "/errors/validation",
-      promisifyHandler(async () => {
-        throw new ValidationError();
-      }),
+      new ExpressRuntime(
+        new Processor(async () => {
+          throw new ValidationError();
+        }),
+      ).handler,
     );
 
     app.get(
       "/errors/validation/runtypes",
-      promisifyHandler(async () => {
-        Guid.check("abc");
-      }),
+      new ExpressRuntime(
+        new Processor(async () => {
+          Guid.check("abc");
+        }),
+      ).handler,
     );
 
     app.get(
       "/errors/unknown",
-      promisifyHandler(async () => {
-        throw new RangeError();
-      }),
+      new ExpressRuntime(
+        new Processor(async () => {
+          throw new RangeError();
+        }),
+      ).handler,
     );
 
     app.get(
       "/services",
-      promisifyHandler(async (_, res) => {
-        const services = servicesMiddleware.getServices(res);
-        res.status(200).json(services);
-      }),
+      new ExpressRuntime(
+        new Processor(async (services) => {
+          return services;
+        }),
+      ).handler,
     );
 
     app.get(
       "/correlation",
-      promisifyHandler(async (_, res) => {
-        const correlationService = correlationMiddleware.getService(res);
-        res.status(200).json({
-          traceId: correlationService.getTraceId(),
-          spanId: correlationService.getSpanId(),
-        });
-      }),
-    );
-
-    app.get(
-      "/correlation",
-      promisifyHandler(async (_, res) => {
-        const correlationService = correlationMiddleware.getService(res);
-        res.status(200).json({
-          traceId: correlationService.getTraceId(),
-          spanId: correlationService.getSpanId(),
-        });
-      }),
+      new ExpressRuntime(
+        new Processor(async ({ correlationService }) => {
+          return {
+            traceId: correlationService.getTraceId(),
+            spanId: correlationService.getSpanId(),
+          };
+        }),
+      ).handler,
     );
 
     app.get(
       "/apiKeyAuth",
       apiKeyAuthMiddleware.handler,
-      promisifyHandler(async (_, res) => {
-        const keyName = apiKeyAuthMiddleware.getName(res);
-        res.status(200).json({
-          keyName,
-        });
-      }),
+      new ExpressRuntime(
+        new Processor(async () => {
+          return;
+        }),
+      ).handler,
     );
 
-    app.get("/health", (req, res) => {
-      res.status(200).send("OK");
-    });
-
-    app.use(new ErrorMiddleware(loggerMiddleware).handler);
+    app.get(
+      "/health",
+      new ExpressRuntime(
+        new Processor(async () => {
+          return;
+        }),
+      ).handler,
+    );
 
     return app;
   };
