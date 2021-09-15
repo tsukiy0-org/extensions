@@ -9,7 +9,6 @@ import {
   TimespanExtensions,
   PromiseExtensions,
   DefaultQueue,
-  SystemClock,
   TimestampExtensions,
 } from "@tsukiy0/extensions-core";
 import { DynamoDB } from "aws-sdk";
@@ -27,7 +26,7 @@ describe("SqsLambdaRuntime", () => {
   beforeEach(() => {
     const config = new SystemConfiguration();
     const queueUrl = Url.check(config.get("TEST_SQS_LAMBDA_RUNTIME_QUEUE_URL"));
-    tableName = config.get("TEST_SQS_LAMBDA_RUNTIME_TABLE_NAME");
+    tableName = config.get("TEST_TABLE_NAME");
     correlationService = new StaticCorrelationService();
     queue = new TestQueue(SqsMessageQueue.build(queueUrl), correlationService, {
       now: () => now,
@@ -51,14 +50,7 @@ describe("SqsLambdaRuntime", () => {
       .promise();
 
     expect(actual.Item?.CONTENT).toEqual({
-      message: {
-        header: {
-          version: 1,
-          traceId: correlationService.getTraceId(),
-          created: now,
-        },
-        body,
-      },
+      message: body,
       traceId: correlationService.getTraceId(),
     });
   });

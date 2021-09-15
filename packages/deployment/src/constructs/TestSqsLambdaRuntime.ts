@@ -3,27 +3,31 @@ import {
   FunctionQueue,
   SqsBulkPurge,
 } from "@tsukiy0/extensions-aws-cdk";
-import { Duration } from "aws-cdk-lib";
+import { Duration, RemovalPolicy } from "aws-cdk-lib";
 import {
   AttributeType,
   BillingMode,
-  ITable,
   Table,
 } from "aws-cdk-lib/lib/aws-dynamodb";
 import { Code, Runtime } from "aws-cdk-lib/lib/aws-lambda";
 import { IQueue } from "aws-cdk-lib/lib/aws-sqs";
 import { Construct } from "constructs";
 import path from "path";
+import { External } from "./External";
 
 export class TestSqsLambdaRuntime extends Construct {
   public readonly queue: IQueue;
-  public readonly table: ITable;
 
-  public constructor(scope: Construct, id: string) {
+  public constructor(
+    scope: Construct,
+    id: string,
+    props: {
+      external: External;
+    },
+  ) {
     super(scope, id);
 
-    const timeout = Duration.seconds(20);
-
+    // @TODO remove this
     const table = new Table(this, "Table", {
       partitionKey: {
         name: "PK",
@@ -34,8 +38,10 @@ export class TestSqsLambdaRuntime extends Construct {
         type: AttributeType.STRING,
       },
       billingMode: BillingMode.PAY_PER_REQUEST,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
+    const timeout = Duration.seconds(20);
     const fn = new DefaultFunction(this, "Function", {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(
@@ -48,10 +54,10 @@ export class TestSqsLambdaRuntime extends Construct {
       handler: "index.handler",
       timeout,
       environment: {
-        TABLE_NAME: table.tableName,
+        TEST_TABLE_NAME: props.external.testTable.tableName,
       },
     });
-    table.grantReadWriteData(fn);
+    props.external.testTable.grantReadWriteData(fn);
 
     const lambdaQueue = new FunctionQueue(this, "LambdaQueue", {
       fn,
@@ -64,6 +70,5 @@ export class TestSqsLambdaRuntime extends Construct {
     });
 
     this.queue = lambdaQueue.queue.queue;
-    this.table = table;
   }
 }

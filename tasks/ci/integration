@@ -9,6 +9,6 @@ get_cfn_output() {
 export API_URL=$(get_cfn_output AppUsEast1 ApiUrl)
 export HTTP_PROXY_FUNCTION_NAME=$(get_cfn_output AppUsEast1 HttpProxyFunctionName)
 export TEST_SQS_LAMBDA_RUNTIME_QUEUE_URL=$(get_cfn_output AppUsEast1 TestSqsLambdaRuntimeQueueUrl)
-export TEST_SQS_LAMBDA_RUNTIME_TABLE_NAME=$(get_cfn_output AppUsEast1 TestSqsLambdaRuntimeTableName)
+export TEST_TABLE_NAME=$(get_cfn_output AppUsEast1 TestTableName)
 
 yarn test:integration

@@ -6,12 +6,14 @@ import { App } from "aws-cdk-lib";
 const app = new App();
 
 const configuration = new SystemConfiguration();
+const testTableName = "test-table-name";
 
 new ExternalStack(app, "External", {
   env: {
     account: configuration.get("CDK_DEFAULT_ACCOUNT"),
     region: "us-east-1",
   },
+  testTableName,
 });
 
 new AppStack(app, "AppUsEast1", {
@@ -19,4 +21,5 @@ new AppStack(app, "AppUsEast1", {
     account: configuration.get("CDK_DEFAULT_ACCOUNT"),
     region: "us-east-1",
   },
+  testTableName,
 });

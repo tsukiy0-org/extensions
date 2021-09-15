@@ -3,18 +3,35 @@ import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { Api } from "../constructs/Api";
 import { ExampleBatchJob } from "../constructs/ExampleBatchJob";
+import { External } from "../constructs/External";
+import { TestBatchRuntime } from "../constructs/TestBatchRuntime";
 import { TestSqsLambdaRuntime } from "../constructs/TestSqsLambdaRuntime";
 
 export class AppStack extends Stack {
-  public constructor(scope: Construct, id: string, props: StackProps) {
+  public constructor(
+    scope: Construct,
+    id: string,
+    props: StackProps & {
+      testTableName: string;
+    },
+  ) {
     super(scope, id, props);
+
+    const external = new External(this, "External", {
+      testTableName: props.testTableName,
+    });
 
     const api = new Api(this, "Api");
 
     const testSqsLambdaRuntime = new TestSqsLambdaRuntime(
       this,
       "TestSqsLambdaRuntime",
+      { external },
     );
+
+    new TestBatchRuntime(this, "TestBatchRuntime", {
+      external,
+    });
 
     new ExampleBatchJob(this, "ExampleBatchJob");
 
@@ -32,8 +49,8 @@ export class AppStack extends Stack {
       value: testSqsLambdaRuntime.queue.queueUrl,
     });
 
-    new CfnOutput(this, "TestSqsLambdaRuntimeTableName", {
-      value: testSqsLambdaRuntime.table.tableName,
+    new CfnOutput(this, "TestTableName", {
+      value: external.testTable.tableName,
     });
   }
 }
