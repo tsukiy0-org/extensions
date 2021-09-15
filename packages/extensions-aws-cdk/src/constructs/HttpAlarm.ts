@@ -16,7 +16,6 @@ export class HttpAlarm extends Construct {
     id: string,
     props: {
       url: string;
-      vpc: IVpc;
     },
   ) {
     super(scope, id);
@@ -25,10 +24,11 @@ export class HttpAlarm extends Construct {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(path.resolve(__dirname, "../../lambda/HttpAlarm")),
       handler: "index.handler",
+      memorySize: 128,
+      timeout: Duration.seconds(20),
       environment: {
         URL: props.url,
       },
-      vpc: props.vpc,
     });
 
     const rule = new Rule(this, "Rule", {
