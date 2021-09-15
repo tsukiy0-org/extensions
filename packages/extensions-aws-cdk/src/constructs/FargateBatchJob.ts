@@ -71,15 +71,8 @@ export class FargateBatchJob extends Construct {
       ],
     });
 
-    const role = new Role(this, "Role", {
+    const role = new Role(this, "JobRole", {
       assumedBy: new ServicePrincipal("ecs-tasks.amazonaws.com"),
-      managedPolicies: [
-        ManagedPolicy.fromManagedPolicyArn(
-          this,
-          "AmazonECSTaskExecutionRolePolicy",
-          "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
-        ),
-      ],
     });
 
     const logGroup = new LogGroup(this, "JobLogGroup", {
@@ -101,7 +94,16 @@ export class FargateBatchJob extends Construct {
             value: props.jobDefinition.resourceRequirements.mem.toString(),
           },
         ],
-        executionRoleArn: role.roleArn,
+        executionRoleArn: new Role(this, "ExecutionRole", {
+          assumedBy: new ServicePrincipal("ecs-tasks.amazonaws.com"),
+          managedPolicies: [
+            ManagedPolicy.fromManagedPolicyArn(
+              this,
+              "AmazonECSTaskExecutionRolePolicy",
+              "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            ),
+          ],
+        }).roleArn,
         networkConfiguration: {
           assignPublicIp: "ENABLED",
         },
