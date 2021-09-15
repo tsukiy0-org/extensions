@@ -1,6 +1,6 @@
 {
   "name": "@tsukiy0/extensions-aws",
-  "version": "0.1.0-alpha.36",
+  "version": "0.1.0-alpha.37",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,8 +19,8 @@
     "test:integration:local": "jest --config jest.config.integration.js -t SqsLambdaRuntime"
   },
   "dependencies": {
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.36",
-    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.36",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.37",
+    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.37",
     "@vendia/serverless-express": "4.3.11",
     "aws-sdk": "2.983.0",
     "runtypes": "^6.4.0"
