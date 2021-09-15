@@ -1,10 +1,8 @@
 import {
   DefaultProcessor,
   ICorrelationService,
-  ILogger,
-  Message,
+  ProcessorServices,
 } from "@tsukiy0/extensions-core";
-import { WinstonLogger } from "@tsukiy0/extensions-logging-winston";
 
 type Services = {
   testService: string;
@@ -13,20 +11,24 @@ type Services = {
 
 export class Processor<T, U> extends DefaultProcessor<T, U> {
   constructor(
-    private readonly bodyHandler: (services: Services, body: T) => Promise<U>,
+    private readonly handleWithServices: (
+      services: Services,
+      body: T,
+    ) => Promise<U>,
   ) {
     super();
   }
 
-  protected getLogger = async (): Promise<ILogger> => {
-    return new WinstonLogger("@tsukiy0/extensions-express-example");
-  };
-  protected handle = async (message: Message<T>): Promise<U> => {
-    const services = {
-      testService: "test",
-      correlationService: this.correlationService,
-    };
-
-    return await this.bodyHandler(services, message.body);
+  protected handle = async (
+    body: T,
+    services: ProcessorServices,
+  ): Promise<U> => {
+    return await this.handleWithServices(
+      {
+        testService: "test",
+        correlationService: services.correlationService,
+      },
+      body,
+    );
   };
 }

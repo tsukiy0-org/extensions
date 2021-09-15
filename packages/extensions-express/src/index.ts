@@ -9,4 +9,4 @@ export * from "./middlewares/ApiKeyAuthMiddleware";
 
 export * from "./services/RequestCorrelationService";
 
-export * from "./runtimes/ExpressRuntime";
+export * from "./runtimes/ExpressJsonRuntime";

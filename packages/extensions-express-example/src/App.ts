@@ -6,7 +6,7 @@ import {
 } from "@tsukiy0/extensions-core";
 import {
   ApiKeyAuthMiddleware,
-  ExpressRuntime,
+  ExpressJsonRuntime,
   FileMiddleware,
 } from "@tsukiy0/extensions-express";
 import express, { Application } from "express";
@@ -45,7 +45,8 @@ export class App {
 
     app.get(
       "/errors/unauthorized",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/errors/unauthorized",
         new Processor(async () => {
           throw new UnauthorizedError();
         }),
@@ -54,7 +55,8 @@ export class App {
 
     app.get(
       "/errors/validation",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/errors/validation",
         new Processor(async () => {
           throw new ValidationError();
         }),
@@ -63,7 +65,8 @@ export class App {
 
     app.get(
       "/errors/validation/runtypes",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/errors/validation/runtypes",
         new Processor(async () => {
           Guid.check("abc");
         }),
@@ -72,7 +75,8 @@ export class App {
 
     app.get(
       "/errors/unknown",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/errors/unknown",
         new Processor(async () => {
           throw new RangeError();
         }),
@@ -81,7 +85,8 @@ export class App {
 
     app.get(
       "/services",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/services",
         new Processor(async (services) => {
           return services;
         }),
@@ -90,7 +95,8 @@ export class App {
 
     app.get(
       "/correlation",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/correlation",
         new Processor(async ({ correlationService }) => {
           return {
             traceId: correlationService.getTraceId(),
@@ -103,16 +109,18 @@ export class App {
     app.get(
       "/apiKeyAuth",
       apiKeyAuthMiddleware.handler,
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/apiKeyAuth",
         new Processor(async () => {
-          return;
+          return {};
         }),
       ).handler,
     );
 
     app.get(
       "/health",
-      new ExpressRuntime(
+      new ExpressJsonRuntime(
+        "/health",
         new Processor(async () => {
           return;
         }),

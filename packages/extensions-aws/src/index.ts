@@ -1,5 +1,4 @@
 export * from "./services/SqsMessageQueue";
-export * from "./services/DefaultProcessor";
 export * from "./services/BatchMessageQueue";
 export * from "./services/HttpProxyService";
 

@@ -1,13 +1,16 @@
-import { DefaultProcessor } from "@tsukiy0/extensions-aws";
-import { Guid, Message, SystemConfiguration } from "@tsukiy0/extensions-core";
+import {
+  DefaultProcessor,
+  Guid,
+  ProcessorServices,
+  SystemConfiguration,
+} from "@tsukiy0/extensions-core";
 import { DynamoDB } from "aws-sdk";
 
 export class Processor extends DefaultProcessor<Guid, void> {
-  constructor() {
-    super("TestSqsLambdaRuntime");
-  }
-
-  protected handle = async (message: Message<Guid>): Promise<void> => {
+  protected handle = async (
+    body: Guid,
+    services: ProcessorServices,
+  ): Promise<void> => {
     const config = new SystemConfiguration();
 
     const tableName = config.get("TABLE_NAME");
@@ -17,11 +20,11 @@ export class Processor extends DefaultProcessor<Guid, void> {
       .put({
         TableName: tableName,
         Item: {
-          PK: message.body,
+          PK: body,
           SK: "TEST_SQS_LAMBDA_RUNTIME",
           CONTENT: {
-            message,
-            traceId: this.correlationService.getTraceId(),
+            message: body,
+            traceId: services.correlationService.getTraceId(),
           },
         },
       })
