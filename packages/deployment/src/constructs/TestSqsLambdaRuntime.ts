@@ -3,12 +3,7 @@ import {
   FunctionQueue,
   SqsBulkPurge,
 } from "@tsukiy0/extensions-aws-cdk";
-import { Duration, RemovalPolicy } from "aws-cdk-lib";
-import {
-  AttributeType,
-  BillingMode,
-  Table,
-} from "aws-cdk-lib/lib/aws-dynamodb";
+import { Duration } from "aws-cdk-lib";
 import { Code, Runtime } from "aws-cdk-lib/lib/aws-lambda";
 import { IQueue } from "aws-cdk-lib/lib/aws-sqs";
 import { Construct } from "constructs";
@@ -26,20 +21,6 @@ export class TestSqsLambdaRuntime extends Construct {
     },
   ) {
     super(scope, id);
-
-    // @TODO remove this
-    const table = new Table(this, "Table", {
-      partitionKey: {
-        name: "PK",
-        type: AttributeType.STRING,
-      },
-      sortKey: {
-        name: "SK",
-        type: AttributeType.STRING,
-      },
-      billingMode: BillingMode.PAY_PER_REQUEST,
-      removalPolicy: RemovalPolicy.DESTROY,
-    });
 
     const timeout = Duration.seconds(20);
     const fn = new DefaultFunction(this, "Function", {
