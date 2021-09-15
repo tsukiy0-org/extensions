@@ -8,3 +8,5 @@ export * from "./middlewares/FileMiddleware";
 export * from "./middlewares/ApiKeyAuthMiddleware";
 
 export * from "./services/RequestCorrelationService";
+
+export * from "./runtimes/ExpressRuntime";
