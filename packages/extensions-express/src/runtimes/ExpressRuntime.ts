@@ -37,20 +37,18 @@ export class ExpressRuntime<T, U> {
 
   private handleError = (e: any, res: Response) => {
     if (e instanceof RuntypesValidationError || e instanceof ValidationError) {
-      res.status(400);
+      return res.status(400).end();
     }
 
     if (e instanceof NotFoundError) {
-      res.status(404);
+      return res.status(404).end();
     }
 
     if (e instanceof UnauthorizedError) {
-      res.status(401);
+      return res.status(401).end();
     }
 
-    res.status(500);
-
-    return res.end();
+    return res.status(500).end();
   };
 }
 

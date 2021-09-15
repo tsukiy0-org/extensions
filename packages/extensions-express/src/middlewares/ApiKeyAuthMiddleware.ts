@@ -23,7 +23,7 @@ export class ApiKeyAuthMiddleware {
     const matchingKey = keys.find((_) => _.value === requestKey);
 
     if (!matchingKey) {
-      throw new UnauthorizedError();
+      return res.status(401).end();
     }
 
     res.locals[this.key] = matchingKey.name;

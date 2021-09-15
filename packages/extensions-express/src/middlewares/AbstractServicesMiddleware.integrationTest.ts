@@ -14,8 +14,7 @@ describe("AbstractServicesMiddleware", () => {
 
     const actual = await fetch(url);
 
-    expect(await actual.json()).toEqual({
-      testService: "test",
-    });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    expect((await actual.json()).testService).toEqual("test");
   });
 });
