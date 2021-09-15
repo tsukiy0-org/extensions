@@ -8,6 +8,10 @@ export class HttpProxyService {
     private readonly functionName: string,
   ) {}
 
+  static build = (functionName: string): HttpProxyService => {
+    return new HttpProxyService(new Lambda(), functionName);
+  };
+
   request = async (
     options: HttpProxyRequestOptions,
   ): Promise<HttpProxyResponse> => {
