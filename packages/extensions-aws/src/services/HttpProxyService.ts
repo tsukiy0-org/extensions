@@ -19,6 +19,6 @@ export class HttpProxyService {
       })
       .promise();
 
-    return HttpProxyResponse.check(res.Payload);
+    return HttpProxyResponse.check(JSON.parse(res.Payload as string));
   };
 }

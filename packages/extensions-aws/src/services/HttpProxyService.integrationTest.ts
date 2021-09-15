@@ -15,7 +15,7 @@ describe("HttpProxyService", () => {
     it("response", async () => {
       const res = await service.request({
         method: "GET",
-        url: Url.check("https://google.com"),
+        url: Url.check("https://www.google.com"),
       });
 
       expect(res).toEqual({
