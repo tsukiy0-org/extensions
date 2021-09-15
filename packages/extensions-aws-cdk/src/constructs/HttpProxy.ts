@@ -10,7 +10,7 @@ export class HttpProxy extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    new DefaultFunction(this, "Fn", {
+    const fn = new DefaultFunction(this, "Fn", {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(path.resolve(__dirname, "../../lambda/HttpProxy")),
       handler: "index.handler",
