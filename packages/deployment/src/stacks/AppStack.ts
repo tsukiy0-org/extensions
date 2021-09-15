@@ -2,7 +2,6 @@ import { HttpProxy } from "@tsukiy0/extensions-aws-cdk";
 import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { Api } from "../constructs/Api";
-import { ExampleBatchJob } from "../constructs/ExampleBatchJob";
 import { External } from "../constructs/External";
 import { TestBatchRuntime } from "../constructs/TestBatchRuntime";
 import { TestSqsLambdaRuntime } from "../constructs/TestSqsLambdaRuntime";
@@ -32,8 +31,6 @@ export class AppStack extends Stack {
     const testBatchRuntime = new TestBatchRuntime(this, "TestBatchRuntime", {
       external,
     });
-
-    new ExampleBatchJob(this, "ExampleBatchJob");
 
     const httpProxy = new HttpProxy(this, "HttpProxy");
 
