@@ -21,13 +21,10 @@ export class ExpressJsonRuntime<T, U> {
       const correlationService = new RequestCorrelationService(req);
       const logger = new WinstonLogger(this.name, correlationService);
 
-      const r = await this.processor.run(
-        JSON.parse((req.body as Buffer).toString()),
-        {
-          correlationService,
-          logger,
-        },
-      );
+      const r = await this.processor.run(req.body, {
+        correlationService,
+        logger,
+      });
 
       return res.status(200).json(r);
     } catch (e) {
