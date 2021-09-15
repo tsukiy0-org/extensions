@@ -6,6 +6,8 @@ import path from "path";
 import { External } from "./External";
 
 export class TestBatchRuntime extends Construct {
+  public readonly batchJob: FargateBatchJob;
+
   public constructor(
     scope: Construct,
     id: string,
@@ -51,5 +53,7 @@ export class TestBatchRuntime extends Construct {
       },
     });
     props.external.testTable.grantReadWriteData(batchJob.role);
+
+    this.batchJob = batchJob;
   }
 }

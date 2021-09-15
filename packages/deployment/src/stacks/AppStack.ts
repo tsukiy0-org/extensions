@@ -29,7 +29,7 @@ export class AppStack extends Stack {
       { external },
     );
 
-    new TestBatchRuntime(this, "TestBatchRuntime", {
+    const testBatchRuntime = new TestBatchRuntime(this, "TestBatchRuntime", {
       external,
     });
 
@@ -47,6 +47,14 @@ export class AppStack extends Stack {
 
     new CfnOutput(this, "TestSqsLambdaRuntimeQueueUrl", {
       value: testSqsLambdaRuntime.queue.queueUrl,
+    });
+
+    new CfnOutput(this, "TestBatchRuntimeJobQueue", {
+      value: testBatchRuntime.batchJob.jobQueue.ref,
+    });
+
+    new CfnOutput(this, "TestBatchRuntimeJobDefinition", {
+      value: testBatchRuntime.batchJob.jobDefinition.ref,
     });
 
     new CfnOutput(this, "TestTableName", {

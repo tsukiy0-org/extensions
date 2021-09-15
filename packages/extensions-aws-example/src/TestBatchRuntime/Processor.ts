@@ -21,7 +21,7 @@ export class Processor extends DefaultProcessor<Guid, void> {
         TableName: tableName,
         Item: {
           PK: body,
-          SK: "TEST_BATCH_JOB_RUNTIME",
+          SK: "TEST_BATCH_RUNTIME",
           CONTENT: {
             message: body,
             traceId: services.correlationService.getTraceId(),
