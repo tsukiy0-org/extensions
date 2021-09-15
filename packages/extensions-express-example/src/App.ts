@@ -117,6 +117,16 @@ export class App {
       ).handler,
     );
 
+    app.post(
+      "/json",
+      new ExpressJsonRuntime(
+        "/json",
+        new Processor(async (services, body) => {
+          return body;
+        }),
+      ).handler,
+    );
+
     app.get(
       "/health",
       new ExpressJsonRuntime(

@@ -23,6 +23,22 @@ describe("ExpressJsonRuntime", () => {
     });
   });
 
+  describe("json", () => {
+    it("parses json request and formats json response", async () => {
+      const url = UrlExtensions.appendPath(apiUrl, "/json");
+      const body = {
+        test: GuidExtensions.generate(),
+      }
+
+      const actual = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(body)
+      });
+
+      expect(await actual.json()).toEqual(body);
+    });
+  });
+
   describe("handles errors", () => {
     it("when UnauthorizedError then status is 401", async () => {
       const url = UrlExtensions.appendPath(apiUrl, "/errors/unauthorized");
