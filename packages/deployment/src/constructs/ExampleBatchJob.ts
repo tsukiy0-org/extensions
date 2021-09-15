@@ -32,8 +32,8 @@ export class ExampleBatchJob extends Construct {
       },
       jobDefinition: {
         resourceRequirements: {
-          mem: 2048,
-          vcpu: 1,
+          mem: 1024,
+          vcpu: 0.5,
         },
         environment: [
           {
