@@ -42,7 +42,7 @@ describe("BatchRuntime", () => {
   it("processes message", async () => {
     const body = GuidExtensions.generate();
     await queue.send(body);
-    await PromiseExtensions.sleep(TimespanExtensions.seconds(90));
+    await PromiseExtensions.sleep(TimespanExtensions.seconds(120));
 
     const actual = await dynamo
       .get({
