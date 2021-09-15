@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.34](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.33...v0.1.0-alpha.34) (2021-09-15)
+
+
+### Bug Fixes
+
+* bad import ([a6b4137](https://github.com/tsukiy0-org/extensions-js/commit/a6b4137256b0207177cb2661fdfb4e9c87dac2a8))
+* exit with status 1 on failure ([0567659](https://github.com/tsukiy0-org/extensions-js/commit/0567659c899bebd44815023d7f0ba8891ea2ed66))
+* parse lambda payload to json ([99be5e2](https://github.com/tsukiy0-org/extensions-js/commit/99be5e2da98e10c12375c748225da96b7ce53a09))
+* send lambda payload as a string ([04863bd](https://github.com/tsukiy0-org/extensions-js/commit/04863bdf5ba184ae159b006ee05b99360ff2bac2))
+
+
+### Features
+
+* add BatchRUntime tests ([0a1fef8](https://github.com/tsukiy0-org/extensions-js/commit/0a1fef8f33bff827e2165809cc390caf4ae2e81c))
+* add HttpProxyService ([49b5e59](https://github.com/tsukiy0-org/extensions-js/commit/49b5e5986855efa87733ab14b60267d8ebb61e84))
+* refactor runtimes to create logger/correlation and pass to proces ([1b7af9f](https://github.com/tsukiy0-org/extensions-js/commit/1b7af9f7a683bf6a33d3f9129ba2fcd41ccf3255))
+
+
+
+
+
 # [0.1.0-alpha.33](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.32...v0.1.0-alpha.33) (2021-09-12)
 
 **Note:** Version bump only for package @tsukiy0/extensions-aws

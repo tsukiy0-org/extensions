@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.34](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.33...v0.1.0-alpha.34) (2021-09-15)
+
+
+### Bug Fixes
+
+* attach job role ([9116d82](https://github.com/tsukiy0-org/extensions-js/commit/9116d825e19a4146607c01de11025c02cb5821fc))
+* cant apply removal policy to lambda log group ([d8fb08e](https://github.com/tsukiy0-org/extensions-js/commit/d8fb08eb995adfb50f3cc536080f7388003aafab))
+* missing variable name ([6ce42c4](https://github.com/tsukiy0-org/extensions-js/commit/6ce42c40b92812719cf838e0aebdb44d690a530b))
+* seperate role for execution and job ([76fa986](https://github.com/tsukiy0-org/extensions-js/commit/76fa986986df21c6843d6895c4f7f9433e9f3851))
+
+
+### Features
+
+* add HttpProxy ([dc332ad](https://github.com/tsukiy0-org/extensions-js/commit/dc332ade94fe54aefbe308405b3712ccce151214))
+* try remove LogGroup ([0e0d567](https://github.com/tsukiy0-org/extensions-js/commit/0e0d5679de1ee780fe8d8f4e16df1d0cf3e5c5e2))
+
+
+
+
+
 # [0.1.0-alpha.33](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.32...v0.1.0-alpha.33) (2021-09-12)
 
 

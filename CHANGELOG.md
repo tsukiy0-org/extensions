@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.34](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.33...v0.1.0-alpha.34) (2021-09-15)
+
+
+### Bug Fixes
+
+* attach job role ([9116d82](https://github.com/tsukiy0-org/extensions-js/commit/9116d825e19a4146607c01de11025c02cb5821fc))
+* bad import ([a6b4137](https://github.com/tsukiy0-org/extensions-js/commit/a6b4137256b0207177cb2661fdfb4e9c87dac2a8))
+* cant apply removal policy to lambda log group ([d8fb08e](https://github.com/tsukiy0-org/extensions-js/commit/d8fb08eb995adfb50f3cc536080f7388003aafab))
+* exit with status 1 on failure ([0567659](https://github.com/tsukiy0-org/extensions-js/commit/0567659c899bebd44815023d7f0ba8891ea2ed66))
+* missing variable name ([6ce42c4](https://github.com/tsukiy0-org/extensions-js/commit/6ce42c40b92812719cf838e0aebdb44d690a530b))
+* parse lambda payload to json ([99be5e2](https://github.com/tsukiy0-org/extensions-js/commit/99be5e2da98e10c12375c748225da96b7ce53a09))
+* remove ExampleBatchJob ([5e14f34](https://github.com/tsukiy0-org/extensions-js/commit/5e14f341d66b255955d9f0a9a4e164fcec7908b2))
+* send lambda payload as a string ([04863bd](https://github.com/tsukiy0-org/extensions-js/commit/04863bdf5ba184ae159b006ee05b99360ff2bac2))
+* seperate role for execution and job ([76fa986](https://github.com/tsukiy0-org/extensions-js/commit/76fa986986df21c6843d6895c4f7f9433e9f3851))
+
+
+### Features
+
+* add BatchRUntime tests ([0a1fef8](https://github.com/tsukiy0-org/extensions-js/commit/0a1fef8f33bff827e2165809cc390caf4ae2e81c))
+* add DefaultProcessor ([0a2fa6b](https://github.com/tsukiy0-org/extensions-js/commit/0a2fa6b7b5f462aa6ca87b3948c4cc30407d67c8))
+* add ExpressRuntime ([43cdf82](https://github.com/tsukiy0-org/extensions-js/commit/43cdf82280e02f0580a975a88b523c4b11b00a24))
+* add HttpProxy ([dc332ad](https://github.com/tsukiy0-org/extensions-js/commit/dc332ade94fe54aefbe308405b3712ccce151214))
+* add HttpProxyService ([49b5e59](https://github.com/tsukiy0-org/extensions-js/commit/49b5e5986855efa87733ab14b60267d8ebb61e84))
+* refactor runtimes to create logger/correlation and pass to proces ([1b7af9f](https://github.com/tsukiy0-org/extensions-js/commit/1b7af9f7a683bf6a33d3f9129ba2fcd41ccf3255))
+* remove middleware in favor of processor pattern ([e4ec0d3](https://github.com/tsukiy0-org/extensions-js/commit/e4ec0d3d678846aef9311d17c3909341927a9e03))
+* try remove LogGroup ([0e0d567](https://github.com/tsukiy0-org/extensions-js/commit/0e0d5679de1ee780fe8d8f4e16df1d0cf3e5c5e2))
+
+
+
+
+
 # [0.1.0-alpha.33](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.32...v0.1.0-alpha.33) (2021-09-12)
 
 

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.34](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.33...v0.1.0-alpha.34) (2021-09-15)
+
+
+### Features
+
+* add ExpressRuntime ([43cdf82](https://github.com/tsukiy0-org/extensions-js/commit/43cdf82280e02f0580a975a88b523c4b11b00a24))
+* refactor runtimes to create logger/correlation and pass to proces ([1b7af9f](https://github.com/tsukiy0-org/extensions-js/commit/1b7af9f7a683bf6a33d3f9129ba2fcd41ccf3255))
+* remove middleware in favor of processor pattern ([e4ec0d3](https://github.com/tsukiy0-org/extensions-js/commit/e4ec0d3d678846aef9311d17c3909341927a9e03))
+
+
+
+
+
 # [0.1.0-alpha.33](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.32...v0.1.0-alpha.33) (2021-09-12)
 
 **Note:** Version bump only for package @tsukiy0/extensions-express

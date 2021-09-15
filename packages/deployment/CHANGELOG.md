@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.34](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.33...v0.1.0-alpha.34) (2021-09-15)
+
+
+### Bug Fixes
+
+* remove ExampleBatchJob ([5e14f34](https://github.com/tsukiy0-org/extensions-js/commit/5e14f341d66b255955d9f0a9a4e164fcec7908b2))
+
+
+### Features
+
+* add BatchRUntime tests ([0a1fef8](https://github.com/tsukiy0-org/extensions-js/commit/0a1fef8f33bff827e2165809cc390caf4ae2e81c))
+* add HttpProxy ([dc332ad](https://github.com/tsukiy0-org/extensions-js/commit/dc332ade94fe54aefbe308405b3712ccce151214))
+
+
+
+
+
 # [0.1.0-alpha.33](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.32...v0.1.0-alpha.33) (2021-09-12)
 
 **Note:** Version bump only for package @tsukiy0/deployment
