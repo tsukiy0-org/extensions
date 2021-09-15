@@ -17,14 +17,10 @@ export class ExpressJsonRuntime<T, U> {
   ) {}
 
   handler: RequestHandler = promisifyHandler(async (req, res) => {
+    const correlationService = new RequestCorrelationService(req);
+    const logger = new WinstonLogger(this.name, correlationService);
+
     try {
-      const correlationService = new RequestCorrelationService(req);
-      const logger = new WinstonLogger(this.name, correlationService);
-
-      logger.info("request body", {
-        body: req.body
-      })
-
       const r = await this.processor.run(req.body, {
         correlationService,
         logger,
@@ -33,6 +29,20 @@ export class ExpressJsonRuntime<T, U> {
       return res.status(200).json(r);
     } catch (e) {
       return this.handleError(e, res);
+    } finally {
+      logger.info("REQUEST_RESPONSE", {
+        request: {
+          method: req.method,
+          path: req.path,
+          url: req.url,
+          query: req.query,
+          headers: req.headers,
+          body: req.body,
+        },
+        response: {
+          status: res.statusCode,
+        },
+      });
     }
   });
 

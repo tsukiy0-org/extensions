@@ -28,11 +28,11 @@ describe("ExpressJsonRuntime", () => {
       const url = UrlExtensions.appendPath(apiUrl, "/json");
       const body = {
         test: GuidExtensions.generate(),
-      }
+      };
 
       const actual = await fetch(url, {
         method: "POST",
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
 
       expect(await actual.json()).toEqual(body);
