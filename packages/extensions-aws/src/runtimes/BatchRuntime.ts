@@ -14,16 +14,22 @@ export class BatchRuntime<T> {
   ) {}
 
   run = async (): Promise<void> => {
-    const config = new SystemConfiguration();
-    const rawMessage = config.get(BatchMessageQueue.MESSAGE_KEY);
-    const message: Message<T> = JSON.parse(rawMessage);
+    try {
+      const config = new SystemConfiguration();
+      const rawMessage = config.get(BatchMessageQueue.MESSAGE_KEY);
+      const message: Message<T> = JSON.parse(rawMessage);
 
-    const correlationService = new MessageCorrelationService(message);
-    const logger = new WinstonLogger(this.name, correlationService);
+      const correlationService = new MessageCorrelationService(message);
+      const logger = new WinstonLogger(this.name, correlationService);
 
-    await this.processor.run(message.body, {
-      correlationService,
-      logger,
-    });
+      await this.processor.run(message.body, {
+        correlationService,
+        logger,
+      });
+
+      process.exit(0);
+    } catch {
+      process.exit(1);
+    }
   };
 }
