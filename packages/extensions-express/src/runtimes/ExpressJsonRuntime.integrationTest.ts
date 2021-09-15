@@ -4,6 +4,7 @@ import {
   Url,
   UrlExtensions,
 } from "@tsukiy0/extensions-core";
+import fetch from "cross-fetch";
 
 describe("ExpressJsonRuntime", () => {
   const configuration = new SystemConfiguration();
