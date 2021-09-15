@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.35](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.34...v0.1.0-alpha.35) (2021-09-15)
+
+
+### Features
+
+* add builder to HttpProxyService ([ec7573a](https://github.com/tsukiy0-org/extensions-js/commit/ec7573aed5880d34d8b76bff2bc87a40618afa5e))
+
+
+
+
+
 # [0.1.0-alpha.34](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.33...v0.1.0-alpha.34) (2021-09-15)
 
 
