@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.36](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.35...v0.1.0-alpha.36) (2021-09-15)
+
+
+### Bug Fixes
+
+* parse request ([12bf244](https://github.com/tsukiy0-org/extensions-js/commit/12bf2441fd869f0cc3f7e5340194cda3020916a6))
+
+
+
+
+
 # [0.1.0-alpha.35](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.34...v0.1.0-alpha.35) (2021-09-15)
 
 
