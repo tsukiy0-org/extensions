@@ -33,3 +33,4 @@ export * from "./services/DefaultQueue";
 export * from "./services/IMessageQueue";
 export * from "./services/MessageCorrelationService";
 export * from "./services/IProcessor";
+export * from "./services/DefaultProcessor";
