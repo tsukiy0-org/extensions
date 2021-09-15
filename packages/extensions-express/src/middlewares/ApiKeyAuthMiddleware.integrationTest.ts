@@ -18,9 +18,7 @@ describe("ApiKeyAuthMiddleware", () => {
       },
     });
 
-    expect(await actual.json()).toEqual({
-      keyName: "test",
-    });
+    expect(actual.status).toEqual(200);
   });
 
   it("when send bad api key then unauthorized", async () => {
