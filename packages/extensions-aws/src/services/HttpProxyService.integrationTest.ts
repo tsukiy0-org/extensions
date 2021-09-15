@@ -1,6 +1,5 @@
-import { Url } from "@tsukiy0/extensions-core";
+import { SystemConfiguration, Url } from "@tsukiy0/extensions-core";
 import { Lambda } from "aws-sdk";
-import { SystemConfiguration } from "packages/extensions-core/src/services/SystemConfiguration";
 import { HttpProxyService } from "./HttpProxyService";
 
 describe("HttpProxyService", () => {
