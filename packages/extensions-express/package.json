@@ -16,12 +16,14 @@
     "build": "tsc -p tsconfig.build.json",
     "test": "jest --passWithNoTests",
     "test:integration": "jest --config jest.config.integration.js",
-    "test:integration:local": "jest --config jest.config.integration.js -t ErrorMiddleware"
+    "test:integration:local": "jest --config jest.config.integration.js -t ExpressJsonRuntime"
   },
   "dependencies": {
     "@tsukiy0/extensions-core": "^0.1.0-alpha.37",
     "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.37",
-    "body-parser": "1.19.0",
+    "@types/body-parser": "^1.19.1",
+    "body-parser": "^1.19.0",
+    "compose-middleware": "^5.0.1",
     "cors": "2.8.5",
     "express": "4.17.1",
     "micromatch": "4.0.4",
