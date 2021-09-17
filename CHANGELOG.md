@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.39](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.38...v0.1.0-alpha.39) (2021-09-17)
+
+
+### Bug Fixes
+
+* update HttpProxyRequestOptions to take headers as object ([fea3813](https://github.com/tsukiy0-org/extensions-js/commit/fea38134771ddf2dfdb1d9f43ed51fe3fc18112d))
+
+
+
+
+
 # [0.1.0-alpha.38](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.37...v0.1.0-alpha.38) (2021-09-16)
 
 
