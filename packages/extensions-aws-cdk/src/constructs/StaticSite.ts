@@ -1,3 +1,4 @@
+import { RemovalPolicy } from "aws-cdk-lib";
 import {
   BehaviorOptions,
   CachePolicy,
@@ -32,6 +33,8 @@ export class StaticSite extends Construct {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "404.html",
       publicReadAccess: true,
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     new BucketDeployment(this, "BucketDeployment", {
