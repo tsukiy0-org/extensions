@@ -15,3 +15,4 @@ export * from "./constructs/FargateBatchJob";
 export * from "./constructs/HttpAlarm";
 export * from "./constructs/SqsBulkPurge";
 export * from "./constructs/HttpProxy";
+export * from "./constructs/DefaultBucket";

@@ -12,6 +12,7 @@ import { HttpOrigin } from "aws-cdk-lib/lib/aws-cloudfront-origins";
 import { Bucket, IBucket } from "aws-cdk-lib/lib/aws-s3";
 import { BucketDeployment, ISource } from "aws-cdk-lib/lib/aws-s3-deployment";
 import { Construct } from "constructs";
+import { DefaultBucket } from "./DefaultBucket";
 import { DomainName } from "./DomainName";
 
 export class StaticSite extends Construct {
@@ -29,12 +30,10 @@ export class StaticSite extends Construct {
   ) {
     super(scope, id);
 
-    const bucket = new Bucket(this, "Bucket", {
+    const bucket = new DefaultBucket(this, "Bucket", {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "404.html",
       publicReadAccess: true,
-      removalPolicy: RemovalPolicy.DESTROY,
-      autoDeleteObjects: true,
     });
 
     new BucketDeployment(this, "BucketDeployment", {
