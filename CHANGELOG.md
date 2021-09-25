@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.40](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.39...v0.1.0-alpha.40) (2021-09-25)
+
+
+### Features
+
+* add DefaultBucket ([a6ce0bb](https://github.com/tsukiy0-org/extensions-js/commit/a6ce0bb1a6a0188d6584175376e53a8c925f712b))
+* static site bucket autoremoves itself ([936677f](https://github.com/tsukiy0-org/extensions-js/commit/936677f98f0f100d8f667e3fcd5df6e17cdda70c))
+
+
+
+
+
 # [0.1.0-alpha.39](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.38...v0.1.0-alpha.39) (2021-09-17)
 
 

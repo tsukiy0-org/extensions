@@ -1,6 +1,6 @@
 {
   "name": "@tsukiy0/extensions-aws",
-  "version": "0.1.0-alpha.39",
+  "version": "0.1.0-alpha.40",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,8 +19,8 @@
     "test:integration:local": "jest --config jest.config.integration.js -t HttpProxyService"
   },
   "dependencies": {
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.39",
-    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.39",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.40",
+    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.40",
     "@vendia/serverless-express": "4.3.11",
     "aws-sdk": "2.983.0",
     "runtypes": "^6.4.0"
