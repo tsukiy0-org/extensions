@@ -15,10 +15,10 @@
   "dependencies": {
     "@tsukiy0/extensions-aws-cdk": "^0.1.0-alpha.40",
     "@tsukiy0/extensions-core": "^0.1.0-alpha.40",
-    "aws-cdk-lib": "2.0.0-rc.20",
+    "aws-cdk-lib": "2.0.0-rc.23",
     "constructs": "10.0.5"
   },
   "devDependencies": {
-    "aws-cdk": "2.0.0-rc.15"
+    "aws-cdk": "2.0.0-rc.23"
   }
 }
