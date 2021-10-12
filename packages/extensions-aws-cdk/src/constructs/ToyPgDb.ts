@@ -1,4 +1,5 @@
 import {
+  AmazonLinuxGeneration,
   CloudFormationInit,
   InitPackage,
   Instance,
@@ -48,7 +49,9 @@ export class ToyPgDb extends Construct {
       vpc,
       securityGroup,
       instanceType: InstanceType.of(InstanceClass.T3, InstanceSize.NANO),
-      machineImage: MachineImage.latestAmazonLinux(),
+      machineImage: MachineImage.latestAmazonLinux({
+        generation: AmazonLinuxGeneration.AMAZON_LINUX_2,
+      }),
       keyName: props.keyName,
       // init: CloudFormationInit.fromElements(InitPackage.apt("")),
     });
