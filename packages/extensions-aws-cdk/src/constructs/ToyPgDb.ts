@@ -15,7 +15,13 @@ import {
 import { Construct } from "constructs";
 
 export class ToyPgDb extends Construct {
-  public constructor(scope: Construct, id: string) {
+  public constructor(
+    scope: Construct,
+    id: string,
+    props: {
+      keyName?: string;
+    },
+  ) {
     super(scope, id);
 
     const vpc = new Vpc(this, "Vpc", {
@@ -42,6 +48,7 @@ export class ToyPgDb extends Construct {
       vpc,
       instanceType: InstanceType.of(InstanceClass.T3, InstanceSize.NANO),
       machineImage: MachineImage.latestAmazonLinux(),
+      keyName: props.keyName,
       // init: CloudFormationInit.fromElements(InitPackage.apt("")),
     });
   }
