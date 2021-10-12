@@ -46,6 +46,7 @@ export class ToyPgDb extends Construct {
 
     const i = new Instance(this, "Instance", {
       vpc,
+      securityGroup,
       instanceType: InstanceType.of(InstanceClass.T3, InstanceSize.NANO),
       machineImage: MachineImage.latestAmazonLinux(),
       keyName: props.keyName,
