@@ -36,6 +36,7 @@ export class AppStack extends Stack {
 
     new ToyPgDb(this, "ToyPgDb", {
       keyName: "test",
+      password: "postgres",
     });
 
     new CfnOutput(this, "ApiUrl", {
