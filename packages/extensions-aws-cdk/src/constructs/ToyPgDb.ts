@@ -79,17 +79,15 @@ export class ToyPgDb extends Construct {
         ),
         InitCommand.shellCommand(`sudo systemctl start postgresql-13`),
         InitCommand.shellCommand(`sudo systemctl enable postgresql-13`),
-        InitCommand.shellCommand("sudo su - postgres"),
         InitCommand.shellCommand(
-          `psql -c "alter user postgres with password '${props.password}'"`,
+          `sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${props.password}';`,
         ),
         InitCommand.shellCommand(
-          `echo "listen_addresses = '*'" >> /var/lib/pgsql/13/data/postgresql.conf`,
+          `sudo echo "listen_addresses = '*'" >> /var/lib/pgsql/13/data/postgresql.conf`,
         ),
         InitCommand.shellCommand(
-          `echo "host all all 0.0.0.0/0 md5" >> /var/lib/pgsql/13/data/pg_hba.conf`,
+          `sudo echo "host all all 0.0.0.0/0 md5" >> /var/lib/pgsql/13/data/pg_hba.conf`,
         ),
-        InitCommand.shellCommand(`exit`),
         InitCommand.shellCommand(`sudo systemctl restart postgresql-13`),
       ),
     });
