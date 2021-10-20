@@ -13,6 +13,7 @@ import {
   Port,
   SecurityGroup,
   SubnetType,
+  UserData,
   Vpc,
 } from "aws-cdk-lib/lib/aws-ec2";
 import { Construct } from "constructs";
@@ -48,6 +49,9 @@ export class ToyPgDb extends Construct {
     securityGroup.addIngressRule(Peer.anyIpv6(), Port.tcp(5432));
     securityGroup.addIngressRule(Peer.anyIpv4(), Port.allTraffic());
 
+    const userData = UserData.forLinux();
+    userData.addCommands("echo v1");
+
     const i = new Instance(this, "Instance", {
       vpc,
       securityGroup,
@@ -56,6 +60,7 @@ export class ToyPgDb extends Construct {
         generation: AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
       keyName: props.keyName,
+      userData,
       init: CloudFormationInit.fromElements(
         InitFile.fromString(
           "/etc/yum.repos.d/pgdg.repo",
