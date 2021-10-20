@@ -61,6 +61,7 @@ export class ToyPgDb extends Construct {
       }),
       keyName: props.keyName,
       userData,
+      userDataCausesReplacement: true,
       init: CloudFormationInit.fromElements(
         InitFile.fromString(
           "/etc/yum.repos.d/pgdg.repo",
