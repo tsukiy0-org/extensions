@@ -60,10 +60,10 @@ export class ToyPgDb extends Construct {
         InitFile.fromString(
           "/etc/yum.repos.d/pgdg.repo",
           `[pgdg13]
-        name=PostgreSQL 13 for RHEL/CentOS 7 - x86_64
-        baseurl=https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-7-x86_64
-        enabled=1
-        gpgcheck=0`,
+name=PostgreSQL 13 for RHEL/CentOS 7 - x86_64
+baseurl=https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-7-x86_64
+enabled=1
+gpgcheck=0`,
         ),
         // InitCommand.shellCommand(
         //   "sudo dnf install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm",
