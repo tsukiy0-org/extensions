@@ -75,23 +75,23 @@ export class ToyPgDb extends Construct {
         InitCommand.shellCommand(
           "sudo yum -y install postgresql13 postgresql13-server",
         ),
-        InitCommand.shellCommand(
-          "sudo /usr/pgsql-13/bin/postgresql-13-setup initdb",
-        ),
-        InitCommand.shellCommand(`sudo systemctl start postgresql-13`),
-        InitCommand.shellCommand(`sudo systemctl enable postgresql-13`),
-        InitCommand.shellCommand("sudo su - postgres"),
-        InitCommand.shellCommand(
-          `psql -c "alter user postgres with password '${props.password}'"`,
-        ),
-        InitCommand.shellCommand(
-          `echo "listen_addresses = '*'" >> /var/lib/pgsql/13/data/postgresql.conf`,
-        ),
-        InitCommand.shellCommand(
-          `echo "host all all 0.0.0.0/0 md5" >> /var/lib/pgsql/13/data/pg_hba.conf`,
-        ),
-        InitCommand.shellCommand(`exit`),
-        InitCommand.shellCommand(`sudo systemctl restart postgresql-13`),
+        // InitCommand.shellCommand(
+        //   "sudo /usr/pgsql-13/bin/postgresql-13-setup initdb",
+        // ),
+        // InitCommand.shellCommand(`sudo systemctl start postgresql-13`),
+        // InitCommand.shellCommand(`sudo systemctl enable postgresql-13`),
+        // InitCommand.shellCommand("sudo su - postgres"),
+        // InitCommand.shellCommand(
+        //   `psql -c "alter user postgres with password '${props.password}'"`,
+        // ),
+        // InitCommand.shellCommand(
+        //   `echo "listen_addresses = '*'" >> /var/lib/pgsql/13/data/postgresql.conf`,
+        // ),
+        // InitCommand.shellCommand(
+        //   `echo "host all all 0.0.0.0/0 md5" >> /var/lib/pgsql/13/data/pg_hba.conf`,
+        // ),
+        // InitCommand.shellCommand(`exit`),
+        // InitCommand.shellCommand(`sudo systemctl restart postgresql-13`),
       ),
     });
   }
