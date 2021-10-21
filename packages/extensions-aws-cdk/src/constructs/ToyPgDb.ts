@@ -13,7 +13,6 @@ import {
   Port,
   SecurityGroup,
   SubnetType,
-  UserData,
   Vpc,
 } from "aws-cdk-lib/lib/aws-ec2";
 import { Construct } from "constructs";
@@ -49,10 +48,7 @@ export class ToyPgDb extends Construct {
     securityGroup.addIngressRule(Peer.anyIpv6(), Port.tcp(5432));
     securityGroup.addIngressRule(Peer.anyIpv4(), Port.allTraffic());
 
-    const userData = UserData.forLinux();
-    userData.addCommands("echo v2");
-
-    const i = new Instance(this, "Instance", {
+    new Instance(this, "Instance", {
       vpc,
       securityGroup,
       instanceType: InstanceType.of(InstanceClass.T3, InstanceSize.NANO),
@@ -79,7 +75,7 @@ gpgcheck=0`,
         InitCommand.shellCommand(`sudo systemctl start postgresql-13`),
         InitCommand.shellCommand(`sudo systemctl enable postgresql-13`),
         InitCommand.shellCommand(
-          `sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${props.password}';`,
+          `sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${props.password}';"`,
         ),
         InitCommand.shellCommand(
           `sudo echo "listen_addresses = '*'" >> /var/lib/pgsql/13/data/postgresql.conf`,
