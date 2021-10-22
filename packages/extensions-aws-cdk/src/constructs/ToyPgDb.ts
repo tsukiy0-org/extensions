@@ -17,6 +17,12 @@ import {
 import { Construct } from "constructs";
 
 export class ToyPgDb extends Construct {
+  public readonly host: string;
+  public readonly port: string;
+  public readonly username: string;
+  public readonly password: string;
+  public readonly database: string;
+
   public constructor(
     scope: Construct,
     id: string,
@@ -46,7 +52,7 @@ export class ToyPgDb extends Construct {
     securityGroup.addIngressRule(Peer.anyIpv6(), Port.tcp(5432));
     securityGroup.addIngressRule(Peer.anyIpv4(), Port.allTraffic());
 
-    new Instance(this, "Instance", {
+    const instance = new Instance(this, "Instance", {
       vpc,
       securityGroup,
       instanceType: InstanceType.of(InstanceClass.T3, InstanceSize.NANO),
@@ -83,5 +89,11 @@ gpgcheck=0`,
         InitCommand.shellCommand(`sudo systemctl restart postgresql-13`),
       ),
     });
+
+    this.host = instance.instancePublicDnsName;
+    this.port = "5432";
+    this.username = "postgres";
+    this.password = props.password;
+    this.database = "postgres";
   }
 }
