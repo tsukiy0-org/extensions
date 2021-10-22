@@ -34,11 +34,6 @@ export class AppStack extends Stack {
 
     const httpProxy = new HttpProxy(this, "HttpProxy");
 
-    new ToyPgDb(this, "ToyPgDb", {
-      keyName: "test",
-      password: "postgres",
-    });
-
     new CfnOutput(this, "ApiUrl", {
       value: api.url,
     });

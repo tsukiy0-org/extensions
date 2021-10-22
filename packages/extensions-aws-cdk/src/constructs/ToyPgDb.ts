@@ -1,4 +1,3 @@
-import { Duration } from "aws-cdk-lib";
 import {
   AmazonLinuxGeneration,
   CloudFormationInit,
@@ -22,7 +21,6 @@ export class ToyPgDb extends Construct {
     scope: Construct,
     id: string,
     props: {
-      keyName: string;
       password: string;
     },
   ) {
@@ -55,7 +53,6 @@ export class ToyPgDb extends Construct {
       machineImage: MachineImage.latestAmazonLinux({
         generation: AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
-      keyName: props.keyName,
       init: CloudFormationInit.fromElements(
         InitFile.fromString(
           "/etc/yum.repos.d/pgdg.repo",
