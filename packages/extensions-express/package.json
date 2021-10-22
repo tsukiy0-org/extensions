@@ -1,6 +1,6 @@
 {
   "name": "@tsukiy0/extensions-express",
-  "version": "0.1.0-alpha.41",
+  "version": "0.1.0-alpha.42",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,8 +19,8 @@
     "test:integration:local": "jest --config jest.config.integration.js -t ExpressJsonRuntime"
   },
   "dependencies": {
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.41",
-    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.41",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.42",
+    "@tsukiy0/extensions-logging-winston": "^0.1.0-alpha.42",
     "@types/body-parser": "1.19.1",
     "body-parser": "1.19.0",
     "compose-middleware": "5.0.1",

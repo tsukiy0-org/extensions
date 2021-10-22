@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.42](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.41...v0.1.0-alpha.42) (2021-10-22)
+
+
+### Features
+
+* bump versions ([669f640](https://github.com/tsukiy0-org/extensions-js/commit/669f640cffd943ecb06c34221f35a986dd956ddd))
+
+
+
+
+
 # [0.1.0-alpha.41](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.40...v0.1.0-alpha.41) (2021-09-25)
 
 

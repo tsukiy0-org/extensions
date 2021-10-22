@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.42](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.41...v0.1.0-alpha.42) (2021-10-22)
+
+
+### Bug Fixes
+
+* alter password without changing user ([95372a3](https://github.com/tsukiy0-org/extensions-js/commit/95372a3724d6048451dbc6df5a0860e281cfd8cc))
+* attach security group ([e174c72](https://github.com/tsukiy0-org/extensions-js/commit/e174c72a0dd232d308ce0e2d011af1b1275af3a4))
+* bad pg chagne password command ([58d3b3e](https://github.com/tsukiy0-org/extensions-js/commit/58d3b3eaa7f12386fb9c6749092447a652df04cc))
+* deploy with amazon linux 2 ([9dd5327](https://github.com/tsukiy0-org/extensions-js/commit/9dd5327d9ed080e347753b968e5cc42acbdb9cba))
+* formatting ([9101114](https://github.com/tsukiy0-org/extensions-js/commit/910111456c9b5cbbf2588381c13e85eb0e6cd49e))
+* formatting error ([4119451](https://github.com/tsukiy0-org/extensions-js/commit/4119451400ff6e36770a53642ccd9384ef99be22))
+* init pg repo command ([9d0cb36](https://github.com/tsukiy0-org/extensions-js/commit/9d0cb3679165d442457e21a79f81cadfe6cf3669))
+
+
+### Features
+
+* add pg install and start commands ([d28b6aa](https://github.com/tsukiy0-org/extensions-js/commit/d28b6aa35560fdfb1e7bba1f87622f152e39ea5f))
+* bump versions ([669f640](https://github.com/tsukiy0-org/extensions-js/commit/669f640cffd943ecb06c34221f35a986dd956ddd))
+* deploy ToyPgDb ([4dcd565](https://github.com/tsukiy0-org/extensions-js/commit/4dcd565159f39f21ed245e936172fabcf49388eb))
+* deploy with test key ([e90d6fd](https://github.com/tsukiy0-org/extensions-js/commit/e90d6fd22f763672326371b4664d0adf700042ef))
+* finish impl ToyPgDb ([40f5355](https://github.com/tsukiy0-org/extensions-js/commit/40f53557f13f97966683c93a0b172b7dc8161dd2))
+* just add new init script ([cc33813](https://github.com/tsukiy0-org/extensions-js/commit/cc33813801bf64b7e951cf9b4d8c29a590a2da85))
+* run init ([2d13e2a](https://github.com/tsukiy0-org/extensions-js/commit/2d13e2a7ac9c80a01a35f0d657beeb62a7f34197))
+* try to start the pg service ([1b202ef](https://github.com/tsukiy0-org/extensions-js/commit/1b202efbd415e04d733c173d43f6a375ef45b9fd))
+
+
+
+
+
 # [0.1.0-alpha.41](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.40...v0.1.0-alpha.41) (2021-09-25)
 
 

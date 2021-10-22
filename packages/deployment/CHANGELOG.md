@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.42](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.41...v0.1.0-alpha.42) (2021-10-22)
+
+
+### Bug Fixes
+
+* add db back ([1178231](https://github.com/tsukiy0-org/extensions-js/commit/1178231499b4bd28ad7092a1355f8b6674ed26b3))
+* bad pg chagne password command ([58d3b3e](https://github.com/tsukiy0-org/extensions-js/commit/58d3b3eaa7f12386fb9c6749092447a652df04cc))
+
+
+### Features
+
+* add back db ([045d866](https://github.com/tsukiy0-org/extensions-js/commit/045d866c02d0f99c32b31714c049675b044a22dc))
+* deploy ToyPgDb ([4dcd565](https://github.com/tsukiy0-org/extensions-js/commit/4dcd565159f39f21ed245e936172fabcf49388eb))
+* deploy with test key ([e90d6fd](https://github.com/tsukiy0-org/extensions-js/commit/e90d6fd22f763672326371b4664d0adf700042ef))
+* finish impl ToyPgDb ([40f5355](https://github.com/tsukiy0-org/extensions-js/commit/40f53557f13f97966683c93a0b172b7dc8161dd2))
+* remove db ([da3e5ef](https://github.com/tsukiy0-org/extensions-js/commit/da3e5efa0cf711cd917668ec83ae9b87d59f0548))
+* run cfn-init ([d46a2cc](https://github.com/tsukiy0-org/extensions-js/commit/d46a2cc59c48d88c61ea2eb8528241280941d62d))
+
+
+
+
+
 # [0.1.0-alpha.41](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.40...v0.1.0-alpha.41) (2021-09-25)
 
 
