@@ -1,7 +1,7 @@
 {
   "name": "@tsukiy0/deployment",
   "private": true,
-  "version": "0.1.0-alpha.42",
+  "version": "0.1.0-alpha.43",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -13,8 +13,8 @@
     "deploy": "cdk deploy --require-approval never --all"
   },
   "dependencies": {
-    "@tsukiy0/extensions-aws-cdk": "^0.1.0-alpha.42",
-    "@tsukiy0/extensions-core": "^0.1.0-alpha.42",
+    "@tsukiy0/extensions-aws-cdk": "^0.1.0-alpha.43",
+    "@tsukiy0/extensions-core": "^0.1.0-alpha.43",
     "aws-cdk-lib": "2.0.0-rc.23",
     "constructs": "10.0.5"
   },
