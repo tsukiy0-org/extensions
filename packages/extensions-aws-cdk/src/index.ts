@@ -3,6 +3,7 @@ export * from "./constructs/EmailAlarmAction";
 export * from "./constructs/DefaultLambdaRestApi";
 export * from "./constructs/RestApiAlarm";
 export * from "./constructs/DefaultFunction";
+export * from "./constructs/DefaultDockerFunction";
 export * from "./constructs/DomainName";
 export * from "./constructs/StaticSite";
 export * from "./constructs/FunctionQueue";
