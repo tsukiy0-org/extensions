@@ -8,7 +8,7 @@ const app = new App();
 const configuration = new SystemConfiguration();
 const testTableName = "test-table-name";
 
-new ExternalStack(app, "External", {
+new ExternalStack(app, "ExtensionsJsExternalStack", {
   env: {
     account: configuration.get("CDK_DEFAULT_ACCOUNT"),
     region: "us-east-1",
@@ -16,7 +16,7 @@ new ExternalStack(app, "External", {
   testTableName,
 });
 
-new AppStack(app, "AppUsEast1", {
+new AppStack(app, "ExtensionsJsAppStack", {
   env: {
     account: configuration.get("CDK_DEFAULT_ACCOUNT"),
     region: "us-east-1",
