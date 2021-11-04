@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.45](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.44...v0.1.0-alpha.45) (2021-11-04)
+
+
+### Features
+
+* default beahvior is to not cache ([0408cf5](https://github.com/tsukiy0-org/extensions-js/commit/0408cf565f7394f7a5dc60251275f2bd2c68b1d3))
+
+
+
+
+
 # [0.1.0-alpha.44](https://github.com/tsukiy0-org/extensions-js/compare/v0.1.0-alpha.43...v0.1.0-alpha.44) (2021-10-26)
 
 
