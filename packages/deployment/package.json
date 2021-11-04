@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "predeploy": "cdk bootstrap && cdk deploy --require-approval never External",
+    "predeploy": "cdk bootstrap && cdk deploy --require-approval never ExtensionsJsExternalStack",
     "deploy": "cdk deploy --require-approval never --all"
   },
   "dependencies": {

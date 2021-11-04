@@ -6,11 +6,11 @@ get_cfn_output() {
     echo $(aws cloudformation describe-stacks --stack-name ${1} --query "Stacks[0].Outputs[?OutputKey==\`${2}\`].OutputValue" --output text --region us-east-1)
 }
 
-export API_URL=$(get_cfn_output AppUsEast1 ApiUrl)
-export HTTP_PROXY_FUNCTION_NAME=$(get_cfn_output AppUsEast1 HttpProxyFunctionName)
-export TEST_SQS_LAMBDA_RUNTIME_QUEUE_URL=$(get_cfn_output AppUsEast1 TestSqsLambdaRuntimeQueueUrl)
-export TEST_BATCH_RUNTIME_JOB_QUEUE=$(get_cfn_output AppUsEast1 TestBatchRuntimeJobQueue)
-export TEST_BATCH_RUNTIME_JOB_DEFINITION=$(get_cfn_output AppUsEast1 TestBatchRuntimeJobDefinition)
-export TEST_TABLE_NAME=$(get_cfn_output AppUsEast1 TestTableName)
+export API_URL=$(get_cfn_output ExtensionsJsAppStack ApiUrl)
+export HTTP_PROXY_FUNCTION_NAME=$(get_cfn_output ExtensionsJsAppStack HttpProxyFunctionName)
+export TEST_SQS_LAMBDA_RUNTIME_QUEUE_URL=$(get_cfn_output ExtensionsJsAppStack TestSqsLambdaRuntimeQueueUrl)
+export TEST_BATCH_RUNTIME_JOB_QUEUE=$(get_cfn_output ExtensionsJsAppStack TestBatchRuntimeJobQueue)
+export TEST_BATCH_RUNTIME_JOB_DEFINITION=$(get_cfn_output ExtensionsJsAppStack TestBatchRuntimeJobDefinition)
+export TEST_TABLE_NAME=$(get_cfn_output ExtensionsJsAppStack TestTableName)
 
 yarn test:integration
