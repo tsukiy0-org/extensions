@@ -1,4 +1,3 @@
-import { RemovalPolicy } from "aws-cdk-lib";
 import {
   BehaviorOptions,
   CachePolicy,
@@ -9,7 +8,7 @@ import {
   ViewerProtocolPolicy,
 } from "aws-cdk-lib/lib/aws-cloudfront";
 import { HttpOrigin } from "aws-cdk-lib/lib/aws-cloudfront-origins";
-import { Bucket, IBucket } from "aws-cdk-lib/lib/aws-s3";
+import { IBucket } from "aws-cdk-lib/lib/aws-s3";
 import { BucketDeployment, ISource } from "aws-cdk-lib/lib/aws-s3-deployment";
 import { Construct } from "constructs";
 import { DefaultBucket } from "./DefaultBucket";
@@ -51,7 +50,6 @@ export class StaticSite extends Construct {
           ...acc,
           [next.path]: {
             origin,
-            viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
             cachePolicy: next.cachePolicy,
           },
         };
@@ -64,8 +62,7 @@ export class StaticSite extends Construct {
       domainNames: props.domainName ? [props.domainName.domainName] : undefined,
       defaultBehavior: {
         origin,
-        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-        cachePolicy: CachePolicy.CACHING_OPTIMIZED,
+        cachePolicy: CachePolicy.CACHING_DISABLED,
       },
       additionalBehaviors: behaviors,
     });
